@@ -1,0 +1,20 @@
+--- 
+title: "Uma introdução gentil à Ciência de Dados"
+author:
+  - Janaina Souza de Souza
+  - Júlia Carolina Bijos
+  - Kaike Wesley Reis
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: []
+biblio-style: apalike
+link-citations: yes
+description: "E-book em desenvolvimento."
+always_allow_html: true
+---
+
+# Prefácio {-}
+
+
+

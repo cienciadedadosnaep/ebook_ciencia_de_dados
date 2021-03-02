@@ -1,0 +1,15 @@
+book_filename: "ciencia_de_dados"
+delete_merged_file: true
+language:
+  label:
+     fig: 'Figura '
+     tab: 'Tabela '
+     eq: 'Equação '
+     thm: 'Teorema '
+     prp: 'Proposição '
+     def: 'Definição '
+     exm: 'Exemplo '
+     exr: 'Exercício '
+     solution: 'Solução '
+  ui:
+    chapter_name: "Capítulo "

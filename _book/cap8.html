@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 8 Entendendo e Avaliando sua Hipóteses | Uma introdução gentil à Ciência de Dados</title>
+  <meta name="description" content="E-book em desenvolvimento." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 8 Entendendo e Avaliando sua Hipóteses | Uma introdução gentil à Ciência de Dados" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="E-book em desenvolvimento." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 8 Entendendo e Avaliando sua Hipóteses | Uma introdução gentil à Ciência de Dados" />
+  
+  <meta name="twitter:description" content="E-book em desenvolvimento." />
+  
+
+<meta name="author" content="Janaina Souza de Souza" />
+<meta name="author" content="Júlia Carolina Bijos" />
+<meta name="author" content="Kaike Wesley Reis" />
+
+
+<meta name="date" content="2021-03-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="cap7.html"/>
+<link rel="next" href="cap9.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Ciência de Dados</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a></li>
+<li class="chapter" data-level="1" data-path="cap1.html"><a href="cap1.html"><i class="fa fa-check"></i><b>1</b> Introdução à Ciência de Dados</a><ul>
+<li class="chapter" data-level="1.1" data-path="cap1.html"><a href="cap1.html#cap1.1"><i class="fa fa-check"></i><b>1.1</b> O que são “dados” e onde estão presentes?</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="cap1.html"><a href="cap1.html#cap1.1.1"><i class="fa fa-check"></i><b>1.1.1</b> Posso compartilhar dados?</a></li>
+<li class="chapter" data-level="1.1.2" data-path="cap1.html"><a href="cap1.html#cap1.1.2"><i class="fa fa-check"></i><b>1.1.2</b> Privacidade de dados</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="cap1.html"><a href="cap1.html#cap1.2"><i class="fa fa-check"></i><b>1.2</b> O ciclo dos Dados - Construindo uma pergunta estatística</a></li>
+<li class="chapter" data-level="1.3" data-path="cap1.html"><a href="cap1.html#cap1.3"><i class="fa fa-check"></i><b>1.3</b> Estruturando os dados</a></li>
+<li class="chapter" data-level="1.4" data-path="cap1.html"><a href="cap1.html#cap1.4"><i class="fa fa-check"></i><b>1.4</b> Identificando o tipo de problema</a></li>
+<li class="chapter" data-level="1.5" data-path="cap1.html"><a href="cap1.html#cap1.5"><i class="fa fa-check"></i><b>1.5</b> Considerações finais</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="cap2.html"><a href="cap2.html"><i class="fa fa-check"></i><b>2</b> Construindo Uma Base de Dados</a><ul>
+<li class="chapter" data-level="2.1" data-path="cap2.html"><a href="cap2.html#cap2.1"><i class="fa fa-check"></i><b>2.1</b> O que é uma base de dados?</a></li>
+<li class="chapter" data-level="2.2" data-path="cap2.html"><a href="cap2.html#cap2.2"><i class="fa fa-check"></i><b>2.2</b> Como montar uma tabela</a></li>
+<li class="chapter" data-level="2.3" data-path="cap2.html"><a href="cap2.html#cap2.3"><i class="fa fa-check"></i><b>2.3</b> Tipos de variáveis</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="cap2.html"><a href="cap2.html#cap2.3.1"><i class="fa fa-check"></i><b>2.3.1</b> Variáveis Numéricas</a></li>
+<li class="chapter" data-level="2.3.2" data-path="cap2.html"><a href="cap2.html#cap2.3.2"><i class="fa fa-check"></i><b>2.3.2</b> Variáveis Categóricas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="cap2.html"><a href="cap2.html#cap2.4"><i class="fa fa-check"></i><b>2.4</b> Como buscar base de dados abertas</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="cap2.html"><a href="cap2.html#cap2.4.1"><i class="fa fa-check"></i><b>2.4.1</b> Dados abertos governamentais</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="cap2.html"><a href="cap2.html#cap2.5"><i class="fa fa-check"></i><b>2.5</b> Concluindo…</a></li>
+<li class="chapter" data-level="2.6" data-path="cap2.html"><a href="cap2.html#cap2.6"><i class="fa fa-check"></i><b>2.6</b> Você sabia? Dados, Anedotas e Fake News</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="cap3.html"><a href="cap3.html"><i class="fa fa-check"></i><b>3</b> Vizualização e Ciência de Dados</a><ul>
+<li class="chapter" data-level="3.1" data-path="cap3.html"><a href="cap3.html#objeto-estudo"><i class="fa fa-check"></i><b>3.1</b> Objeto de estudo</a></li>
+<li class="chapter" data-level="3.2" data-path="cap3.html"><a href="cap3.html#gbarras"><i class="fa fa-check"></i><b>3.2</b> Gráfico de barra</a></li>
+<li class="chapter" data-level="3.3" data-path="cap3.html"><a href="cap3.html#gtend"><i class="fa fa-check"></i><b>3.3</b> Gráfico de tendências</a></li>
+<li class="chapter" data-level="3.4" data-path="cap3.html"><a href="cap3.html#gset"><i class="fa fa-check"></i><b>3.4</b> Gráfico de setores</a></li>
+<li class="chapter" data-level="3.5" data-path="cap3.html"><a href="cap3.html#gdisp"><i class="fa fa-check"></i><b>3.5</b> Gráfico de dispersão</a></li>
+<li class="chapter" data-level="3.6" data-path="cap3.html"><a href="cap3.html#ghist"><i class="fa fa-check"></i><b>3.6</b> Histograma</a></li>
+<li class="chapter" data-level="3.7" data-path="cap3.html"><a href="cap3.html#conc"><i class="fa fa-check"></i><b>3.7</b> Concluindo …</a></li>
+<li class="chapter" data-level="3.8" data-path="cap3.html"><a href="cap3.html#indo-além"><i class="fa fa-check"></i><b>3.8</b> Indo Além</a></li>
+<li class="chapter" data-level="3.9" data-path="cap3.html"><a href="cap3.html#citações-no-capítulo"><i class="fa fa-check"></i><b>3.9</b> Citações no capítulo</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="cap4.html"><a href="cap4.html"><i class="fa fa-check"></i><b>4</b> Correlação e Causalidade</a><ul>
+<li class="chapter" data-level="4.1" data-path="cap4.html"><a href="cap4.html#cap4.1"><i class="fa fa-check"></i><b>4.1</b> O que é correlação?</a></li>
+<li class="chapter" data-level="4.2" data-path="cap4.html"><a href="cap4.html#cap4.2"><i class="fa fa-check"></i><b>4.2</b> Quão forte é a correlação?</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="cap4.html"><a href="cap4.html#cap4.2.1"><i class="fa fa-check"></i><b>4.2.1</b> Coeficiente de Pearson</a></li>
+<li class="chapter" data-level="4.2.2" data-path="cap4.html"><a href="cap4.html#cap4.2.2"><i class="fa fa-check"></i><b>4.2.2</b> Coeficiente de Spearman</a></li>
+<li class="chapter" data-level="4.2.3" data-path="cap4.html"><a href="cap4.html#cap4.2.3"><i class="fa fa-check"></i><b>4.2.3</b> Multicolinearidade</a></li>
+<li class="chapter" data-level="4.2.4" data-path="cap4.html"><a href="cap4.html#cap4.2.4"><i class="fa fa-check"></i><b>4.2.4</b> Considerações sobre a análise</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="cap4.html"><a href="cap4.html#cap4.3"><i class="fa fa-check"></i><b>4.3</b> Relações de causa e efeito: conhecendo a causalidade</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="cap4.html"><a href="cap4.html#cap4.3.1"><i class="fa fa-check"></i><b>4.3.1</b> Coincidência ou Causalidade?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="cap4.html"><a href="cap4.html#cap4.4"><i class="fa fa-check"></i><b>4.4</b> Correlações expúrias</a></li>
+<li class="chapter" data-level="4.5" data-path="cap4.html"><a href="cap4.html#cap4.5"><i class="fa fa-check"></i><b>4.5</b> Considerações Finais</a></li>
+<li class="chapter" data-level="4.6" data-path="cap4.html"><a href="cap4.html#cap4.6"><i class="fa fa-check"></i><b>4.6</b> Indo além</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="cap5.html"><a href="cap5.html"><i class="fa fa-check"></i><b>5</b> Indicadores Básicos na Ciência de Dados</a><ul>
+<li class="chapter" data-level="5.1" data-path="cap5.html"><a href="cap5.html#objeto-de-estudo"><i class="fa fa-check"></i><b>5.1</b> Objeto de estudo</a></li>
+<li class="chapter" data-level="5.2" data-path="cap5.html"><a href="cap5.html#medidas-de-tendência-central"><i class="fa fa-check"></i><b>5.2</b> Medidas de tendência central</a></li>
+<li class="chapter" data-level="5.3" data-path="cap5.html"><a href="cap5.html#medidas-de-dispersão"><i class="fa fa-check"></i><b>5.3</b> Medidas de dispersão</a></li>
+<li class="chapter" data-level="5.4" data-path="cap5.html"><a href="cap5.html#diagramas-de-caixa"><i class="fa fa-check"></i><b>5.4</b> Diagramas de Caixa</a></li>
+<li class="chapter" data-level="5.5" data-path="cap5.html"><a href="cap5.html#concluindo"><i class="fa fa-check"></i><b>5.5</b> Concluindo …</a></li>
+<li class="chapter" data-level="5.6" data-path="cap3.html"><a href="cap3.html#indo-além"><i class="fa fa-check"></i><b>5.6</b> Indo Além</a></li>
+<li class="chapter" data-level="5.7" data-path="cap3.html"><a href="cap3.html#citações-no-capítulo"><i class="fa fa-check"></i><b>5.7</b> Citações no capítulo</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="cap6.html"><a href="cap6.html"><i class="fa fa-check"></i><b>6</b> Coletando Dados para Pesquisas</a><ul>
+<li class="chapter" data-level="6.1" data-path="cap6.html"><a href="cap6.html#cap6.1"><i class="fa fa-check"></i><b>6.1</b> Como é realizado a coleta de dados</a></li>
+<li class="chapter" data-level="6.2" data-path="cap6.html"><a href="cap6.html#cap6.2"><i class="fa fa-check"></i><b>6.2</b> Amostragem</a></li>
+<li class="chapter" data-level="6.3" data-path="cap6.html"><a href="cap6.html#cap6.3"><i class="fa fa-check"></i><b>6.3</b> Viés Amostral</a></li>
+<li class="chapter" data-level="6.4" data-path="cap6.html"><a href="cap6.html#cap6.4"><i class="fa fa-check"></i><b>6.4</b> Ética na Construção de Bancos de Dados</a></li>
+<li class="chapter" data-level="6.5" data-path="cap6.html"><a href="cap6.html#cap6.5"><i class="fa fa-check"></i><b>6.5</b> Você Sabia? Pesquisa Eleitoral</a></li>
+<li class="chapter" data-level="6.6" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i><b>6.6</b> Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="cap7.html"><a href="cap7.html"><i class="fa fa-check"></i><b>7</b> Distribuições, Probabilidade e Possibilidade</a></li>
+<li class="chapter" data-level="8" data-path="cap8.html"><a href="cap8.html"><i class="fa fa-check"></i><b>8</b> Entendendo e Avaliando sua Hipóteses</a><ul>
+<li class="chapter" data-level="8.1" data-path="cap8.html"><a href="cap8.html#cap8.1"><i class="fa fa-check"></i><b>8.1</b> O que é “Teste de Hipóteses”?</a></li>
+<li class="chapter" data-level="8.2" data-path="cap8.html"><a href="cap8.html#cap8.2"><i class="fa fa-check"></i><b>8.2</b> Hipóteses estatísticas</a></li>
+<li class="chapter" data-level="8.3" data-path="cap8.html"><a href="cap8.html#cap8.3"><i class="fa fa-check"></i><b>8.3</b> p-valor</a></li>
+<li class="chapter" data-level="8.4" data-path="cap8.html"><a href="cap8.html#cap8.4"><i class="fa fa-check"></i><b>8.4</b> Verificando a normalidade</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="cap8.html"><a href="cap8.html#cap8.4.1"><i class="fa fa-check"></i><b>8.4.1</b> Gráficos de normalidade: Histograma e Q-Q Plot</a></li>
+<li class="chapter" data-level="8.4.2" data-path="cap8.html"><a href="cap8.html#cap8.4.2"><i class="fa fa-check"></i><b>8.4.2</b> Testes de normalidade</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="cap8.html"><a href="cap8.html#cap8.5"><i class="fa fa-check"></i><b>8.5</b> Uma breve contextualização!</a></li>
+<li class="chapter" data-level="8.6" data-path="cap8.html"><a href="cap8.html#cap8.6"><i class="fa fa-check"></i><b>8.6</b> Concluindo…</a></li>
+<li class="chapter" data-level="8.7" data-path="cap8.html"><a href="cap8.html#cap8.7"><i class="fa fa-check"></i><b>8.7</b> Indo além</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="cap9.html"><a href="cap9.html"><i class="fa fa-check"></i><b>9</b> Classificação</a></li>
+<li class="chapter" data-level="10" data-path="cap10.html"><a href="cap10.html"><i class="fa fa-check"></i><b>10</b> Regressão</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Uma introdução gentil à Ciência de Dados</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="cap8" class="section level1">
+<h1><span class="header-section-number">Capítulo 8</span> Entendendo e Avaliando sua Hipóteses</h1>
+<p>Olá, neste capítulo iremos aprender sobre o <strong>Teste de Hipóteses</strong>.Ele é mais uma das ferramentas estatísticas que nos permite tomar decisões com base nas informações que obtivemos de uma amostra!</p>
+<p>Lembre-se que: quando selecionamos uma amostra precisamos atender alguns pressupostos que foram discutidos nos capítulos <a href="cap6.html#cap6">6</a> e <a href="cap7.html#cap7">7</a>. Se as condições de seleção estiverem adequadas, então dizemos que esta amostra representa bem a população, não é mesmo? Com isso, qualquer estatística que calcularmos sobre a amostra poderá ser generalizada para a nossa população. Uma forma de comprovar isto é fazendo o teste de Hipóteses.</p>
+<p>Mas a discussão não para por aqui. Ainda temos muita coisa interessante para aprender! Então, vamos começar?</p>
+<div id="cap8.1" class="section level2">
+<h2><span class="header-section-number">8.1</span> O que é “Teste de Hipóteses”?</h2>
+<p>Vamos utilizar um exemplo sobre pesquisas eleitorais. Observe as manchetes na Figura <a href="cap8.html#fig:figura81">8.1</a> e tente compreendê-las.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura81"></span>
+<img src="fig_cap8/Fig1_cap8.png" alt="Pesquisas de intenção de voto" width="100%" />
+<p class="caption">
+Figura 8.1: Pesquisas de intenção de voto
+</p>
+</div>
+<p>Vemos que estas pesquisas utilizam a estatística para apontar os possíveis “vencedores” para prefeito de Salvador e governador do Estado da Bahia. Mas, devemos nos lembrar que estas pesquisas não foram realizadas com TODOS os eleitores, ou seja, não foi realizada com <strong>toda a população</strong> de eleitores destas localidades. Isto porquê, como visto no cap 7, uma entrevista com toda a população de interesse demandaria muito tempo e recursos financeiros para deslocamento, contratações, entre outros fatores.</p>
+<p>Por isso, utiliza-se <strong>amostras</strong>, uma parcela de indivíduos capaz de representar bem a população. Por conta disso, precisamos fazer algumas <strong>suposições</strong> ou <strong>hipóteses</strong> para verificar se é possível que a população tenha um determinado valor para o parâmetro que investigamos a partir da amostra selcionada. Veja que legal, o teste de hipóteses garante que mesmo não tendo utilizado toda a população, encontramos resultados confiáveis que podem ser extrapolados como parâmetros populacionais.</p>
+<p>Observe a Figura <a href="cap8.html#fig:figura82">8.2</a>, ilustrando este conceito.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura82"></span>
+<img src="fig_cap8/Fig2_cap8.png" alt="Porquê fazer teste de hipótese?" width="100%" />
+<p class="caption">
+Figura 8.2: Porquê fazer teste de hipótese?
+</p>
+</div>
+<blockquote>
+<p>O processo de Inferência está sujeito a erro. Sim, devido ao fato de estarmos utilizando uma amostra para generalizar resultados para uma população. Este erro nunca será zero, a menos que não trabalhemos com amostra, e sim diretamente com a população, como é feito com as pesquisas do CENSO.</p>
+</blockquote>
+</div>
+<div id="cap8.2" class="section level2">
+<h2><span class="header-section-number">8.2</span> Hipóteses estatísticas</h2>
+<p>As Hipóteses Estatísticas são <strong>suposições</strong> feitas sobre o valor de um <em>parâmetro populacional</em>, ou a natureza de uma distribuição da <em>população</em>.</p>
+<p>1 - A temperatura corporal média de adultos é 37°C?<br />
+2 - A taxa de natalidade de Salvador mudou nos últimos 5 anos?<br />
+3 - A proporção de mulheres com depressão é 5%<br />
+4 - A carga horária média de trabalho de funcionários de uma empresa é 40 horas semanais</p>
+<p>Observe que as suposições dos exemplos ocorrem sobre uma <strong>população</strong> de interesse. Para verificar estas suposições precisamos fazer cálculos, que consideram as estatísticas da nossa amostra. Portanto, de acordo com os resultados destes cálculos, a nossa hipótese estatística pode ser aceita ou rejeitada.</p>
+<p>Podemos então pensar uma hipótese para o caso da Figura <a href="cap8.html#fig:figura81">8.1</a>, com a intenção de votos do candidato Rui Costa. Imagine que a pesquisa ainda não tenha sido feita, portanto ainda não temos o resultado. Inicialmente, o candidato estava afirmando que teria 70% dos votos. Nossa primeira suposição para investigar seria:</p>
+<p>1 - A proporção de votos para o candidato Rui Costa é 70%</p>
+<p>O teste de hipóteses é composto por duas afirmativas. A primeira, que já elaboramos, é conhecida por <strong>hipótese nula</strong>. E a segunda hipótese, <em>complementar</em>, é conhecida como <strong>hipótese alternativa</strong>. A hipótese nula é uma afirmativa de que parâmetro populacional é <em>igual</em> a um determinado valor. Já a hipótese alternativa é uma afirmativa de que o parâmetro tem um valor que <em>difere</em> da hipótese nula.</p>
+<p><em>Mas, o que é o parâmetro populacional?</em> No caso deste exemplo, nosso parâmetro populacional é a intenção de votos para o candidato Rui Costa.</p>
+<p>Convencionalmente, utilizamos símblos para identificar estas hipóteses:</p>
+<div class="figure" style="text-align: center"><span id="fig:figura83"></span>
+<img src="fig_cap8/Fig3_cap8.png" alt="Porquê fazer teste de hipótese?" width="60%" />
+<p class="caption">
+Figura 8.3: Porquê fazer teste de hipótese?
+</p>
+</div>
+<p>Assim, podemos afirmar como hipótese alternativa:</p>
+<p>2 - A proporção de votos para o candidato Rui Costa é menor do que 70%</p>
+<p>Em termos matemáticos, podemos escrever da seguinte forma:</p>
+<p><em>H<sub>0</sub>: A proporção de votos para o candidato Rui Costa é <strong>=</strong> a 70% </em><br />
+<em>H<sub>1</sub>:A proporção de votos para o candidato Rui Costa é <strong>menor que</strong> 70%</em></p>
+<p>Observe que as hipóteses são complementares, isto implica que o que é afirmado em uma hipótese não deve ser afirmado em outra.
+Agora, suponha que tenham dado início à pesquisa eleitoral. Uma equipe de profissionais selecionou uma amostra de forma adequada e atingiram a estimativa de intenção de votos para Rui Costa igual a 61%.
+Após o teste de hipótese, podem inferir este valor como parâmetro populacional, como foi divulgado na reportagem da Figura <a href="cap8.html#fig:figura81">8.1</a>. Qual hipótese está correta, H<sub>0</sub> ou H<sub>1</sub>?</p>
+<p>Em um teste de hipóteses temos duas opções:</p>
+<p>1 - Rejeitar H<sub>0</sub>: neste caso confirmamos que a proporção de votos <em>não</em> equivale a 70%<br />
+2- Não rejeitamos H<sub>0</sub>: neste caso confirmamos que a proporção de votos é <em>igual</em> a 70%.</p>
+<p>No nosso exemplo, devemos rejeitar a hipótese nula H<sub>0</sub>, já que a intenção de votos no candidato é 61%.</p>
+<p>Neste caso, atribuímos o &lt; (menor que) para a nossa hipótese alternativa, mas poderíamos optar por colocar os símbolos &gt;(maior que) ou o diferente.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura84"></span>
+<img src="fig_cap8/Fig4_cap8.png" alt="Porquê fazer teste de hipótese?" width="60%" />
+<p class="caption">
+Figura 8.4: Porquê fazer teste de hipótese?
+</p>
+</div>
+</div>
+<div id="cap8.3" class="section level2">
+<h2><span class="header-section-number">8.3</span> p-valor</h2>
+<div align="left">
+<p>O P-valor também é conhecido como <strong>nível descritivo</strong>, e representa uma <em>probabilidade</em> em se obter estimativas <em>iguais ou mais extremas</em>, supondo que a hipótese nula seja <em>verdadeira</em>.</p>
+<p><img src="fig_cap8/gif1_cap8.gif" /></p>
+<p>Eu sei que parece complicado, de fato é! Mas vamos destrinchar cada parte desta afirmação e você verá que é possível entendê-la.
+Para isto, vamos voltar ao exemplo da intenção de votos, cujas hipótestes eram:</p>
+<p><em>H<sub>0</sub>: A proporção de votos para o candidato Rui Costa é <strong>=</strong> a 63% </em><br />
+<em>H<sub>1</sub>:A proporção de votos para o candidato Rui Costa é <strong>menor que</strong> 63%</em></p>
+<p>Supomos que a intenção de votos para Rui Costa é 65%, lembre-se que esta afirmação é sobre a <em>população</em> de interesse, ou seja, <em>todos</em> os eleitores baianos que tem voto válido. Bom, como já discutimos, é inviável entrevistar cada eleitor, por isso selecionamos uma amostra representativa.Então, acreditamos que a proporção populacional é 63%, <em>mas</em> como estamos fazendo uma <em>amostragem</em> esperamos que nosso resultado final tenha alguma variação em relação aos 63% (lembra quando citamos o erro estatístico?). Também já sabemos que após as entrevistas, foi visto que 61% planejava votar no candidato Rui Costa. O valor de 61% claramente é menor/ diferente dos 63% que estamos supondo no teste.</p>
+<p>A primeira coisa que passa pela mente é rejeitar logo a nossa hipótese nula, não é mesmo? Claro, olha a diferença entre 63% e 61%.</p>
+<p><em>Aqui é o grande ponto:</em>será que esta diferença é de fato <strong>estatisticamente significativa</strong> ou será um mero acaso? Podemos fazer esta pergunta de forma um pouco mais estatística: se pegassemos outras amostras para realizar a análise, qual a probabilidade do valor 61% ocorrer?</p>
+<p>Esta pergunta é importante porque se esta probabilidade for alta, significa que nossa hipótese nula H<sub>0</sub> deve ser rejeitada. Mas, se esta probabilidade for mínima, quer dizer que o valor de 61% ocorreu devido ao acaso e, nossa hipótese nula H<sub>0</sub> não deve ser rejeitada. Esta <em>probabilidade</em> é conhecida como <strong>p-valor</strong>, ou <strong>nível descritivo</strong>.</p>
+<p>Quando utilizamos expressões como <em>estatisticamente significativa</em> ou <em>significância estatística</em>, estamos na realidade querendo saber a que condições a nossa suposição deve ser aceita ou rejeitada.</p>
+<p><em>Se você chegou até aqui, parabéns! Já entendeu metade da afirmação inicial:</em></p>
+<blockquote>
+<p>“P-valor também é conhecido como <strong>nível descritivo</strong>, e representa uma <em>probabilidade</em> em se obter estimativas <em>iguais ou mais extremas</em>”</p>
+</blockquote>
+<p>Vamos continuar a discussão…</p>
+<p><img src="fig_cap8/gif2_cap8.gif" /></p>
+<p><em>A segunda parte da afirmação diz:</em></p>
+<blockquote>
+<p>“supondo que a hipótese nula seja <em>verdadeira</em>.”</p>
+</blockquote>
+<p>Isto significa que sempre vamos partir da crença de que nossa H<sub>0</sub> é realmente verdadeira. Caso contrário, não faria sentido testá-la, automaticamente já aceitaríamos a hipótese alternativa.</p>
+<p>Suponha agora, que os dados das entrevistas de intenção de votos já tenham sido coletados e, foram enviados para as análises estatísticas. Temos um interesse específico sobre <em>quantos entrevistados afirmaram votar em Rui Costa</em>, lembra?!</p>
+<p>Atenção, até este momento ainda não confirmamos nada sobre a nossa hipótese. Toda esta discussão está nos direcionando ao próximo passo do nosso teste que é justamente a avaliação do <em>p-valor</em>. Vamos observar graficamente o comportamento da nossa amostra.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura85"></span>
+<img src="fig_cap8/Fig5_cap8.png" alt="Histograma" width="100%" />
+<p class="caption">
+Figura 8.5: Histograma
+</p>
+</div>
+<p>Este gráfico não é uma novidade para você! No Capítulo 3 @/Cap3 diversos tipos de gráficos foram apresentados, inclusive este, o <em>Histograma</em>. Além disso, no capítulo anterior @/Cap7 você viu a importância do histograma para identificar e avaliar o formato de <em>distribuições estatísticas</em>. O Histograma é uma excelente ferramenta visual para identificarmos uma <em>Distribuição Normal</em>.</p>
+<p>E porquê isto é importante? Porque, como visto no capítulo anterior, as hipóteses e considerações estatísticas se baseiam em um distribuição normal.</p>
+<p>A Figura <a href="cap8.html#fig:figura85">8.5</a> indica no eixo <strong>x</strong>, a proporção de pessoas que afirmaram votar no candidato Rui Costa <em>tomando várias amostras aleatórias diferentes</em>. Observe que a proporção varia de 57 a 65, sendo indicado no eixo, 58 a 64. Sabemos que o eixo <strong>y</strong> indica a frequência destas observações. O nosso valor com maior frequência de ocorrência ou, o mais provável é o valor central de 61. Isto significa, que se selecionássemos várias amostras de entrevistados, a maioria delas iria indicar a procentagem de votos para Rui Costa de 61%. Percebemos uma tendência central de ocorrência deste valor.</p>
+<p>Perceba também, que é muito pouco provável a ocorrência de 63% de votos para o candidato, uma vez que este valor apresenta uma frequência muito baixa. Mas, vamos prosseguir nossas confirmações.</p>
+<p>Lembrando, nossas hipóetses são:
+<em>H<sub>0</sub>: A proporção de votos para o candidato Rui Costa é <strong>=</strong> a 63% </em><br />
+<em>H<sub>1</sub>:A proporção de votos para o candidato Rui Costa é <strong>menor que</strong> 63%</em></p>
+<p>Assim, a Figura abaixo mostra a probabilidade, o p-valor da ocorrência da nossa hipótese nula.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura86"></span>
+<img src="fig_cap8/Fig6_cap8.png" alt="p-valor da hipótese nula" width="100%" />
+<p class="caption">
+Figura 8.6: p-valor da hipótese nula
+</p>
+</div>
+<p>Então, testando a nossa <strong>H<sub>0</sub></strong>, é como dizer: <em>“quão provável é que as intenções de voto para Rui Costa sejam 63%?”</em>
+O teste de hipótese acontece por meio do cálculo de um parâmetro estatístico de teste, vinculado ao p-valor deste teste. O p-valor obtido foi 2.2 x 10<sub>-16</sub> (0,0000000000000022). Este valor pode ser considerado 0. Por este motivo, podemos rejeitar a nossa hipótese nula, o que nos leva a ter mais argumentos a favor da nossa hipótese alternativa, como indicado pela seta 2.</p>
+<p>Portanto: <strong>REJEITAMOS</strong> a hipótese nula!</p>
+<p>Mas, existe um fator muito importante que determina a nossa rejeição ou não rejeição de uma hipótese. <strong>Nós</strong> precisamos definir o <strong>nível de significância</strong> do nosso teste antes de fazer a análise. Isto porque é a partir dele que vamos saber o que podemos considerar “provável” ou não. O nível de significância é representado pela letra grega <strong><span class="math inline">\(\alpha\)</span></strong> (alpha).</p>
+<p>Então, quando decidimos a qual nível de significância estamos trabalhando, teremos uma noção de quão pequeno o p-valor deve ser, para termos resultados estatisticamente significativos. Na prática, o alfa é um ponto de corte para a rejeição da hipótese nula.</p>
+<p>Podemos traduzir toda essa explicação em:</p>
+<p>Se o <em>p-valor</em> <strong>menor ou igual</strong> a <span class="math inline">\(\alpha\)</span>: <strong>rejeitamos</strong> a hipótese nula em favor da alternativa.
+Se o <em>p-valor</em> <strong>maior</strong> que <span class="math inline">\(\alpha\)</span>: não rejeitamos a hipótese nula.</p>
+<p>No caso da nossa pesquisa, estamos trabalhando com <span class="math inline">\(\alpha\)</span> = 5%, que implica em um <strong>Intervalo de Confiança de 95%</strong>. Mas poderiam ser utilizados outros valores, como 90%, 98% ou 99%.</p>
+<p>Então, finalizamos o nosso teste de hipóteses para a intenção de votos no candidato Rui Costa. Poderíamos fazer o seguinte enunciado:</p>
+<p>O candidato Rui Costa afirmou que teria 63% de intenção de votos na disputa eleitoral. Queremos verificar se esta informação é verídica, utilizando dados da pesquisa de intenção de votos realizada posteriormente. Portanto, queremos testar se a intenção de votos para o candidato Rui Costa é 63% à um nível de significância(<span class="math inline">\(\alpha\)</span>) 5%.</p>
+<p><em>H<sub>0</sub>: A proporção de votos para o candidato Rui Costa é <strong>=</strong> a 63% </em><br />
+<em>H<sub>1</sub>:A proporção de votos para o candidato Rui Costa é <strong>menor que</strong> 63%</em></p>
+<p>Assim, nossa resposta a este etste pdoeria ser: <em>A um nível de significância (<span class="math inline">\(\alpha\)</span>) de 5% nosso resulatdo é estatisticamente significativo (p- valor 2.2 x 10<sub>-16</sub>). Concluímos que a intenção de votos para o candidato Rui Costa não será igual a 63%. Segundo o p-valor obtido no teste, rejeitamos a hipótese nula.</em></p>
+<blockquote>
+<p>E Por que não dizer que <strong>aceitamos</strong> a hipótese alternativa? Bom, basicamente, a nossa motivação e análise do teste foi feita para H<sub>0</sub>, lembra? Por isso, nossa conclusão também deve ser relacionada a esta hipótese.</p>
+</blockquote>
+<p>E com isso, vimos que a afirmação do candidato estava equivocada e, como foi comprovado e divulgado depois, a intenção de votos para ele é 61%, um valor menor do que testado.</p>
+</div>
+<div id="cap8.4" class="section level2">
+<h2><span class="header-section-number">8.4</span> Verificando a normalidade</h2>
+<p>Você já sabe a importância da <em>normalidade</em>, mas já parou pra pensar que precisamos garantir que estamos trabalhando sobre a hipótese da normalidade? Para isto, podemos utilizar ferramentas como a interpretação gráfica ou podemos testar estatisticamente os dados para verificar se a distribuição é de fato normal.</p>
+<div id="cap8.4.1" class="section level3">
+<h3><span class="header-section-number">8.4.1</span> Gráficos de normalidade: Histograma e Q-Q Plot</h3>
+<p>Bom, no exemplo da pesquisa eleitoral você já viu o Histograma. Pois bem, ele é a primeira ferramenta que pode ser aplicada para verificar a normalidade da distribuição de variáveis. Neste sentido, observamos que a curva apresnetada tende a se assemelhar com o formato de um sino, onde há um valor central que ocorre mais vezes, assim como vimos na Figura <a href="cap8.html#fig:figura85">8.5</a> cujo valor central é 0.61.</p>
+<p>Uma outra forma gráfica bastante utilizada é o Q-Q Plot. Observe a Figura <a href="cap8.html#fig:figura87">8.7</a>, o <strong>qq-plot</strong> dos dados do nosso exemplo. No eixo <strong>y</strong> indicam-se os valores reais e no eixo <strong>x</strong> indica-se os valores teóricos. Isto significa que ao fazer um qqplot de qualquer conjunto de dados, estamos comparando os valores reais com os valores <em>teóricos</em> ou seja, valores que ocorreriam caso a distribuição dos dados fosse normal. Se os pontos estiverem próximos à reta indicada, significa que a distribuição é normal.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura87"></span>
+<img src="fig_cap8/Fig7_cap8.png" alt="q-q plot de distribuição normal" width="100%" />
+<p class="caption">
+Figura 8.7: q-q plot de distribuição normal
+</p>
+</div>
+<p>Mas, e quando temos outras distribuições? Naturalmente, o perfil visual verificado nestes gráficos será diferente. Veja por exemplo um histograma de uma distribuição exponencial. Observe a diferença de formato.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura88"></span>
+<img src="fig_cap8/Fig8_cap8.png" alt="Formato da distribuição Exponencial" width="100%" />
+<p class="caption">
+Figura 8.8: Formato da distribuição Exponencial
+</p>
+</div>
+<p>O <em>qq-Plot</em> destes dados fica da seguinte forma:</p>
+<div class="figure" style="text-align: center"><span id="fig:figura89"></span>
+<img src="fig_cap8/Fig9_cap8.png" alt="q-q plot disrtibuição não normal" width="100%" />
+<p class="caption">
+Figura 8.9: q-q plot disrtibuição não normal
+</p>
+</div>
+<p>Compare a Figura <a href="cap8.html#fig:figura89">8.9</a>, com a Figura <a href="cap8.html#fig:figura87">8.7</a> e perceba as diferenças em como os pontos se ajustam à linha vermelha. Esta linha indica teoricamente onde os pontos deveriam estar se os dados seguissem uma distribuição normal. Por isso, na Figura <a href="cap8.html#fig:figura87">8.7</a> vemos uma aderência à linha, que não é vista na Figura <a href="cap8.html#fig:figura89">8.9</a>.</p>
+<p>Apesar de ser visualmente possível detectar uma distribução normal, esta forma de análise não é a mais segura. Isto porque há muitas variações no perfil geral dos gráficos, que nos faz acreditar que uma distribuição é normal quando na realidade ela pode não ser. E sabe como comprovar de forma confiável? Através do <strong>teste de normalidade</strong>.</p>
+</div>
+<div id="cap8.4.2" class="section level3">
+<h3><span class="header-section-number">8.4.2</span> Testes de normalidade</h3>
+<p>Os testes de normalidade são importantes porque verificam a normalidade de dados através de cálculos estatísticos. Esta opção é mais segura por não é <em>subjetiva</em> como a análise gráfica.</p>
+<p>Existem vários testes de normalidade que dependem do tipo de dados considerados e tamanho da amostra. <strong>Shapiro Wilk, Kolmorogov-Smirnov, Anderson-Darling</strong>, são alguns dos testes de normalidade utilizados. E sim, o tamanho da amostra impacta no resultado do teste.</p>
+<p>Em geral, quanto maior a amostra, mais esperamos que a distribuição siga um perfil <em>normal</em>, como explicado no capítulo anterior.</p>
+<p>Os testes de normalidade são definidos a partir de hipóteses. Na realidade, são testes de hipóteses sobre a normalidade da população de onde aquela amostra foi retirada. Assim, vamos fazer duas aplicações do teste de normalidade de Shapiro Wilk para <span class="math inline">\(\alpha\)</span> = 5%, cujas hipóteses são:</p>
+<p><em>H<sub>0</sub>: a amostra vem de uma população normal</em><br />
+<em>H<sub>1</sub>: a amostra não vem de uma população normal</em></p>
+<p>Vamos inciar fazendo o teste para para um conjunto de dados qualquer, indicado na Figura <a href="cap8.html#fig:figura810">8.10</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura810"></span>
+<img src="fig_cap8/Fig10_cap8.png" alt="Dados fictícios" width="100%" />
+<p class="caption">
+Figura 8.10: Dados fictícios
+</p>
+</div>
+<p>Este teste nos fornece como resultado o parâmetro do teste, indicado por W = 0.81389, e o p-valor do teste é 2.727e<sub>-9</sub>. Lembre-se das nossas condições para o p-valor: se ele for menor que o nível de significância, temos evidências para rejeitar a hipótese nula! Portanto, o nosso p-valor que é praticamente 0 é menor do que 0,05, o que nos leva a rejeitar a hipótese nula H<sub>0</sub> do nosso teste, trazendo evidências à favor do argumento de que nossa amostra <strong>não</strong> provém de uma população normal.</p>
+<p><em>E para o caso da pesquisa de intenção de votos?</em>
+Bom, neste caso, vamos testar a normalidade para <span class="math inline">\(\alpha\)</span> = 5%, as hipóteses são as mesmas:</p>
+<p><em>H<sub>0</sub>: a amostra vem de uma população normal</em>
+<em>H<sub>1</sub>: a amostra não vem de uma população normal</em></p>
+<p>O resultado obtido do parâmetro do teste foi de: W = 0.99895, com p-valor = 0.8448.Como vemos, o nosso p-valor é maior que o nível de significância 0.05, portanto não rejeitamos a hipótese nula! Ou seja, nossa amostra realmente provém de uma população normal.</p>
+</div>
+</div>
+<div id="cap8.5" class="section level2">
+<h2><span class="header-section-number">8.5</span> Uma breve contextualização!</h2>
+<p>Após esta longa explicação, é possível que você ainda se pergunte de que forma todos estes conceitos são utilizados. Por isso, este tópico traz uma breve discussão sobre como os artifícios estatísticos são aplicados em conjunto para direcionar a tomada de decisão.</p>
+<p>Ainda sobre uma pesquisa eleitoral, ao verificar a Figura <a href="cap8.html#fig:figura811">8.11</a>, vemos que abaixo dos títulos tem algumas outras informações relevantes, <strong>Margem de erro</strong> e <strong>Nível de Confiança</strong>.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura811"></span>
+<img src="fig_cap8/Fig11_cap8.png" alt="Dados fictícios" width="100%" />
+<p class="caption">
+Figura 8.11: Dados fictícios
+</p>
+</div>
+<p>Vamos entender primeiro o que é a <strong>margem de erro</strong>. Como o próprio nome diz, este valor mede quão exato é o resultado de uma pesquisa. No capítulo 6, você aprendeu o processo de coleta de dados para pesquisas e viu que ele está sujeito a erros, lembra? Pois bem, você também deve se lembrar que trabalhamos com uma amostra porque não conseguimos abranger toda a população de interesse. Por isso, a margem de erro indica a estimativa máxima de erro da pesquisa. Se ela aumenta a nossa confiança na pesquisa acaba sendo reduzida. Para reduzir a margem de erro, uma alternativa é aumentar o tamanho da amostra, de forma que os resultados fiquem mais confiáveis.</p>
+<p>Veja na Figura o exemplo do prefeito de Camaçari, que liderava as pesquisas com 47% das intenções de voto, com margem de erro de 4 pontos para mais ou para menos e, nível de confiança 95%. Como interpretar esta informação?</p>
+<p>Bom, se ele tem 47% das intenções de voto, mas a uma margem de erro de 4% para mais ou para menos, significa que a intenção de votos para ele pode variar de 43% até 51%!</p>
+<p>O Intervalo de Confiança (IC) indica quão provável é a pesquisa obter os mesmos resultados se for repetida diversas vezes com uma nova amostra da população. Ou seja, se entrevistássemos outros grupos de pessoas da <em>mesma</em> população (eleitores de Camaçari), teríamos os 47% de intenção de votos, com 4% de margem de erro? O valor 95% indica justamente isso, que em 95% das vezes o candidato estaria dentro da margem de erro.</p>
+<p>Como você já deve ter notado, o IC é um indicativo extremamente importante para análises estatísticas. Tanto que ao longo do capítulo, percebemos a importância de indicar qual o nível de confiança estamos trabalhando. Poranto, não apenas em pesquisas eleitorais, mas em qualquer investigação que você pretenda tomar uma decisão baseada em dados é preciso utilizá-lo.</p>
+</div>
+<div id="cap8.6" class="section level2">
+<h2><span class="header-section-number">8.6</span> Concluindo…</h2>
+<p>E aí, gostou deste capítulo? Apesar de serem muitos conceitos, lembre-se que eles são essenciais para você desenvolver uma pesquisa, ou mesmo ser mais crítico ao ler notícias que divulgam resultados de pesquisas.</p>
+<p>Para te auxiliar a fixar os conteúdos discutidos, a Figura abaixo traz uma síntese dos principais aspectos tratados neste capítulo! E assim, finalizamos mais uma etapa de aprendizado, até a próxima!!!</p>
+<div class="figure" style="text-align: center"><span id="fig:figura812"></span>
+<img src="fig_cap8/Fig12_cap8.jpg" alt="Síntese de conceitos" width="70%" />
+<p class="caption">
+Figura 8.12: Síntese de conceitos
+</p>
+</div>
+</div>
+<div id="cap8.7" class="section level2">
+<h2><span class="header-section-number">8.7</span> Indo além</h2>
+<p>Foi realizada uma pesquisa para verificar a idade média dos estudantes da modalidade EJA (Educação para Jovens e Adultos) em uma escola de Salvador. Um estudo antigo apontou que a idade média da turma era de 38 anos e, atualmente, os professores tem suspeitado da presença predominante de estudantes mais jovens. Foi utilizada uma amostra aleatória de 30 elementos para a investigação.</p>
+<ol style="list-style-type: upper-roman">
+<li><p>Como você definiria as hipóteses do seu teste?</p></li>
+<li><p>Qual o elemento essencial para definir o que será considerado <em>estatisticamente significativo</em>?</p></li>
+<li><p>Foi realizado um teste de normalidade nos dados de idades coletadas e os resultados foram: W = 0.97135 e p-valor = 0.557, à 95% de confiança. O que você pode concluir?</p></li>
+<li><p>A média amostral das idades é 43 anos. Sabe-se que o teste de hipóteses teve p-valor de 0,9841, a nível de significância 95%. Qual a sua conclusão?</p></li>
+</ol>
+</div>
+<div id="referências" class="section level2 unnumbered">
+<h2>Referências</h2>
+<p>FREIRE, Sérgio Miranda (2020). Bioestatística Básica. Capítulo 15: Teste de Hipóteses. <a href="http://www.lampada.uerj.br/arquivosdb/_book/testeHipotese.html">link</a></p>
+<p>Lumen: Concepts in statistics. Hypothesis Testing (4 of 5). <a href="https://courses.lumenlearning.com/wmopen-concepts-statistics/chapter/introduction-to-hypothesis-testing-4-of-5/">link</a></p>
+<p>Professor Guru (2017). #01 - O que são Testes de Hipóteses. <a href="https://www.youtube.com/watch?v=h4QcWDDlrW0">link</a></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="cap7.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cap9.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["ciencia_de_dados.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

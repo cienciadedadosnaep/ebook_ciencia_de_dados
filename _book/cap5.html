@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 5 Indicadores Básicos na Ciência de Dados | Uma introdução gentil à Ciência de Dados</title>
+  <meta name="description" content="E-book em desenvolvimento." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 5 Indicadores Básicos na Ciência de Dados | Uma introdução gentil à Ciência de Dados" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="E-book em desenvolvimento." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 5 Indicadores Básicos na Ciência de Dados | Uma introdução gentil à Ciência de Dados" />
+  
+  <meta name="twitter:description" content="E-book em desenvolvimento." />
+  
+
+<meta name="author" content="Janaina Souza de Souza" />
+<meta name="author" content="Júlia Carolina Bijos" />
+<meta name="author" content="Kaike Wesley Reis" />
+
+
+<meta name="date" content="2021-03-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="cap4.html"/>
+<link rel="next" href="cap6.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Ciência de Dados</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a></li>
+<li class="chapter" data-level="1" data-path="cap1.html"><a href="cap1.html"><i class="fa fa-check"></i><b>1</b> Introdução à Ciência de Dados</a><ul>
+<li class="chapter" data-level="1.1" data-path="cap1.html"><a href="cap1.html#cap1.1"><i class="fa fa-check"></i><b>1.1</b> O que são “dados” e onde estão presentes?</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="cap1.html"><a href="cap1.html#cap1.1.1"><i class="fa fa-check"></i><b>1.1.1</b> Posso compartilhar dados?</a></li>
+<li class="chapter" data-level="1.1.2" data-path="cap1.html"><a href="cap1.html#cap1.1.2"><i class="fa fa-check"></i><b>1.1.2</b> Privacidade de dados</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="cap1.html"><a href="cap1.html#cap1.2"><i class="fa fa-check"></i><b>1.2</b> O ciclo dos Dados - Construindo uma pergunta estatística</a></li>
+<li class="chapter" data-level="1.3" data-path="cap1.html"><a href="cap1.html#cap1.3"><i class="fa fa-check"></i><b>1.3</b> Estruturando os dados</a></li>
+<li class="chapter" data-level="1.4" data-path="cap1.html"><a href="cap1.html#cap1.4"><i class="fa fa-check"></i><b>1.4</b> Identificando o tipo de problema</a></li>
+<li class="chapter" data-level="1.5" data-path="cap1.html"><a href="cap1.html#cap1.5"><i class="fa fa-check"></i><b>1.5</b> Considerações finais</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="cap2.html"><a href="cap2.html"><i class="fa fa-check"></i><b>2</b> Construindo Uma Base de Dados</a><ul>
+<li class="chapter" data-level="2.1" data-path="cap2.html"><a href="cap2.html#cap2.1"><i class="fa fa-check"></i><b>2.1</b> O que é uma base de dados?</a></li>
+<li class="chapter" data-level="2.2" data-path="cap2.html"><a href="cap2.html#cap2.2"><i class="fa fa-check"></i><b>2.2</b> Como montar uma tabela</a></li>
+<li class="chapter" data-level="2.3" data-path="cap2.html"><a href="cap2.html#cap2.3"><i class="fa fa-check"></i><b>2.3</b> Tipos de variáveis</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="cap2.html"><a href="cap2.html#cap2.3.1"><i class="fa fa-check"></i><b>2.3.1</b> Variáveis Numéricas</a></li>
+<li class="chapter" data-level="2.3.2" data-path="cap2.html"><a href="cap2.html#cap2.3.2"><i class="fa fa-check"></i><b>2.3.2</b> Variáveis Categóricas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="cap2.html"><a href="cap2.html#cap2.4"><i class="fa fa-check"></i><b>2.4</b> Como buscar base de dados abertas</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="cap2.html"><a href="cap2.html#cap2.4.1"><i class="fa fa-check"></i><b>2.4.1</b> Dados abertos governamentais</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="cap2.html"><a href="cap2.html#cap2.5"><i class="fa fa-check"></i><b>2.5</b> Concluindo…</a></li>
+<li class="chapter" data-level="2.6" data-path="cap2.html"><a href="cap2.html#cap2.6"><i class="fa fa-check"></i><b>2.6</b> Você sabia? Dados, Anedotas e Fake News</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="cap3.html"><a href="cap3.html"><i class="fa fa-check"></i><b>3</b> Vizualização e Ciência de Dados</a><ul>
+<li class="chapter" data-level="3.1" data-path="cap3.html"><a href="cap3.html#objeto-estudo"><i class="fa fa-check"></i><b>3.1</b> Objeto de estudo</a></li>
+<li class="chapter" data-level="3.2" data-path="cap3.html"><a href="cap3.html#gbarras"><i class="fa fa-check"></i><b>3.2</b> Gráfico de barra</a></li>
+<li class="chapter" data-level="3.3" data-path="cap3.html"><a href="cap3.html#gtend"><i class="fa fa-check"></i><b>3.3</b> Gráfico de tendências</a></li>
+<li class="chapter" data-level="3.4" data-path="cap3.html"><a href="cap3.html#gset"><i class="fa fa-check"></i><b>3.4</b> Gráfico de setores</a></li>
+<li class="chapter" data-level="3.5" data-path="cap3.html"><a href="cap3.html#gdisp"><i class="fa fa-check"></i><b>3.5</b> Gráfico de dispersão</a></li>
+<li class="chapter" data-level="3.6" data-path="cap3.html"><a href="cap3.html#ghist"><i class="fa fa-check"></i><b>3.6</b> Histograma</a></li>
+<li class="chapter" data-level="3.7" data-path="cap3.html"><a href="cap3.html#conc"><i class="fa fa-check"></i><b>3.7</b> Concluindo …</a></li>
+<li class="chapter" data-level="3.8" data-path="cap3.html"><a href="cap3.html#indo-além"><i class="fa fa-check"></i><b>3.8</b> Indo Além</a></li>
+<li class="chapter" data-level="3.9" data-path="cap3.html"><a href="cap3.html#citações-no-capítulo"><i class="fa fa-check"></i><b>3.9</b> Citações no capítulo</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="cap4.html"><a href="cap4.html"><i class="fa fa-check"></i><b>4</b> Correlação e Causalidade</a><ul>
+<li class="chapter" data-level="4.1" data-path="cap4.html"><a href="cap4.html#cap4.1"><i class="fa fa-check"></i><b>4.1</b> O que é correlação?</a></li>
+<li class="chapter" data-level="4.2" data-path="cap4.html"><a href="cap4.html#cap4.2"><i class="fa fa-check"></i><b>4.2</b> Quão forte é a correlação?</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="cap4.html"><a href="cap4.html#cap4.2.1"><i class="fa fa-check"></i><b>4.2.1</b> Coeficiente de Pearson</a></li>
+<li class="chapter" data-level="4.2.2" data-path="cap4.html"><a href="cap4.html#cap4.2.2"><i class="fa fa-check"></i><b>4.2.2</b> Coeficiente de Spearman</a></li>
+<li class="chapter" data-level="4.2.3" data-path="cap4.html"><a href="cap4.html#cap4.2.3"><i class="fa fa-check"></i><b>4.2.3</b> Multicolinearidade</a></li>
+<li class="chapter" data-level="4.2.4" data-path="cap4.html"><a href="cap4.html#cap4.2.4"><i class="fa fa-check"></i><b>4.2.4</b> Considerações sobre a análise</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="cap4.html"><a href="cap4.html#cap4.3"><i class="fa fa-check"></i><b>4.3</b> Relações de causa e efeito: conhecendo a causalidade</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="cap4.html"><a href="cap4.html#cap4.3.1"><i class="fa fa-check"></i><b>4.3.1</b> Coincidência ou Causalidade?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="cap4.html"><a href="cap4.html#cap4.4"><i class="fa fa-check"></i><b>4.4</b> Correlações expúrias</a></li>
+<li class="chapter" data-level="4.5" data-path="cap4.html"><a href="cap4.html#cap4.5"><i class="fa fa-check"></i><b>4.5</b> Considerações Finais</a></li>
+<li class="chapter" data-level="4.6" data-path="cap4.html"><a href="cap4.html#cap4.6"><i class="fa fa-check"></i><b>4.6</b> Indo além</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="cap5.html"><a href="cap5.html"><i class="fa fa-check"></i><b>5</b> Indicadores Básicos na Ciência de Dados</a><ul>
+<li class="chapter" data-level="5.1" data-path="cap5.html"><a href="cap5.html#objeto-de-estudo"><i class="fa fa-check"></i><b>5.1</b> Objeto de estudo</a></li>
+<li class="chapter" data-level="5.2" data-path="cap5.html"><a href="cap5.html#medidas-de-tendência-central"><i class="fa fa-check"></i><b>5.2</b> Medidas de tendência central</a></li>
+<li class="chapter" data-level="5.3" data-path="cap5.html"><a href="cap5.html#medidas-de-dispersão"><i class="fa fa-check"></i><b>5.3</b> Medidas de dispersão</a></li>
+<li class="chapter" data-level="5.4" data-path="cap5.html"><a href="cap5.html#diagramas-de-caixa"><i class="fa fa-check"></i><b>5.4</b> Diagramas de Caixa</a></li>
+<li class="chapter" data-level="5.5" data-path="cap5.html"><a href="cap5.html#concluindo"><i class="fa fa-check"></i><b>5.5</b> Concluindo …</a></li>
+<li class="chapter" data-level="5.6" data-path="cap3.html"><a href="cap3.html#indo-além"><i class="fa fa-check"></i><b>5.6</b> Indo Além</a></li>
+<li class="chapter" data-level="5.7" data-path="cap3.html"><a href="cap3.html#citações-no-capítulo"><i class="fa fa-check"></i><b>5.7</b> Citações no capítulo</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="cap6.html"><a href="cap6.html"><i class="fa fa-check"></i><b>6</b> Coletando Dados para Pesquisas</a><ul>
+<li class="chapter" data-level="6.1" data-path="cap6.html"><a href="cap6.html#cap6.1"><i class="fa fa-check"></i><b>6.1</b> Como é realizado a coleta de dados</a></li>
+<li class="chapter" data-level="6.2" data-path="cap6.html"><a href="cap6.html#cap6.2"><i class="fa fa-check"></i><b>6.2</b> Amostragem</a></li>
+<li class="chapter" data-level="6.3" data-path="cap6.html"><a href="cap6.html#cap6.3"><i class="fa fa-check"></i><b>6.3</b> Viés Amostral</a></li>
+<li class="chapter" data-level="6.4" data-path="cap6.html"><a href="cap6.html#cap6.4"><i class="fa fa-check"></i><b>6.4</b> Ética na Construção de Bancos de Dados</a></li>
+<li class="chapter" data-level="6.5" data-path="cap6.html"><a href="cap6.html#cap6.5"><i class="fa fa-check"></i><b>6.5</b> Você Sabia? Pesquisa Eleitoral</a></li>
+<li class="chapter" data-level="6.6" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i><b>6.6</b> Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="cap7.html"><a href="cap7.html"><i class="fa fa-check"></i><b>7</b> Distribuições, Probabilidade e Possibilidade</a></li>
+<li class="chapter" data-level="8" data-path="cap8.html"><a href="cap8.html"><i class="fa fa-check"></i><b>8</b> Entendendo e Avaliando sua Hipóteses</a><ul>
+<li class="chapter" data-level="8.1" data-path="cap8.html"><a href="cap8.html#cap8.1"><i class="fa fa-check"></i><b>8.1</b> O que é “Teste de Hipóteses”?</a></li>
+<li class="chapter" data-level="8.2" data-path="cap8.html"><a href="cap8.html#cap8.2"><i class="fa fa-check"></i><b>8.2</b> Hipóteses estatísticas</a></li>
+<li class="chapter" data-level="8.3" data-path="cap8.html"><a href="cap8.html#cap8.3"><i class="fa fa-check"></i><b>8.3</b> p-valor</a></li>
+<li class="chapter" data-level="8.4" data-path="cap8.html"><a href="cap8.html#cap8.4"><i class="fa fa-check"></i><b>8.4</b> Verificando a normalidade</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="cap8.html"><a href="cap8.html#cap8.4.1"><i class="fa fa-check"></i><b>8.4.1</b> Gráficos de normalidade: Histograma e Q-Q Plot</a></li>
+<li class="chapter" data-level="8.4.2" data-path="cap8.html"><a href="cap8.html#cap8.4.2"><i class="fa fa-check"></i><b>8.4.2</b> Testes de normalidade</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="cap8.html"><a href="cap8.html#cap8.5"><i class="fa fa-check"></i><b>8.5</b> Uma breve contextualização!</a></li>
+<li class="chapter" data-level="8.6" data-path="cap8.html"><a href="cap8.html#cap8.6"><i class="fa fa-check"></i><b>8.6</b> Concluindo…</a></li>
+<li class="chapter" data-level="8.7" data-path="cap8.html"><a href="cap8.html#cap8.7"><i class="fa fa-check"></i><b>8.7</b> Indo além</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="cap9.html"><a href="cap9.html"><i class="fa fa-check"></i><b>9</b> Classificação</a></li>
+<li class="chapter" data-level="10" data-path="cap10.html"><a href="cap10.html"><i class="fa fa-check"></i><b>10</b> Regressão</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Uma introdução gentil à Ciência de Dados</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="cap5" class="section level1">
+<h1><span class="header-section-number">Capítulo 5</span> Indicadores Básicos na Ciência de Dados</h1>
+<p>Apesar da ciência de dados ser bem conhecida atualmente através das aplicações mais práticas e incríveis da Inteligência Artificial como demonstrado no vídeo abaixo:</p>
+<div class="embed-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CRy2g_-SqKY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+<p></br></p>
+<p>Ela está presente de outras formas no dia a dia do brasileiro de forma sutil. Na Figura <a href="cap5.html#fig:f50">5.1</a> destacamos alguns termos desta área, consegue identificá-los?</p>
+<div class="figure" style="text-align: center"><span id="fig:f50"></span>
+<img src="fig_cap5/machetes_media.PNG" alt="Manchetes de jornais com termos da ciência de dados" width="99%" />
+<p class="caption">
+Figura 5.1: Manchetes de jornais com termos da ciência de dados
+</p>
+</div>
+<p>Eles são muito recorrentes neste imenso universo que é a ciência de dados e seus conceitos são bem simples de entender além de práticos!</p>
+<p>Porém, você pode estar se questionando “Porque devo aprender mais sobre eles?” ou “Vou usar isso em algum momento da minha vida?”. Questões como essas podem ser recorrentes durante a aprendizagem e são importante serem endereçadas. A área que é apresentada na Figura <a href="cap5.html#fig:f50">5.1</a> e que será discutida neste capítulo é chamada de <strong>estatística descritiva</strong>. Ao estudar os dados, é comum o cientista buscar padrões desconhecidos e quantificar grandes quantidades de números em um só valor e é neste aspecto que esta ferramenta simples e eficaz é aplicada.</p>
+<p>O nome pode parecer complicado, porém se trata de um ramo da matemática com uma série de técnicas para descrever e resumir dados ou informações em indicadores de fácil compreensão. Essa área pode ser dividida em três grupos de medidas: tendência central, dispersão e forma. Neste capítulo focaremos nas duas primeiras. Além disso iremos explorar formas de visualizações utilizando estes conceitos como o diagrama de caixas e distribuições.</p>
+<div id="objeto-de-estudo" class="section level2">
+<h2><span class="header-section-number">5.1</span> Objeto de estudo</h2>
+<p>Para compreender a importância dessas medidas estatísticas e como usá-las, vamos estudar os dados de segurança pública da cidade de Salvador disponibilizados pela Secretaria de Segurança Pública (SSP) no <a href="http://www.ssp.ba.gov.br/modules/conteudo/conteudo.php?conteudo=109">portal</a><sup>1</sup> para compreender um pouco da realidade que Salvador convive: a violência. Porém, antes de apresentar nosso tema central de estudo precisamos entender como funciona essa base de informações.</p>
+<p>Disponibilizados através de boletins mensais, as ocorrências dos principais delitos na capital baiana são separados por áreas e regiões. Os principais tipos de delitos considerados são:</p>
+<ul>
+<li><p>Homicídio Doloso</p></li>
+<li><p>Lesão Corporal Seguida de Morte</p></li>
+<li><p>Roubo com Resultado Morte (Latrocínio)</p></li>
+<li><p>Tentativa de Homicídio</p></li>
+<li><p>Estupro</p></li>
+<li><p>Roubo a Ônibus (Urbano e em Rodovia)</p></li>
+<li><p>Roubo de Veículo</p></li>
+<li><p>Furto de Veículo</p></li>
+<li><p>Uso/Porte de Substância Entorpecentes (Usuários)</p></li>
+</ul>
+<p>Você viu que eu citei “áreas” e “regiões” certo? Elas são definidas pela SSP em Salvador respectivamente como Área Integrada de Segurança Pública (AISP) e Região Integrada de Segurança Pública (RISP). Para entender melhor essas divisões, vamos explicar através da Figura <a href="cap5.html#fig:f51">5.2</a> estes conceitos usando uma abordagem de conjuntos.</p>
+<div class="figure" style="text-align: center"><span id="fig:f51"></span>
+<img src="fig_cap5/aisp_risp_explicacao.png" alt="Conceito por trás das divisões AISP e RISP" width="99%" />
+<p class="caption">
+Figura 5.2: Conceito por trás das divisões AISP e RISP
+</p>
+</div>
+<p><strong>AISP</strong> são conjuntos de bairros, ou seja, cada <strong>AISP</strong> representa uma quantidade de bairros da cidade. Já <strong>RISP</strong> se trata de um conjunto de <strong>AISP</strong> e finalmente, o conjunto total de <strong>RISP</strong> representa toda a extensão da cidade de Salvador. Essa divisão é realizada para facilitar o trabalho dos profissionais de segurança em compreender como cada região se comporta de acordo a um determinado tipo de delito, além de agrupar melhor os bairros, que somam um valor superior a 160 em Salvador. Imagina como seria mais complexo de apresentar um plano para cada bairro em específico para um gestor municipal ou estadual?</p>
+<div class="figure" style="text-align: center"><span id="fig:f52"></span>
+<img src="fig_cap5/risp_atlantico.png" alt="RISP Atlântico de Salvador realizado pela SSP" width="99%" />
+<p class="caption">
+Figura 5.3: RISP Atlântico de Salvador realizado pela SSP
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:f53"></span>
+<img src="fig_cap5/risp_baia.png" alt="RISP Baía de Todos os Santos (BTS) de Salvador realizado pela SSP" width="99%" />
+<p class="caption">
+Figura 5.4: RISP Baía de Todos os Santos (BTS) de Salvador realizado pela SSP
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:f54"></span>
+<img src="fig_cap5/risp_central.png" alt="RISP Central de Salvador realizado pela SSP" width="99%" />
+<p class="caption">
+Figura 5.5: RISP Central de Salvador realizado pela SSP
+</p>
+</div>
+<p>As Figuras <a href="cap5.html#fig:f52">5.3</a>, <a href="cap5.html#fig:f53">5.4</a> e <a href="cap5.html#fig:f54">5.5</a> mostram as divisões referentes as AISP e RISP em Salvador. Para contextualizar, a maioria das escolas que participaram do projeto “Meninas na Ciência de Dados” são localizadas no bairro da federação e este bairro está contido na AISP - Rio Vermelho que, por sua vez, está contida na RISP - Atlântico.</p>
+<p>Com toda estas informações em mente como os principais tipos delitos, divisões e subdivisões territoriais de Salvador determinada pela SSP podemos de fato identificar um objeto de estudo com um propósito: entender um pouco a violência em Salvador. Será analisado em específico um tipo de delito principal nos meses de janeiro, feveireiro e março de 2019 em Salvador: <strong>Roubo a Ônibus urbano e em rodovia</strong>. Essas escolhas não foram aleatórias. Os três meses citados foram escolhidos por ser um período de grande movimentação na capital: estação de verão, um dos principais períodos para turismo em Salvador,onde a grande maioria dos trabalhadores entram de férias. Além disso o delito de roubo a ônibus é uma realidade presente para quem depende do serviço público para se locomover na capital baiana, seja a trabalho, estudos ou a lazer.</p>
+<div class="figure" style="text-align: center"><span id="fig:f55"></span>
+<img src="fig_cap5/manchetes_roubo.png" alt="Manchetes sobre roubos a ônibus na cidade de Salvador" width="99%" />
+<p class="caption">
+Figura 5.6: Manchetes sobre roubos a ônibus na cidade de Salvador
+</p>
+</div>
+<p>Na Figura <a href="cap5.html#fig:f55">5.6</a> podemos verificar uma realidade referente a este crime: <strong>em média ocorreram 3 assaltos em Salvador por dia avaliados durante 2019</strong>. Neste capítulo frases como essa serão compreendidas por vocês de forma mais simples e intuitiva!</p>
+<p>A base de dados referente aos assaltos à coletivos na cidade de Salvador na estação do verão em 2019 é apresentada abaixo:</p>
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:t51">Tabela 5.1: </span>Ocorrências registradas na cidade de Salvador no período de Janeiro à Março em 2019
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+RISP
+</th>
+<th style="text-align:left;">
+AISP
+</th>
+<th style="text-align:right;">
+Janeiro
+</th>
+<th style="text-align:right;">
+Fevereiro
+</th>
+<th style="text-align:right;">
+Março
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Atlântico
+</td>
+<td style="text-align:left;">
+Brotas
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Atlântico
+</td>
+<td style="text-align:left;">
+Rio Vermelho
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Atlântico
+</td>
+<td style="text-align:left;">
+Boca do Rio
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Atlântico
+</td>
+<td style="text-align:left;">
+Itapuã
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Atlântico
+</td>
+<td style="text-align:left;">
+Barra
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Atlântico
+</td>
+<td style="text-align:left;">
+Nordeste
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Atlântico
+</td>
+<td style="text-align:left;">
+Pituba
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BTS
+</td>
+<td style="text-align:left;">
+Barris
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BTS
+</td>
+<td style="text-align:left;">
+Liberdade
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BTS
+</td>
+<td style="text-align:left;">
+Bonfim
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BTS
+</td>
+<td style="text-align:left;">
+São Caetano
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BTS
+</td>
+<td style="text-align:left;">
+Periperi
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BTS
+</td>
+<td style="text-align:left;">
+CIA
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Central
+</td>
+<td style="text-align:left;">
+Pau da Lima
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Central
+</td>
+<td style="text-align:left;">
+Tancredo Neves
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Central
+</td>
+<td style="text-align:left;">
+Cajazeiras
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+</tbody>
+</table>
+<p>Na Tabela <a href="cap5.html#tab:t51">5.1</a> vemos valores para cada uma das regiões divididas pela Secretária de Segurança Pública que serão estudados no decorrer deste capítulo. Alguns valores são bem alarmantes como a AISP de Tancredo Neves com um total de 40 ocorrências de assalto à coletivos em janeiro e 33 em março. Em contrapartida, outras AISP como Barra e CIA apresentam valores muito baixos em comparação com 1 ou 2 ocorrências.</p>
+<p>Porém, e se quisermos <strong>resumir esses valores para gerar indicadores para uma determinada região (RISP) ou para a cidade neste período?</strong> <strong>Como esses indicadores poderiam ajudar os gestores a entender como está determinada região ou área em relação ao aumento da violência, considerando este delito?</strong> E principalmente: <strong>Como podemos visualizar e passar estas ideias de forma fácil e intuitiva para gerar ações públicas de combate?</strong></p>
+<p>Para responder esses e outros questionamentos, vamos estudar alguns conceitos importantes da ciência de dados como medidas de tendência central, medidas de dispersão, diagrama de caixas e distribuição no decorrer deste capítulo.</p>
+</div>
+<div id="medidas-de-tendência-central" class="section level2">
+<h2><span class="header-section-number">5.2</span> Medidas de tendência central</h2>
+<p>As <strong>medidas de tendência central</strong> são aquelas que buscam refletir o ponto de equilíbrio dos dados, ou seja, o seu ponto central. Diversas medidas existem com esse intuito e as mais básicas são: média, mediana e moda. Porém você pode se perguntar “Porque existe mais de uma medida se elas apresentam o mesmo significado?” Bom, cada uma dessas medidas possui suas vantagens e desvantagens, onde entendê-las pode ser fundamental para compreender aquele conjunto de informações da forma mais coerente com a realidade<sup>2</sup>.</p>
+<p>Porém, antes de cair de cabeça nestas medidas vamos avaliar a Tabela apresentada na seção anterior (número de ocorrências de roubo à ônibus) através de um <strong>mapa de calor</strong>.</p>
+<p>Na Figura <a href="cap5.html#fig:f56">5.7</a> apresentamos um mapa de calor para todas as áreas de Salvador considerando o número de ocorrências, onde quanto mais avermelhada for aquela região, maior é a incidência de delitos e quanto menor for o número de ocorrências mais branca se torna a célula.</p>
+<div class="figure" style="text-align: center"><span id="fig:f56"></span>
+<img src="fig_cap5/fig6_cap5.png" alt="Mapa de calor da incidência de roubos à ônibus nas áreas de Salvador" width="100%" />
+<p class="caption">
+Figura 5.7: Mapa de calor da incidência de roubos à ônibus nas áreas de Salvador
+</p>
+</div>
+<p>Apesar do mapa de calor parecer bastante com uma tabela na Figura <a href="cap5.html#fig:f56">5.7</a>, existe uma diferença: Cada célula (campo do gráfico) apresenta uma coloração de acordo a grandeza representada. Além disso podemos verificar que o setor Tancredo Neves, localizado na RISP Central, apresenta os maiores valores disparado, enquanto o restante em sua grande maioria aparece com um tom mais rosa. Em contrapartida as áreas Barra e CIA apresentam os menores números de ocorrências, não passando de duas ocorrências por mês. Visualmente falando, já conseguimos extrair algumas informações deste gráfico não é?</p>
+<p>Em geral percebemos que:</p>
+<ul>
+<li><p>O setor com maior incidência é, de forma disparada, Tancredo Neves em todos os meses do verão.</p></li>
+<li><p>Barra e CIA são os setores com os menores números de ocorrência.</p></li>
+<li><p>Somando o número total de ocorrências por área para cada mês encontramos para janeiro, fevereiro e março respectivamente 190, 129 e 166 ocorrências. Logo, o mês de Janeiro se destaca inicialmente em nossa análise.</p></li>
+</ul>
+<p>Além dessas informações, você consegue extrair mais conhecimento deste gráfico?</p>
+<p>Apesar da Figura <a href="cap5.html#fig:f56">5.7</a> apresentar um panorama completo das ocorrências, podemos notar um detalhe curioso: O fato da área Tancredo Neves apresentar altas incidências, torna outros setores, visualmente, menos perigosos. E se fizermos uma análise por região, será que conseguiremos identificar novas zonas com alta incidência de assaltos? Na Figura <a href="cap5.html#fig:f57">5.8</a> apresentamos novamente o mapa de calor, agora separado por regiões.</p>
+<div class="figure" style="text-align: center"><span id="fig:f57"></span>
+<img src="fig_cap5/fig7_cap5.png" alt="Mapa de calor particionado por regiões de Salvador" width="100%" />
+<p class="caption">
+Figura 5.8: Mapa de calor particionado por regiões de Salvador
+</p>
+</div>
+<p>Cada uma das três regiões apresentaram características interessantes no verão:</p>
+<ul>
+<li><p>Na região Atlântico podemos verificar que as áreas Brotas e Itapuã são as mais perigosas de modo geral, onde em Janeiro ocorreu em ambas o maior número de ocorrências com 17 casos. Além disso, Pituba e Rio Vermelho possuem um grande tom de rosa, mostrando que elas não são tão seguras.</p></li>
+<li><p>Na região BTS nota-se que diversas áreas apresentam tons avermelhados, mostrando um grande perigo nesta região com destaque para São Caetano e Periperi que apresentam os maiores valores.</p></li>
+<li><p>Na região Central é possível perceber que a área Tancredo Neves é a mais perigosa, mantendo o mesmo padrão apresentado na Figura <a href="cap5.html#fig:f57">5.8</a>.</p></li>
+</ul>
+<p>Com esta nova análise conseguimos perceber que as vezes até uma imagem podem acabar nos enganando no que se refere a perspectiva: Na Figura <a href="cap5.html#fig:f56">5.7</a> apenas a área de Tancredo Neves se destacava em comparação as outras, porém ao fazer uma análise mais aprofundada, considerando uma comparação apenas dentro das regiões definidas pela SSP, verificamos que outras áreas apresentam uma grande quantidade de ocorrências. Este padrão será observado nesta seção quando avaliarmos as medidas de tendência central, onde vamos entender o impacto de um <strong>valor aberrante</strong>.</p>
+<p>A primeira medida de tendência central a ser analisada será a <strong>Média</strong>. Trata-se da medida mais conhecida e usada em nosso dia a dia, como vimos no início deste capítulo.</p>
+<p>Ela é calculada através do <strong>somatório de todos os valores dividido pela sua quantidade</strong>. Com este conhecimento em mãos vamos montar uma tabela da média de ocorrência para os meses do verão de acordo a região:</p>
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:t52">Tabela 5.2: </span>Médias encontradas para as ocorrências de assalto à ônibus separada por região
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+RISP
+</th>
+<th style="text-align:left;">
+Janeiro
+</th>
+<th style="text-align:left;">
+Fevereiro
+</th>
+<th style="text-align:left;">
+Março
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Atlântico
+</td>
+<td style="text-align:left;">
+9,29
+</td>
+<td style="text-align:left;">
+5,57
+</td>
+<td style="text-align:left;">
+6,71
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BTS
+</td>
+<td style="text-align:left;">
+11,50
+</td>
+<td style="text-align:left;">
+8,67
+</td>
+<td style="text-align:left;">
+11,83
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Central
+</td>
+<td style="text-align:left;">
+18,67
+</td>
+<td style="text-align:left;">
+12,67
+</td>
+<td style="text-align:left;">
+16,00
+</td>
+</tr>
+</tbody>
+</table>
+<p>Porém, antes de analisar a Tabela <a href="cap5.html#tab:t52">5.2</a>, por quê calculamos a média? Bom, o intuito é apresentar um indicador para o número de ocorrências para as regiões de Salvador encontrando uma medida capaz de resumir todos os valores daquelas áreas. Assim, ao invés de avaliar área por área, temos um valor único que resume aquela imensa quantidade de dados em um só representativo.</p>
+<p>Através das médias calculadas na Tabela <a href="cap5.html#tab:t52">5.2</a>, podemos perceber que:</p>
+<ul>
+<li><p>O mês de fevereiro como um todo possui os menores índices de ocorrências em comparação a janeiro e fevereiro.</p></li>
+<li><p>A RISP Central possui as maiores médias de ocorrências nos meses de verão, mesmo sendo uma região com apenas 3 áreas catalogadas. Note que a área com maior incidência, Tancredo Neves, pertence a esta região.</p></li>
+<li><p>A RISP Atlântico possui os melhores indicadores em todos os meses, ou seja, possui a menor média de ocorrências e, portanto, poderia ser considerada a região mais segura.</p></li>
+</ul>
+<p>Através da média, conseguimos extrair indicadores capazes de fazer comparações diretas entre as regiões! Isso é importante para avaliar situações de forma mais abrangente em um cenário mais amplo para a cidade de Salvador.</p>
+<p>Para deixar ainda mais claro o cálculo desta medida, a Figura <a href="cap5.html#fig:fmean">5.9</a> apresenta as etapas para calculá-la através do estudo de caso.</p>
+<div class="figure" style="text-align: center"><span id="fig:fmean"></span>
+<img src="fig_cap5/calc_media.png" alt="Etapas para calcular a média" width="99%" />
+<p class="caption">
+Figura 5.9: Etapas para calcular a média
+</p>
+</div>
+<p>A Figura <a href="cap5.html#fig:fmean">5.9</a> mostra o passo a passo simples para calcular a média de ocorrências para uma das regiões de Salvador em janeiro. Note que ao final a média apresentou um resultado aproximado, diferente da Tabela <a href="cap5.html#tab:t52">5.2</a> que apresentou alguns valores decimais, mas qual seria o motivo?</p>
+<p>Bom, estamos tratando de números de ocorrências, certo? Você nunca ouviu algo como “Ontem acontecem 2,5 assaltos naquele ponto de ônibus” ou “Aconteceu em Salvador 30,5 furtos de veículos na região do litoral” e mesmo assim o valor da média é decimal na Tabela <a href="cap5.html#tab:t52">5.2</a>. Isto ocorre, pois estamos tratando de uma variável que por natureza é <strong>inteira</strong>, ou seja, aumenta em unidades, porém a forma como a média é calculada não é garante que o resultado seja também um <strong>inteiro</strong> (algumas vezes pode acontecer). Logo, é comum realizar uma aproximação simples seguindo as regras:</p>
+<ul>
+<li><p>Caso a parte decimal seja maior ou igual 0,5, você aproxima para o maior valor inteiro próximo do seu número</p></li>
+<li><p>Caso a parte decimal seja menor que 0,5, você aproxima para o menor valor inteiro próximo do seu número</p></li>
+</ul>
+<p>Esta regra vale para qualquer valor decimal que você queira representar e não somente a média. Aplicando esta regra na Tabela <a href="cap5.html#tab:t52">5.2</a>, assim como foi aplicada na Figura <a href="cap5.html#fig:fmean">5.9</a>, temos:</p>
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:t53">Tabela 5.3: </span>Médias encontradas após aproximação para as ocorrências de assalto à ônibus separada por região
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+RISP
+</th>
+<th style="text-align:left;">
+Janeiro
+</th>
+<th style="text-align:left;">
+Fevereiro
+</th>
+<th style="text-align:left;">
+Março
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Atlântico
+</td>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BTS
+</td>
+<td style="text-align:left;">
+12
+</td>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Central
+</td>
+<td style="text-align:left;">
+19
+</td>
+<td style="text-align:left;">
+13
+</td>
+<td style="text-align:left;">
+16
+</td>
+</tr>
+</tbody>
+</table>
+<p>A Tabela <a href="cap5.html#tab:t53">5.3</a> mostra de forma a média com a mesma natureza da grandeza estudada, ou seja, em valores inteiros mantendo o seu conceito: representar um ponto de equilíbrio para o número de ocorrências de assaltos a ônibus por região em Salvador.</p>
+<p>Com os valores das médias calculados por região, podemos assinalar outro situação, protagonizada pela novamente pela área Tancredo Neves na região Central… Você conseguiu perceber?</p>
+<p>Olhe para as médias da região Central: 19 ocorrências em Janeiro, 13 ocorrências em Fevereiro e 16 ocorrências em Março. Agora olhe novamente para esta mesma região na Figura <a href="cap5.html#fig:f57">5.8</a> e responda: estes valores de média fazem sentido?</p>
+<p>Infelizmente não. A situação que ocorre aqui mostra uma das fraquezas desta medida: <strong>valores aberrantes</strong>. Tratam-se de observações demasiadamente grandes ou pequenos que apresentam um grande afastamento das demais.</p>
+<p>Neste caso a responsável por esses valores é o setor Tancredo Neves, com números de ocorrências muito maiores em comparação aos demais. Os valores aberrantes influenciam bastante na média e isso será discutido mais a frente …</p>
+<p>Agora que aprendemos como calcular e utilizar a média, podemos compreender a frase dita no início desta seção:</p>
+<p><strong>“Em média ocorreram 3 assaltos em Salvador por dia avaliados durante o ano”</strong></p>
+<p>Basicamente o que o jornal apresentou foi um tratamento similiar ao que fizemos anteriormente: Adquiriu todos os os boletins mensais disponibilizados pela SSP, somou todos os números de ocorrências de Janeiro até Dezembro e então dividiu pelo total de dias que existem no ano, 365 dias. É provável que o valor encontrado tenha sido decimal também, e então foi aproximado para este valor que verificamos: três ocorrências em média!</p>
+<p>Podemos aplicar esta mesma análise para o nosso banco de dados. Considerando os dias vigentes de cada mês no ano de 2019, podemos dizer que:</p>
+<ul>
+<li><p>Em Janeiro ocorreram em média 6 assaltos à ônibus por dia em Salvador.</p></li>
+<li><p>Em fevereiro ocorreram em média 5 assaltos à ônibus por dia em Salvador.</p></li>
+<li><p>Em março ocorreram em média 5 assaltos à ônibus por dia em Salvador.</p></li>
+</ul>
+<p>Note que esses valores foram encontrados considerando a aproximação discutida anteriormente.</p>
+<p>Além disso, com a tabela calculada podemos dizer frases como:</p>
+<ul>
+<li><p>“Durante o período de Janeiro, em média ocorreram doze assaltos à ônibus”</p></li>
+<li><p>“Em Fevereiro, na Região BTS, aconteceram nove assaltos à ônibus em média”</p></li>
+</ul>
+<p>Depois de compreender um pouco sobre a medida mais usada e saber uma de suas falhas (valores aberrantes), será que existe alguma outra medida que seja blindada a esta questão? Para nossa sorte, ela existe e se chama <strong>Mediana</strong>.</p>
+<p>A mediana é definida como o valor que divide os dados na metade, 50% estão acima da mediana e 50% estão abaixo. A obtenção da mediana é feita ordenando-se os dados e escolhendo-se o valor do meio. Por exemplo se temos 11 valores, a mediana estará na 6º posição (5 valores abaixo e 5 valores acima). No caso de uma quantidade amostral par, computamos a média dos dois valores “centrais”.</p>
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:t54">Tabela 5.4: </span>Medianas encontradas para as ocorrências de assalto à ônibus separada por região
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+RISP
+</th>
+<th style="text-align:left;">
+Janeiro
+</th>
+<th style="text-align:left;">
+Fevereiro
+</th>
+<th style="text-align:left;">
+Março
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Atlântico
+</td>
+<td style="text-align:left;">
+7,0
+</td>
+<td style="text-align:left;">
+6,0
+</td>
+<td style="text-align:left;">
+6,0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BTS
+</td>
+<td style="text-align:left;">
+10,5
+</td>
+<td style="text-align:left;">
+9,5
+</td>
+<td style="text-align:left;">
+11,5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Central
+</td>
+<td style="text-align:left;">
+11,0
+</td>
+<td style="text-align:left;">
+9,0
+</td>
+<td style="text-align:left;">
+9,0
+</td>
+</tr>
+</tbody>
+</table>
+<p>A Tabela <a href="cap5.html#tab:t54">5.4</a> apresenta os valores das medianas para cada região de Salvador. Note que algumas regiões apresentam valores decimais, assim como aconteceu com a média e o motivo é o mesmo: ao calcular a média dos valores “centrais” não garantimos um resultado inteiro.</p>
+<p>Para compreender melhor este resultado, na Figura <a href="cap5.html#fig:fmed">5.10</a> apresentamos o passo a passo para calcular esta medida.</p>
+<div class="figure" style="text-align: center"><span id="fig:fmed"></span>
+<img src="fig_cap5/calc_mediana.png" alt="Etapas para calcular a mediana" width="99%" />
+<p class="caption">
+Figura 5.10: Etapas para calcular a mediana
+</p>
+</div>
+<p>Na Figura <a href="cap5.html#fig:fmed">5.10</a> mostramos em duas regiões diferentes de Salvador como calcular a mediana. Note que ela pode ser encontrada de duas maneiras distintas a depender da quantidade de valores como apresentamos anteriormente.</p>
+<div class="figure" style="text-align: center"><span id="fig:f58"></span>
+<img src="fig_cap5/fig8_cap5.png" alt="Gráfico de pontos para as ocorrências em Salvador" width="100%" />
+<p class="caption">
+Figura 5.11: Gráfico de pontos para as ocorrências em Salvador
+</p>
+</div>
+<p>Na Figura <a href="cap5.html#fig:f58">5.11</a> avaliamos essas duas medidas junto a grandeza estudada através de uma nova visualização: <strong>gráfico de pontos</strong>.</p>
+<p>Podemos perceber na Figura <a href="cap5.html#fig:f58">5.11</a> que para as regiões Atlâtico e BTS os valores de média e mediana são próximos, diferente da região Central. Essa disparidade é explicada pelo que vimos anteriormente: O <strong>valor aberrante</strong> distorce o valor da média, puxando-a em sua direção como vocês percebem.</p>
+<p>A comparação de média e mediana pode ser um bom indicativo para verificar a presença de um valor aberrante: quanto mais próximos essas medidas forem, mais provável a ausência de valores aberrantes.</p>
+<p>Nesta análise em específico, verificamos que a mediana seria uma melhor medida para representar a região Central como um todo, já para as outras duas regiões a escolha entre ambas as medidas é arbitrária, pois elas estão bem próximas.</p>
+<p>São visualizações como essas que ajudam o cientista de dados a tomar melhores decisões na escolha de indicadores ou medidas de resumo. Logo, conseguimos perceber que no geral a região mais perigosa, ou melhor, a área mais perigosa durante o verão de 2019 foi Tancredo Neves.</p>
+<p>Finalmente, a última medida de tendência central a ser mencionada neste capítulo é a <strong>moda</strong>. Trata-se da medida de maior frequência em um conjunto de dados, em outras palavras, o valor que mais se repete em uma amostra será a moda deste dado. Este conceito é muito usado com variáveis categóricas. Como neste capítulo trabalhamos com valores numéricos, não cabe sua análise deste medida.</p>
+</div>
+<div id="medidas-de-dispersão" class="section level2">
+<h2><span class="header-section-number">5.3</span> Medidas de dispersão</h2>
+<p>Como já foi visto as medidas de posição ou se preferir, tendência central, podem ser utilizadas para descrever as informações através de um único valor. Porém e se dois conjuntos possuirem o mesmo valor de média ou mediana, podemos dizer que eles são equivalentes?</p>
+<p><strong>A resposta é Não!</strong> Apesar destas medidas resumirem bem os conjuntos de informações, perdemos outras características importantes. Para alcançar uma visão geral e expandir nossas análises usamos também as <strong>medidas de dispersão</strong><sup>2</sup>.</p>
+<div class="figure" style="text-align: center"><span id="fig:f59"></span>
+<img src="fig_cap5/disp.png" alt="Explicação das medidas de dispersão" width="99%" />
+<p class="caption">
+Figura 5.12: Explicação das medidas de dispersão
+</p>
+</div>
+<p>Para entender melhor este conceito e a necessidade de saber entender melhor essas medidas dispersão avalie a Figura <a href="cap5.html#fig:f59">5.12</a> onde apresentamos duas situações: Na “Situação 1” podemos perceber que os dados apresentam um espalhamento ou dispersão em relação a medida de posição, lembre que o triângulo busca resumir todas as bolinhas. Isto significa dizer que há variação entre os valores observados em comparação a uma medida qualquer de posição, o que torna este conjunto <strong>heterogêneo</strong>, ou seja, bem diversificado. Já na “Situação 2” vemos uma situação oposta, onde a massa de dados está bem localizada ao redor da medida de posição inclusive bastante próxima, mostrando assim um conjunto de dados <strong>homogêneo</strong>.</p>
+<p>Quanto mais homogêneo for um conjunto em relação a uma medida de posição, maior será o poder de explicação desta medida sobre o conjunto.</p>
+<p>Portanto, medidas de dispersão são medidas capazes de relacionar o afastamento dos dados em comparação à uma medida de posição, que estudamos na seção anterior. Existem várias formas de se medir, porém será tratado como tópico de discussão a <strong>Amplitude</strong>, <strong>Desvio padrão</strong> e <strong>Distância Interquartil</strong>. Essas medidas se tratam de um complemento, pois agora conseguimos entender como os dados estão espalhados em relação a medida central calculada.</p>
+<p>A primeira medida a ser trabalha é a <strong>amplitude</strong> definida como:</p>
+<p><span class="math display">\[Amplitude=Valor\ Máximo\ -\ Valor\ Minímo\]</span>
+Seu conceito é bastante simples de entender.</p>
+<div class="figure" style="text-align: center"><span id="fig:f510"></span>
+<img src="fig_cap5/fig10_cap5.png" alt="Gráfico de pontos para as ocorrências em Salvador" width="100%" />
+<p class="caption">
+Figura 5.13: Gráfico de pontos para as ocorrências em Salvador
+</p>
+</div>
+<p>Na Figura <a href="cap5.html#fig:f510">5.13</a> apresentamos novamente o gráfico de pontos da seção anterior para o número de ocorrências. Podemos perceber de forma visual, que a amplitude da região Central será maior do que todas as outras regiões em todos os meses, pois a área de Tancredo Neves apresenta grandes índices de assaltos, como foi discutido anteriormente. Em geral, a amplitude apenas permite comparar dois ou mais conjuntos no sentido de avaliar quem apresentar a maior ou menor variação em relação a outra, porém não dá resposta em relação à distribuição dos dados e como eles estão espalhados em torno de uma medida de posição. Além disso, assim como a média essa medida sofre bastante com a presença de valores aberrantes, a amplitude também sofre … Você consegue identificar o motivo?</p>
+<p>Agora que entendemos um conceito mais simples, vamos partir para a compreensão de dois conceitos um pouco mais complexos: Desvio padrão e Distância Interquartil.</p>
+<p>O <strong>Desvio Padrão</strong> relaciona a diferença entre cada elemento do conjunto com a média aritmética através de uma fórmula matemática. Ou seja, cada elemento terá um determinado valor de variação em relação à média do grupo e desta forma, é possível saber quando os conjuntos analisados são heterogêneos ou homogêneos. Isso confirma que esta medida consegue representar a dispersão dos dados, já que utiliza todos os valores do conjunto no seu cálculo. Sua fórmula não será apresentada neste material, pois foge do escopo do livro. Na ciência, esta medida junto com a média é essencial para construir análises e resultados, pois esta dupla se complementa, sendo as mais utilizadas.</p>
+<p>A <strong>Distância Interquartil</strong>, diferente da amplitude, é mais robusta à valores aberrantes. Para entender a distância interquartil precisamos inicialmente definir os quartis. Quartis são valores que dividem os dados em quatro partes e eles são:</p>
+<ul>
+<li><p><span class="math inline">\(Q1\)</span> (primeiro quartil) define o valor para o qual 25% dos valores estão abaixo dele;</p></li>
+<li><p><span class="math inline">\(Q2\)</span> (segundo quartil) é o valor que tem 50% dos valores abaixo e 50% acima;</p></li>
+<li><p><span class="math inline">\(Q3\)</span> (terceiro quartil) define o valor que possui 75% dos dados abaixo dele.</p></li>
+</ul>
+<p>Onde, a fórmula para a distância interquartil será a diferença entre o primeiro e terceiro quartil:</p>
+<p><span class="math display">\[Distância\ Interquartil\ =Q3-Q1\]</span></p>
+<p>Note que o <span class="math inline">\(Q2\)</span> é um conhecido nosso: a <strong>mediana</strong>. Logo, dá para perceber que para calcular essa medida precisamos fazer o mesmo método que utilizamos: ordenar os dados e extrair os quartis. Para facilitar o cálculo desta medida, podemos utilizar o seguinte procedimento:</p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>Ordenar os dados de forma crescente</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>Seja <span class="math inline">\(N\)</span> a quantidade de valores do seu conjunto, podemos calcular as posições dos quartis <span class="math inline">\(Q3\)</span> e <span class="math inline">\(Q1\)</span> da seguinte forma:</li>
+</ol></li>
+</ul>
+<p><span class="math display">\[Posição\ de\ Q1=N*0,25\]</span>
+<span class="math display">\[Posição\ de\ Q3=N*0,75\]</span></p>
+<ul>
+<li><ol start="3" style="list-style-type: decimal">
+<li>Verificar se as posições encontradas são valores inteiros ou decimais. Se for decimal, aproximar para o valor inteiro mais próximo seguindo a regra ensinada na seção anterior.</li>
+</ol></li>
+<li><ol start="4" style="list-style-type: decimal">
+<li>Encontrar os quartis <span class="math inline">\(Q1\)</span> e <span class="math inline">\(Q3\)</span> da seguinte forma: calculando a média entre o valor na posição encontrada com o valor seguinte na sequência.</li>
+</ol></li>
+<li><ol start="5" style="list-style-type: decimal">
+<li>Finalmente, com os quartis em mãos, calcule a distância entre o terceiro e o primeiro para encontrar a <strong>Distância Interquartil</strong>.</li>
+</ol></li>
+</ul>
+<p>Na Figura <a href="cap5.html#fig:fdiq">5.14</a> apresentamos os passos explicados anteriormente de forma prática em nosso estudo de caso.</p>
+<div class="figure" style="text-align: center"><span id="fig:fdiq"></span>
+<img src="fig_cap5/calc_diq.png" alt="Etapas para calcular Distância Interquartil" width="99%" />
+<p class="caption">
+Figura 5.14: Etapas para calcular Distância Interquartil
+</p>
+</div>
+<p>A Figura <a href="cap5.html#fig:fdiq">5.14</a> detalha os passos apresentados para o cálculo da distância interquartil na RISP Atlântico no mês de Janeiro, mostrando que apesar de parecer complexo as etapas são bem simples de resolver! Porém, o mais comum no dia a dia de um cientista de dados é utilizar o computador através de programas e códigos para encontrar esses resultados.</p>
+<p>Para entender melhor as medidas de dispersão, vamos calculá-las para o nosso caso de estudo: número de ocorrências de assalto à ônibus em Salvador. A Figura <a href="cap5.html#fig:f511">5.15</a> resume os resultados encontrados dessas medidas para cada região de Salvador separado por mês.</p>
+<div class="figure" style="text-align: center"><span id="fig:f511"></span>
+<img src="fig_cap5/fig11_cap5.png" alt="Medidas de dispersão aproximadas em gráfico de barras das ocorrências de Salvador" width="100%" />
+<p class="caption">
+Figura 5.15: Medidas de dispersão aproximadas em gráfico de barras das ocorrências de Salvador
+</p>
+</div>
+<p>Conseguimos extrair as seguintes informações:</p>
+<ul>
+<li><p>Considerando a <strong>amplitude</strong>, vemos que a região central é que mais varia em todos os meses em comparação com BTS e Atlântico. Isso indica uma grande disparidade entre o máximo de ocorrências, Tancredo Neves, com as demais. Esta região impacta inclusive no resultado do <strong>Desvio Padrão</strong> que é o dobro em comparação as demais regiões.</p></li>
+<li><p>O menor <strong>Desvio Padrão</strong> avaliado está no mês de fevereiro para a RISP Atlântico. O valor 4 pode ser lido da seguinte forma “No mês de fevereiro a diferença entre o número de ocorrências por área com a média da região é de quatro ocorrências”</p></li>
+<li><p>No geral, o conjunto com maior espalhamento é representado pela RISP Central, que demonstrou os maiores valores em todas medidas. Essa tendência é observada também na Figura <a href="cap5.html#fig:f510">5.13</a> onde as outras regiões mostram número de ocorrências similares.</p></li>
+</ul>
+<p>Um fato a ser ressaltado sobre a Distância Interquartil: Apesar de ser uma medida robusta a valores aberrantes, assim como a mediana, ao avalia-la com um conjunto muito pequeno, como é o caso da RISP Central, essa robustez acaba se tornando fraca.</p>
+<p>Outro ponto a ser ressaltado é que amplitude e desvio padrão possuem uma relação: quanto mais próximos os dados estiverem do valor médio, significa que há uma amplitude menor e consequentemente um desvio padrão dos dados também será pequeno, por outro lado quando os dados se afastam do valor da média, é indicado que a amplitude é maior e consequentemente, o desvio padrão também será maior.</p>
+<p>No geral utilizar mais de uma medida descritiva é essencial para se atingir uma boa conclusão a respeito dos dados que estão sendo avaliados. Além disso, o diagnóstico encontrado ao se utilizar uma medida é confirmado pelas outras. Por isso a importância de conhecer as medidas de Tendência Central e Dispersão para interpretar nossos dados e garantir conclusões confiáveis!</p>
+<p>Na próxima seção iremos expandir ainda mais o que aprendemos aqui, trazendo conclusões mais factíveis ao nosso caso de estudo através do Diagrama de caixas.</p>
+</div>
+<div id="diagramas-de-caixa" class="section level2">
+<h2><span class="header-section-number">5.4</span> Diagramas de Caixa</h2>
+<p>Nesta seção vamos tratar sobre o <strong>Diagrama de Caixa</strong> (chamado comumente de <em>boxplot</em>), uma das visualizações mais completa de dados numéricos que um cientista de dados possui e que resume as duas ideias apresentadas anteriormente: tendência central e dispersão.</p>
+<p>Antes de mergulhar em sua utilização através do nosso caso de estudos, vamos explicar o que é cada parte dessa “caixinha”.</p>
+<div class="figure" style="text-align: center"><span id="fig:f512"></span>
+<img src="fig_cap5/fig_diagramaCaixas.png" alt="Diagrama de caixa explicado para o mês de Janeiro" width="99%" />
+<p class="caption">
+Figura 5.16: Diagrama de caixa explicado para o mês de Janeiro
+</p>
+</div>
+<p>Na Figura <a href="cap5.html#fig:f512">5.16</a> apresentamos de forma elegante nosso diagrama de blocos referente ao mês de janeiro. No geral, quando olhamos este tipo de visualização focamos em 4 elementos principais<sup>2</sup>:</p>
+<ul>
+<li><p><strong>Mediana</strong>: Trata-se da medida de blindada a valores aberrantes e que separa o conjunto de dados em 50% para cada lado como aprendemos anteriormente.</p></li>
+<li><p><strong>Distância Interquartil</strong>: Nossa medida de dispersão definida anteriormente. Assim como a mediana, trata-se de uma medida blindada a valores aberrantes.</p></li>
+<li><p><strong>Limites</strong>: São valores calculados a partir da distância interquartil e de seus elementos. Responsáveis por definir “a última fronteira” entre valores comuns e aberrantes. São separados em dois como vimos na Figura <a href="cap5.html#fig:f512">5.16</a>: Limite Superior e Limite Inferior.</p></li>
+</ul>
+<p>O <strong>Limite Superior</strong> é calculado:
+<span class="math display">\[Limite\ Superior=Q3+1,5*Distância\ Interquartil\]</span></p>
+<p>Já o <strong>Limite Inferior</strong> é calculado como:
+<span class="math display">\[Limite\ Inferior=Q1-1,5*Distância\ Interquartil\]</span></p>
+<ul>
+<li><strong>Valor Aberrante</strong>: Todo valor que ultrapassa a barreira definida pelos limites. Na maioria das vezes são definidos como pontinhos.</li>
+</ul>
+<p>Considerando esses elementos discutidos, percebemos que:</p>
+<ul>
+<li><p>a linha superior da nossa caixa retrata o <span class="math inline">\(Q3\)</span>, já a linha inferior o <span class="math inline">\(Q1\)</span>, pois <span class="math inline">\(Q3-Q1=Distância\ Interquartil\)</span> como vemos na Figura <a href="cap5.html#fig:f512">5.16</a>. Finalmente, a linha do meio, que divide a caixa em duas, é a nossa <span class="math inline">\(Mediana\)</span>.</p></li>
+<li><p>Não é garantido a existência de valores aberrantes como na Figura <a href="cap5.html#fig:f512">5.16</a>. Eles só ocorrem se ultrapassar o limite superior ou inferior.</p></li>
+<li><p>Apesar de usarmos mediana e distância interquartil, poderíamos ter utilizado a média junto com o desvio padrão, porém o mais comum é utilizar os dois primeiros.</p></li>
+</ul>
+<p>Neste momento você pode se perguntar: “Mais o que este gráfico pode me oferecer? Qual o sentido de eu aprender seus elementos?” E a resposta é simples:</p>
+<p><strong>Ele condensa muitas informações de forma robusta e de fácil percepção!</strong></p>
+<p>O diagrama de caixas nos fornece: dispersão dos dados (distância interquartil) em torno de uma medida de posição (mediana), presença de valores aberrantes e assimetria dos dados.</p>
+<p>Vamos discuti-las através do nosso caso de estudo através da construção de diagramas de caixa para cada mês do verão em 2019.</p>
+<div class="figure" style="text-align: center"><span id="fig:f513"></span>
+<img src="fig_cap5/fig13_cap5.png" alt="Diagrama de caixa das ocorrências mensais" width="100%" />
+<p class="caption">
+Figura 5.17: Diagrama de caixa das ocorrências mensais
+</p>
+</div>
+<p>Através da Figura <a href="cap5.html#fig:f513">5.17</a> avaliamos as ocorrências de assaltos à ônibus em Salvador dividos pelos meses do verão. Note que não estamos trabalhando mais com AISP ou RISP e sim com a cidade de Salvador, ou seja, reduzimos aquela tabela inicial em três caixinhas!</p>
+<p>Primeiramente, antes de entrar em uma análise mais aprofudanda desta Figura, vamos responder em tópicos a seguinte pergunta:</p>
+<p><strong>Qual seria o melhor diagrama de caixas para o número de ocorrências de assalto ônibus em Salvador para um determinado mês?</strong></p>
+<p>Com o que aprendemos até então neste capítulo, poderiamos dizer:</p>
+<ul>
+<li><p>Um baixo valor de mediana, pois assim teríamos uma baixa incidência de assaltos.</p></li>
+<li><p>Sem valores aberrantes. Caso exista incidência de valores aberrantes acima da caixa, estaremos enfrentando casos extremos certo? afinal eles estariam muito acima das outras áreas. Já valores aberrantes abaixo da caixa pode demonstrar que apenas poucas regiões são seguras na cidade em comparação aos demais.</p></li>
+</ul>
+<p>Esses dois tópicos resumem bem o que um policial ou delegado gostaria de ver em relação a sua cidade: um baixo número de ocorrências. Vamos agora avaliar de forma aprofundada o que conseguimos verificar nesses três meses de 2019:</p>
+<ul>
+<li><p>Se considerarmos a <strong>mediana</strong>, podemos verificar que Janeiro apresentou o maior valor, logo um cenário ruim em comparação aos demais. Em outras palavras, podemos dizer que foi o mês com maior incidência central.</p></li>
+<li><p>Considerando a <strong>distância interquartil</strong>, ou se preferir a altura da caixa, verificamos que o mês de janeiro apresentou a maior variação em torno da mediana, valor que separa o conjunto em duas partes de 50%. Mas … O que significa dizer isso? Significa dizer que tivemos áreas com muitos assaltos e outras com poucos assaltos. Lembre-se que dentro da caixa representamos 50% das nossas áreas!</p></li>
+</ul>
+<p>Considerando o mês de janeiro por exemplo, vemos que o <strong>limite inferior</strong> é equivalente à 5 ocorrências de assalto enquanto o <strong>limite superior</strong> está entre 15 e 20 ocorrências, mais de três vezes o valor inferior! Demonstrando um desbalancaeamento entre áreas neste mês e uma assimetria na ocorrência de casos.</p>
+<ul>
+<li>Conseguem ver aqueles potinhos em cima de cada caixa? Eles são nossos <strong>valores aberrantes</strong> e são de uma área bastante citada neste capítulo: AISP Tancredo Neves. Os valores de ocorrência foram tão altos nessa região, durante todos os meses, que o diagrama de caixa os coloca como valores aberrantes.</li>
+</ul>
+<p>De forma geral, conseguimos verificar que janeiro foi o mês com maiores ocorrências por região apresentando os maiores: Limite superior, Q3 e Mediana, ou seja, podemos dizer que foi o pior mês do verão de 2019 para se andar de ônibus. Já fevereiro pode ser considerado o melhor:sua caixa se concentra em uma região de 3 à 10 ocorrências com um limite superior máximo de 15 ocorrências. Além disso, apresentou a menor ocorrência do nosso pior setor Tancredo Neves com 25 ocorrências. Finalmente, março ocorreu uma piora em comparação a fevereiro através da deslocação da caixa para uma região de 5 à 12 assaltos, porém não superou janeiro.</p>
+<p>Através desta simples visualização, conseguimos extrair muitas respostas a cerca do nosso caso de estudo, inclusive muitas de comparação!</p>
+</div>
+<div id="concluindo" class="section level2">
+<h2><span class="header-section-number">5.5</span> Concluindo …</h2>
+<p>Através deste capítulo conseguimos entender que através de alguns indicadores conseguimos analisar e discutir grandes tabelas. Além disso, avaliamos uma nova forma de visualizar nossas informações: o diagrama de caixa. Por meio do infográfico da <a href="cap5.html#fig:f514">5.18</a> resumimos o verão de 2019 de Salvador em relação aos assaltos à ônibus na cidade.</p>
+<div class="figure" style="text-align: center"><span id="fig:f514"></span>
+<img src="fig_cap5/info_tema.png" alt="Conclusões sobre o tema do nosso capítulo" width="99%" />
+<p class="caption">
+Figura 5.18: Conclusões sobre o tema do nosso capítulo
+</p>
+</div>
+<p>Podemos perceber que através de uma análise descritiva simples, conseguimos chegar em diversas conclusões a respeito do tema estudado. Estas conclusões podem embasar políticas públicas para melhorar esses indicadores.</p>
+<p>Além disso, aprendemos que:</p>
+<ul>
+<li><p>Apesar de existirem diferentes tipos de medidas para apresentar um mesmo conceito, elas se diferem em quando utilizá-las.</p></li>
+<li><p>O diagrama de caixa é uma ótima ferramenta para ter uma visão geral a respeito do nosso conjunto de dados.</p></li>
+</ul>
+<p>Dominar essas ferramentas é uma peça fundamental para o cientista de dados exercer seu trabalho e responder questões.</p>
+</div>
+<div id="indo-além" class="section level2">
+<h2><span class="header-section-number">5.6</span> Indo Além</h2>
+<p>Agora que já aprendemos um pouco sobre <strong>Estatística Descritiva</strong> que tal aplica-lo na prática?</p>
+<p>Você agora é cientista contratado pelo governo de Salvador para compreender e descrever melhor as ocorrências de <strong>roubo de veículos na capital baiana</strong> durante o mês de Dezembro. A Figura <a href="cap5.html#fig:f515">5.19</a> mostra o boletim da SSP que lhe foi enviado (no formato <code>.csv</code>), constando as ocorrências de todos os delitos na capital baiana no mês de dezembro<sup>1</sup>.</p>
+<div class="figure" style="text-align: center"><span id="fig:f515"></span>
+<img src="fig_cap5/boletim_12_19_ssp.PNG" alt="Boletim de dezembro de 2019 produzido pela SSP" width="99%" />
+<p class="caption">
+Figura 5.19: Boletim de dezembro de 2019 produzido pela SSP
+</p>
+</div>
+<p>O gestor pediu que apresentasse, em relação ao delito de roubo de veículos:</p>
+<ul>
+<li><p>Qual a RISP que precisa ser mais monitorada pelos profissionais?</p></li>
+<li><p>Em média, quantos roubos estão acontecendo por região?</p></li>
+<li><p>Qual a região com menor incidência de casos? Consegue descrever uma motivação para isso.</p></li>
+<li><p>Descrição completa deste delito através de uma visualização gráfica.</p></li>
+</ul>
+<p>Então, com o conhecimento que desenvolvemos até aqui, resolva essas questões usando programação!</p>
+</div>
+<div id="citações-no-capítulo" class="section level2">
+<h2><span class="header-section-number">5.7</span> Citações no capítulo</h2>
+<p>[1] Secretaria de Segurança Pública. <strong>Boletins mensais de delitos</strong>. Disponível em: <a href="http://www.ssp.ba.gov.br/modules/conteudo/conteudo.php?conteudo=109">link de acesso</a></p>
+<p>[2] Sergio Miranda Freire. <strong>Bioestatística Básica, Capítulo 3 – Medidas de Tendência Central e Dispersão</strong> Disponível em: <a href="http://www.lampada.uerj.br/arquivosdb/_book/medidasTendenciaDispersao.html">link de acesso</a></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="cap4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cap6.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["ciencia_de_dados.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

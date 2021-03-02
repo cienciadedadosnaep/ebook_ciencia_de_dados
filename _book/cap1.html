@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 1 Introdução à Ciência de Dados | Uma introdução gentil à Ciência de Dados</title>
+  <meta name="description" content="E-book em desenvolvimento." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 1 Introdução à Ciência de Dados | Uma introdução gentil à Ciência de Dados" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="E-book em desenvolvimento." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 1 Introdução à Ciência de Dados | Uma introdução gentil à Ciência de Dados" />
+  
+  <meta name="twitter:description" content="E-book em desenvolvimento." />
+  
+
+<meta name="author" content="Janaina Souza de Souza" />
+<meta name="author" content="Júlia Carolina Bijos" />
+<meta name="author" content="Kaike Wesley Reis" />
+
+
+<meta name="date" content="2021-03-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="cap2.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Ciência de Dados</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a></li>
+<li class="chapter" data-level="1" data-path="cap1.html"><a href="cap1.html"><i class="fa fa-check"></i><b>1</b> Introdução à Ciência de Dados</a><ul>
+<li class="chapter" data-level="1.1" data-path="cap1.html"><a href="cap1.html#cap1.1"><i class="fa fa-check"></i><b>1.1</b> O que são “dados” e onde estão presentes?</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="cap1.html"><a href="cap1.html#cap1.1.1"><i class="fa fa-check"></i><b>1.1.1</b> Posso compartilhar dados?</a></li>
+<li class="chapter" data-level="1.1.2" data-path="cap1.html"><a href="cap1.html#cap1.1.2"><i class="fa fa-check"></i><b>1.1.2</b> Privacidade de dados</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="cap1.html"><a href="cap1.html#cap1.2"><i class="fa fa-check"></i><b>1.2</b> O ciclo dos Dados - Construindo uma pergunta estatística</a></li>
+<li class="chapter" data-level="1.3" data-path="cap1.html"><a href="cap1.html#cap1.3"><i class="fa fa-check"></i><b>1.3</b> Estruturando os dados</a></li>
+<li class="chapter" data-level="1.4" data-path="cap1.html"><a href="cap1.html#cap1.4"><i class="fa fa-check"></i><b>1.4</b> Identificando o tipo de problema</a></li>
+<li class="chapter" data-level="1.5" data-path="cap1.html"><a href="cap1.html#cap1.5"><i class="fa fa-check"></i><b>1.5</b> Considerações finais</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="cap2.html"><a href="cap2.html"><i class="fa fa-check"></i><b>2</b> Construindo Uma Base de Dados</a><ul>
+<li class="chapter" data-level="2.1" data-path="cap2.html"><a href="cap2.html#cap2.1"><i class="fa fa-check"></i><b>2.1</b> O que é uma base de dados?</a></li>
+<li class="chapter" data-level="2.2" data-path="cap2.html"><a href="cap2.html#cap2.2"><i class="fa fa-check"></i><b>2.2</b> Como montar uma tabela</a></li>
+<li class="chapter" data-level="2.3" data-path="cap2.html"><a href="cap2.html#cap2.3"><i class="fa fa-check"></i><b>2.3</b> Tipos de variáveis</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="cap2.html"><a href="cap2.html#cap2.3.1"><i class="fa fa-check"></i><b>2.3.1</b> Variáveis Numéricas</a></li>
+<li class="chapter" data-level="2.3.2" data-path="cap2.html"><a href="cap2.html#cap2.3.2"><i class="fa fa-check"></i><b>2.3.2</b> Variáveis Categóricas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="cap2.html"><a href="cap2.html#cap2.4"><i class="fa fa-check"></i><b>2.4</b> Como buscar base de dados abertas</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="cap2.html"><a href="cap2.html#cap2.4.1"><i class="fa fa-check"></i><b>2.4.1</b> Dados abertos governamentais</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="cap2.html"><a href="cap2.html#cap2.5"><i class="fa fa-check"></i><b>2.5</b> Concluindo…</a></li>
+<li class="chapter" data-level="2.6" data-path="cap2.html"><a href="cap2.html#cap2.6"><i class="fa fa-check"></i><b>2.6</b> Você sabia? Dados, Anedotas e Fake News</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="cap3.html"><a href="cap3.html"><i class="fa fa-check"></i><b>3</b> Vizualização e Ciência de Dados</a><ul>
+<li class="chapter" data-level="3.1" data-path="cap3.html"><a href="cap3.html#objeto-estudo"><i class="fa fa-check"></i><b>3.1</b> Objeto de estudo</a></li>
+<li class="chapter" data-level="3.2" data-path="cap3.html"><a href="cap3.html#gbarras"><i class="fa fa-check"></i><b>3.2</b> Gráfico de barra</a></li>
+<li class="chapter" data-level="3.3" data-path="cap3.html"><a href="cap3.html#gtend"><i class="fa fa-check"></i><b>3.3</b> Gráfico de tendências</a></li>
+<li class="chapter" data-level="3.4" data-path="cap3.html"><a href="cap3.html#gset"><i class="fa fa-check"></i><b>3.4</b> Gráfico de setores</a></li>
+<li class="chapter" data-level="3.5" data-path="cap3.html"><a href="cap3.html#gdisp"><i class="fa fa-check"></i><b>3.5</b> Gráfico de dispersão</a></li>
+<li class="chapter" data-level="3.6" data-path="cap3.html"><a href="cap3.html#ghist"><i class="fa fa-check"></i><b>3.6</b> Histograma</a></li>
+<li class="chapter" data-level="3.7" data-path="cap3.html"><a href="cap3.html#conc"><i class="fa fa-check"></i><b>3.7</b> Concluindo …</a></li>
+<li class="chapter" data-level="3.8" data-path="cap3.html"><a href="cap3.html#indo-além"><i class="fa fa-check"></i><b>3.8</b> Indo Além</a></li>
+<li class="chapter" data-level="3.9" data-path="cap3.html"><a href="cap3.html#citações-no-capítulo"><i class="fa fa-check"></i><b>3.9</b> Citações no capítulo</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="cap4.html"><a href="cap4.html"><i class="fa fa-check"></i><b>4</b> Correlação e Causalidade</a><ul>
+<li class="chapter" data-level="4.1" data-path="cap4.html"><a href="cap4.html#cap4.1"><i class="fa fa-check"></i><b>4.1</b> O que é correlação?</a></li>
+<li class="chapter" data-level="4.2" data-path="cap4.html"><a href="cap4.html#cap4.2"><i class="fa fa-check"></i><b>4.2</b> Quão forte é a correlação?</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="cap4.html"><a href="cap4.html#cap4.2.1"><i class="fa fa-check"></i><b>4.2.1</b> Coeficiente de Pearson</a></li>
+<li class="chapter" data-level="4.2.2" data-path="cap4.html"><a href="cap4.html#cap4.2.2"><i class="fa fa-check"></i><b>4.2.2</b> Coeficiente de Spearman</a></li>
+<li class="chapter" data-level="4.2.3" data-path="cap4.html"><a href="cap4.html#cap4.2.3"><i class="fa fa-check"></i><b>4.2.3</b> Multicolinearidade</a></li>
+<li class="chapter" data-level="4.2.4" data-path="cap4.html"><a href="cap4.html#cap4.2.4"><i class="fa fa-check"></i><b>4.2.4</b> Considerações sobre a análise</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="cap4.html"><a href="cap4.html#cap4.3"><i class="fa fa-check"></i><b>4.3</b> Relações de causa e efeito: conhecendo a causalidade</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="cap4.html"><a href="cap4.html#cap4.3.1"><i class="fa fa-check"></i><b>4.3.1</b> Coincidência ou Causalidade?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="cap4.html"><a href="cap4.html#cap4.4"><i class="fa fa-check"></i><b>4.4</b> Correlações expúrias</a></li>
+<li class="chapter" data-level="4.5" data-path="cap4.html"><a href="cap4.html#cap4.5"><i class="fa fa-check"></i><b>4.5</b> Considerações Finais</a></li>
+<li class="chapter" data-level="4.6" data-path="cap4.html"><a href="cap4.html#cap4.6"><i class="fa fa-check"></i><b>4.6</b> Indo além</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="cap5.html"><a href="cap5.html"><i class="fa fa-check"></i><b>5</b> Indicadores Básicos na Ciência de Dados</a><ul>
+<li class="chapter" data-level="5.1" data-path="cap5.html"><a href="cap5.html#objeto-de-estudo"><i class="fa fa-check"></i><b>5.1</b> Objeto de estudo</a></li>
+<li class="chapter" data-level="5.2" data-path="cap5.html"><a href="cap5.html#medidas-de-tendência-central"><i class="fa fa-check"></i><b>5.2</b> Medidas de tendência central</a></li>
+<li class="chapter" data-level="5.3" data-path="cap5.html"><a href="cap5.html#medidas-de-dispersão"><i class="fa fa-check"></i><b>5.3</b> Medidas de dispersão</a></li>
+<li class="chapter" data-level="5.4" data-path="cap5.html"><a href="cap5.html#diagramas-de-caixa"><i class="fa fa-check"></i><b>5.4</b> Diagramas de Caixa</a></li>
+<li class="chapter" data-level="5.5" data-path="cap5.html"><a href="cap5.html#concluindo"><i class="fa fa-check"></i><b>5.5</b> Concluindo …</a></li>
+<li class="chapter" data-level="5.6" data-path="cap3.html"><a href="cap3.html#indo-além"><i class="fa fa-check"></i><b>5.6</b> Indo Além</a></li>
+<li class="chapter" data-level="5.7" data-path="cap3.html"><a href="cap3.html#citações-no-capítulo"><i class="fa fa-check"></i><b>5.7</b> Citações no capítulo</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="cap6.html"><a href="cap6.html"><i class="fa fa-check"></i><b>6</b> Coletando Dados para Pesquisas</a><ul>
+<li class="chapter" data-level="6.1" data-path="cap6.html"><a href="cap6.html#cap6.1"><i class="fa fa-check"></i><b>6.1</b> Como é realizado a coleta de dados</a></li>
+<li class="chapter" data-level="6.2" data-path="cap6.html"><a href="cap6.html#cap6.2"><i class="fa fa-check"></i><b>6.2</b> Amostragem</a></li>
+<li class="chapter" data-level="6.3" data-path="cap6.html"><a href="cap6.html#cap6.3"><i class="fa fa-check"></i><b>6.3</b> Viés Amostral</a></li>
+<li class="chapter" data-level="6.4" data-path="cap6.html"><a href="cap6.html#cap6.4"><i class="fa fa-check"></i><b>6.4</b> Ética na Construção de Bancos de Dados</a></li>
+<li class="chapter" data-level="6.5" data-path="cap6.html"><a href="cap6.html#cap6.5"><i class="fa fa-check"></i><b>6.5</b> Você Sabia? Pesquisa Eleitoral</a></li>
+<li class="chapter" data-level="6.6" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i><b>6.6</b> Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="cap7.html"><a href="cap7.html"><i class="fa fa-check"></i><b>7</b> Distribuições, Probabilidade e Possibilidade</a></li>
+<li class="chapter" data-level="8" data-path="cap8.html"><a href="cap8.html"><i class="fa fa-check"></i><b>8</b> Entendendo e Avaliando sua Hipóteses</a><ul>
+<li class="chapter" data-level="8.1" data-path="cap8.html"><a href="cap8.html#cap8.1"><i class="fa fa-check"></i><b>8.1</b> O que é “Teste de Hipóteses”?</a></li>
+<li class="chapter" data-level="8.2" data-path="cap8.html"><a href="cap8.html#cap8.2"><i class="fa fa-check"></i><b>8.2</b> Hipóteses estatísticas</a></li>
+<li class="chapter" data-level="8.3" data-path="cap8.html"><a href="cap8.html#cap8.3"><i class="fa fa-check"></i><b>8.3</b> p-valor</a></li>
+<li class="chapter" data-level="8.4" data-path="cap8.html"><a href="cap8.html#cap8.4"><i class="fa fa-check"></i><b>8.4</b> Verificando a normalidade</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="cap8.html"><a href="cap8.html#cap8.4.1"><i class="fa fa-check"></i><b>8.4.1</b> Gráficos de normalidade: Histograma e Q-Q Plot</a></li>
+<li class="chapter" data-level="8.4.2" data-path="cap8.html"><a href="cap8.html#cap8.4.2"><i class="fa fa-check"></i><b>8.4.2</b> Testes de normalidade</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="cap8.html"><a href="cap8.html#cap8.5"><i class="fa fa-check"></i><b>8.5</b> Uma breve contextualização!</a></li>
+<li class="chapter" data-level="8.6" data-path="cap8.html"><a href="cap8.html#cap8.6"><i class="fa fa-check"></i><b>8.6</b> Concluindo…</a></li>
+<li class="chapter" data-level="8.7" data-path="cap8.html"><a href="cap8.html#cap8.7"><i class="fa fa-check"></i><b>8.7</b> Indo além</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="cap9.html"><a href="cap9.html"><i class="fa fa-check"></i><b>9</b> Classificação</a></li>
+<li class="chapter" data-level="10" data-path="cap10.html"><a href="cap10.html"><i class="fa fa-check"></i><b>10</b> Regressão</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Uma introdução gentil à Ciência de Dados</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="cap1" class="section level1">
+<h1><span class="header-section-number">Capítulo 1</span> Introdução à Ciência de Dados</h1>
+<p>Provavelmente você deve estar pensando que não faz ideia do que seja Ciência de Dados, já que nunca teve contato com esta área da ciência. Mas, será mesmo? Ao longo deste capítulo vamos entender o que é a <strong>Ciência de Dados</strong> e refletir como ela está inserida no nosso dia a dia.</p>
+<p><em>A Ciência de Dados pode ser definida como o campo do conhecimento que busca transformar <strong>dados</strong> em <strong>informações</strong>.</em></p>
+<p><em>Mas, o que isto significa?</em></p>
+<p>Observe a Figura <a href="cap1.html#fig:figura11">1.1</a> que trata algumas situações vivenciadas na nossa cidade ou comunidade, que precisam ser adaptadas para melhorar o bem estar dos cidadãos. Você consegue imaginar como a Ciência de Dados poderia ajudar a lidar com estas dificuldades? Verifique os setores observados, os questionamentos e possíveis soluções indicados nas caixas em azul.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura11"></span>
+<img src="fig_cap1/fig1_cap1.png" alt="Ciência de Dados para o bem social" width="100%" />
+<p class="caption">
+Figura 1.1: Ciência de Dados para o bem social
+</p>
+</div>
+<p>Esta imagem é um bom referencial de algumas aplicações da Ciência de Dados para o bem da sociedade. Além disso, mostra como podemos partir de problemas e perguntas iniciais para realizar investigações. Observe o questionamento 1, em que os ônibus não passam no horário esperado. Uma das formas de solucionar este problema é através de uma estimativa da frequência ideal de ônibus neste ponto, com base em um tempo de espera que se imagina ser adequado. Então, para definir esta frequência é necessário saber:</p>
+<ul>
+<li>a <strong>frequência dos ônibus</strong> que ali passam para conhecer a situação atual</li>
+<li>a <strong>quantidade de passageiros</strong> que utiliza o transporte</li>
+<li>a <strong>melhor rota</strong> que deve ser percorrida, de forma que evite atrasos no translado</li>
+</ul>
+<p>A definição destes tópicos é importante, pois eles indicam quais dados são necessários obter. A partir do momento que são obtidos, o processo investigativo evolui até que se saiba qual é a frequência ideal de ônibus neste ponto da cidade!</p>
+<p>Observe como temos questionamentos em tantas áreas diferentes. Isto indica que a Ciência de Dados é um campo do conhecimento que nos permite abordar problemas de uma forma abrangente e com aplicações em diversos setores!</p>
+<p>No processo da Ciência de Dados, o <strong>dado</strong> é transformado em informação relevante por meio de etapas que permitem analisar tendências e prever comportamentos futuros! Estas informações geradas permitem extrair conclusões e criar <strong>sacadas</strong> (os famosos <em><strong>insights</strong></em> ou “lampejos de ideias”) para responder a perguntas e solucionar problemas.</p>
+<blockquote>
+<p><em>Que tal conhecer alguns setores que tem aplicado Ciência de Dados aqui no Brasil?</em>
+Transportes e Mobilidade Urbana: <a href="https://jornal.usp.br/ciencias/ciencias-humanas/dados-sobre-onibus-em-sp-permitirao-analises-criticas-do-servico/">link 1</a> <a href="https://www.caf.com/pt/presente/noticias/2019/03/ciencia-dados-para-aprimorar-as-politicas-publicas-a-experiencia-de-cordoba/">link 2</a><br />
+Saúde: <a href="https://www.einstein.br/Pages/Home.aspx">link</a><br />
+Segurança pública: <a href="https://jornal.usp.br/universidade/acoes-para-comunidade/pesquisadores-aplicam-ciencia-de-dados-e-inteligencia-artificial-no-combate-ao-crime/">link</a><br />
+Comunicação com clientes: <a href="https://g1.globo.com/jornal-nacional/noticia/2019/03/09/ligacoes-de-robos-incomodam-muitos-brasileiros.ghtml">link</a><br />
+Turismo: <a href="https://datascienceacademy.com.br/blog/7-casos-de-uso-de-data-science-no-turismo/">link</a><br />
+Atividade Jurídica: <a href="http://www.crb8.org.br/entrevista-sofia-marshallowitz-ciencia-de-dados-aplicada-ao-direito/">link</a></p>
+</blockquote>
+<p>Para aplicar esta ciência é preciso ter conhecimentos de Estatística, Computação e conhecimento sobre o problema investigado! Isto porque as ferramentas de solução são baseadas nestes conteúdos, por isso eles são a essência da Ciência de Dados! Mas não se engane, estas ferramentas “matemáticas” são vinculadas à ciências sociais, biológicas, ambientais, ao setor de negócios, tecnologia, entre outros, a fim de descobrir padrões em problemas de diferentes naturezas (como vimos na Figura <a href="cap1.html#fig:figura11">1.1</a>). Por este motivo, a Ciência de Dados é uma área <strong>interdisciplinar</strong>. A Figura <a href="cap1.html#fig:figura12">1.2</a> esquematiza os conteúdos básicos da Ciência de Dados.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura12"></span>
+<img src="fig_cap1/fig2_cap1.png" alt="Interdisciplinaridade da Ciência de Dados" width="60%" />
+<p class="caption">
+Figura 1.2: Interdisciplinaridade da Ciência de Dados
+</p>
+</div>
+<p><em>Mas por quê a Ciência de Dados se tornou indispensável?</em><br />
+A popularidade da área veio a partir do aumento de dados disponíveis atualmente. É impossível gerir tantos dados sem a utilização de computadores, que apresentam alta capacidade de processamento. Mas atenção, embora a Ciência de Dados seja favorecida pela tecnologia, é importante ressaltar que são seres humanos que direcionam, criam regras, avaliam e manuseiam todo o processo investigativo. Portanto, a criticidade de um profissional que avalie a execução de cada etapa realizada é essencial para garantir análises e interpretações coerentes a cada situação.</p>
+<p><em>Para compreender melhor como o processo de Ciência de Dados ocorre, vamos pensar na seguinte situação:</em><br />
+Sabemos que atualmente o lazer está muito vinculado ao uso de tecnologias e, portanto, estamos a um clique de uma música que gostamos de ouvir, ou de um vídeo que queremos assistir, uma busca no <em>google</em> sobre algum tema de interesse. O fato de realizarmos estas buscas revela nossos interesses, você concorda? A partir da análise do nosso histórico de buscas, várias propagandas ou recomendações podem começar a nos ser feitas. Pense em quantas vezes você pesquisou sobre algum item e depois surgiram várias propagandas sobre ele. Ou quando você assistiu no <em>youtube</em> o clipe de uma banda e depois apareceram sugestões de outros clipes desta mesma banda, como na Figura <a href="cap1.html#fig:figura13">1.3</a>. Observe que nesta imagem estamos assistindo a um vídeo da banda <em>Coldplay</em>, e ao lado existem várias sugestões de outras músicas deles, inclusive há uma indicação de outra banda.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura13"></span>
+<img src="fig_cap1/fig3_cap1.png" alt="Mecanismo de recomendação do Youtube" width="80%" />
+<p class="caption">
+Figura 1.3: Mecanismo de recomendação do Youtube
+</p>
+</div>
+<p><em>Que tal entender melhor como este mecanismo ocorre?</em><br />
+Imagine que você será responsável por escolher um filme para assistir junto com seus amigos. Porém, eles disseram gostar de filmes de terror, romance, suspense, ação, comédia, ficção científica e drama. Para você ficou quase impossível escolher frente à tantas opções, já que quer ter certeza que eles irão curtir o filme. Assim, como podemos saber qual gênero de filmes deve ser escolhido? Sabendo isso, a sua escolha será certeira e a diversão estará garantida!</p>
+<p>Podemos solucionar este problema utilizando a Ciência de Dados para analisar as preferências de filme dos seus amigos, de forma similar ao mecanismo de recomendações do <em>youtube</em>, por exemplo. Nas próximas seções deste capítulo, vamos solucionar cada etapa desta investigação!</p>
+<blockquote>
+<p>Quer saber mais sobre onde a Ciência de Dados se aplica? Assista ao vídeo abaixo:</p>
+</blockquote>
+<div class="embed-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WjSimFnfPF0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+<p></br>
+Depois de tantos exemplos uma conclusão é real: a Ciência de Dados está por toda parte e nós, fazemos parte dela ao consumir ou gerar dados. Você concorda?</p>
+<div id="cap1.1" class="section level2">
+<h2><span class="header-section-number">1.1</span> O que são “dados” e onde estão presentes?</h2>
+<p>No item anterior vimos que a Ciência de Dados é algo indispensável, já que é impossível lidar com tantos dados sem o uso de tecnologias. Vimos também, que parte destes dados, somos nós quem geramos. Precisamos entender o que significa a palavra <strong>dados</strong> neste contexto.</p>
+<p>Vamos dar sequência no nosso exemplo, onde queremos descobrir qual é o gênero de filmes que você deve escolher. Para isto, podemos avaliar qual é o gênero favorito de cada amigo seu a partir dos filmes que eles assistiram recentemente e o gênero destes filmes. Desta forma, iremos verificar se eles têm a preferência em comum por algum gênero. Para iniciar a investigação, devemos criar um registro para cada pessoa, contendo características importantes coletadas para a avaliação das preferências deles, como:</p>
+<ul>
+<li>Nome</li>
+<li>Filmes assistidos</li>
+<li>Gênero do filme</li>
+</ul>
+<p>Portanto, o nosso registro irá conter observações de cada característica citada, para cada pessoa. Assim, dizemos que as observações destas determinadas características são os nossos dados.</p>
+<p><em>Em outras palavras: dados são <strong>observações</strong> que foram coletadas e armazenadas de alguma forma. Inicialmente, compõem apenas registros e não apresentam relevância. Qualquer dado pode ser armazenado, caso contrário não pode ser considerado um dado.</em></p>
+<blockquote>
+<p><em>O dado por si só não apresenta significado e por isso não serve para gerar respostas, interpretações e informações. Assim, somente após processar e transformá-los é que se torna possível tirar conclusões.</em></p>
+</blockquote>
+<p></br>
+Parte do trabalho do investigador é avaliar quais dados são de fato importantes para o processo de análise. Muitas vezes temos uma grande quantidade de dados, mas ao avaliar a natureza do problema percebemos que nem todos são fatores importantes para a situação investigada.</p>
+<p>No nosso exemplo, queremos saber qual gênero de filmes você deve escolher para assistir com seus amigos. Já vimos que algumas características são importantes para guiar a sua decisão final, mas podem existir outras que também complementariam nossos dados. Todavia, deve ser feita uma valiação sobre a importância delas para o problema abordado. Por exemplo, poderíamos coletar a altura e peso de cada amigo, mas, isso seria relevante para a nossa investigação? Claramente não, portanto não faria sentido registrar estes dados. Observe também que você obteve os dados por meio de uma pesquisa realizada com os seus amigos. Todavia, há muitas outras fontes de obtenção de dados. Basta lembrar que nós mesmos somos geramos dados quando interagimos em uma rede social.</p>
+<p><em>Portanto, os dados podem ser obtidos pelo uso de celulares, computadores, sensores, registros escolares, pesquisas de opinião ou qualquer forma de registro.</em>
+</br>
+E porquê é tão importante entendermos a definição de dados e como eles são obtidos? Basicamente, porque eles são a essência da Ciência de Dados. Sem eles não é possível gerar informações e aplicar o processo investigativo. A análise dos dados permite observar uma <strong>tendência</strong> ou <strong>padrão</strong> em processos, fenômenos na natureza ou mesmo nos nossos comportamentos. E este é o grande objetivo da Ciência de Dados, <strong>reconhecer padrões</strong> e <strong>interpretá-los</strong> para tomar boas decisões!</p>
+<div id="cap1.1.1" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> Posso compartilhar dados?</h3>
+<p>Vamos voltar à nossa investigação sobre os filmes. Lembre-se que para nós é importante registrar os últimos filmes assistidos pelos nossos amigos, o gênero dos filmes e a identificação da pessoa. Podemos nos questionar se estes registros serão restritos à você que está analisando ou se serão abertos à qualquer pessoa (inclusive seus amigos). É um questionamento pertinente? Haveria algum incômodo se qualquer pessoa tivesse acesso a estes registros?</p>
+<p>Outro questionamento que poderia ser feito antes mesmo de seus amigos aceitarem participar do experimento é: como os dados serão utilizados e com qual finalidade?</p>
+<p>Estas perguntas são importantes porque as informações adquiridas a partir dos dados revelam gostos pessoais e padrões de comportamento dos seus amigos. E, portanto, quem tiver acesso a estes dados vai ter conhecimento sobre as preferências deles. E a forma como esta informação será utilizada é extremamente importante. Assim, temos duas observações:</p>
+<p><em>1. dados são gerados a todo momento</em></p>
+<p><em>2. dados são transformados em informações que revelam padrões desconhecidos.</em></p>
+<p>Por este motivo, empresas e organizações tem tanto interesse em deter dados de usuários dos seus serviços, pois isso permite conhecer o cliente a ponto de fazer ofertas que se adequem ao perfil de cada um. Mas, quais são as consequências dessa prática? Para compreender mais, vamos discutir sobre a <strong>privacidade</strong>.</p>
+</div>
+<div id="cap1.1.2" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> Privacidade de dados</h3>
+<p>A privacidade antes de tudo é um direito. Este direito nos resguarda da exposição de nossas informações pessoais. O contexto atual de estarmos conectados, com uma constante troca de informação, traz algumas preocupações quanto à garantia da nossa privacidade.</p>
+<p>Podemos começar citando o exemplo das publicações em redes sociais. Por meio delas, divulgamos sobre nosso local de trabalho ou estudo, quem são nossos familiares, nosso itinerário, datas importantes e tantas outras informações, na maioria das vezes sem refletir o que isto representa. E estes são os dados que nós sabemos que estamos divulgando!</p>
+<p>Além disso, os aplicativos que temos em nossos <em>smartphones</em> podem ter acesso à nossa câmera, microfone e contatos. Sim, ao fazer o download de um aplicativo e concordarmos com os termos de condição de uso, damos acesso à todos estes dados. Você já leu os termos de condições antes de prosseguir com a instalação de um aplicativo?</p>
+<p>Mas muito além do que publicamos, existe uma infinidade de dados que são coletados sobre nós que nem temos ideia. Eles alimentam grandes <em>bases de dados</em> de empresas, organizações ou instituições. Nossas preferências de lazer, política, estilo, gostos musicais, itens que compramos, informações bancárias, local de viagens, são convertidos em informações nas mãos de quem pode manipulá-los. Ficamos expostos, sendo influenciados por serviços e propagandas e, ao mesmo tempo, não temos acesso à forma que processam estes dados.</p>
+<p>Assim, sempre que abrimos nossos aplicativos, automaticamente somos direcionados a interagir com posts de conteúdos preparados para prender a nossa atenção, ou sempre existem propostas imperdíveis para adquirir itens que geralmente nos interessamos.</p>
+<p>O ponto central que deve ser levantado aqui é que podemos sim fazer uso de aplicativos, redes sociais e sites, mas devemos ter criticidade para entender que somos monitorados e possivelmente influenciados. Para refletir mais sobre a privacidade dos dados, assista ao vídeo indicado.</p>
+<div class="embed-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qw_TGrpPdkw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+<p><br /></p>
+<blockquote>
+<p><em>Já ouviu o termo <strong>LGPD</strong>?</em> <br />
+Diante da problemática da privacidade e segurança dos dados, o Brasil aprovou a <em>Lei n° 13.709/18 (Lei de Proteção de Dados - LGPD)</em>, o que vai exigir a adequação de empresas e corporações que realizam coleta, tratamento, processamento ou comércio de dados em prol de grantir a privacidade e a segurança de usuários. Isso será feito por meio de políticas e planos de proteção de dados. Ao mesmo tempo, nós usuários deveremos estar mais atentos à segurança que as empresas oferecem aos nossos dados. <em>(Para saber mais sobre esta lei, assista ao <a href="https://www.youtube.com/watch?v=fuuudzh1qEo">vídeo</a>)</em><br />
+A rede social Facebook é um exemplo de organização que já iniciou as alterações recomendadas pela lei em busca de transparência. A Figura <a href="cap1.html#fig:figura14">1.4</a> exibe partes da mensagem que aparece ao realizar o acesso à página.</p>
+</blockquote>
+<div class="figure" style="text-align: center"><span id="fig:figura14"></span>
+<img src="fig_cap1/fig4_cap1.png" alt="Notificação do Facebook" width="100%" />
+<p class="caption">
+Figura 1.4: Notificação do Facebook
+</p>
+</div>
+</div>
+</div>
+<div id="cap1.2" class="section level2">
+<h2><span class="header-section-number">1.2</span> O ciclo dos Dados - Construindo uma pergunta estatística</h2>
+<p>No início do capítulo, definimos Ciência de Dados como um campo da ciência que realiza a transformação de dados em informação por meio de etapas. Neste tópico, vamos compreender melhor sobre cada etapa que ocorre neste processo. Primeiramente, esta série de etapas é denominada como <em>Ciclo dos dados</em>.</p>
+<p>A compreensão do ciclo dos dados dá uma noção geral sobre o que deverá ser realizado na metodologia de investigação, possibilitando um melhor planejamento de cada etapa.</p>
+<p>Uma vez que a Ciência de Dados busca extrair padrões para lidar com problemas, é essencial que inicialmente se tenha uma pergunta a ser respondida. Esta pergunta irá direcionar todo o nosso processo em relação à quais dados devem ser coletados, quais são os melhores métodos de análise e qual a natureza do problema.</p>
+<p>O Ciclo dos Dados compreende quatro etapas, como indicado na Figura <a href="cap1.html#fig:figura15">1.5</a>:</p>
+<div class="figure" style="text-align: center"><span id="fig:figura15"></span>
+<img src="fig_cap1/fig5_cap1.png" alt="Etapas do ciclo de Dados" width="80%" />
+<p class="caption">
+Figura 1.5: Etapas do ciclo de Dados
+</p>
+</div>
+<p>Vamos lembrar do nosso exemplo inicial, cuja pergunta é: Qual gênero de filme você deve escolher para assistir com seus amigos com base nas preferências deles?</p>
+<p>Observe que geramos uma pergunta inicial que só poderá ser respondida a partir dos dados. Isto significa dizer que precisaremos coletar dados, analisá-los e, por fim, interpretá-los para tomar uma decisão. Por este motivo, esta pergunta é definida como <strong>pergunta estatística</strong>. A partir dela todas as outras etapas do ciclo dos dados serão direcionadas, a fim de respondê-la. A Figura <a href="cap1.html#fig:figura16">1.6</a> indica como cada etapa se desenvolve.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura16"></span>
+<img src="fig_cap1/fig6_cap1.png" alt="O que fazer em cada etapa?" width="80%" />
+<p class="caption">
+Figura 1.6: O que fazer em cada etapa?
+</p>
+</div>
+<p>Mas, como saber se temos uma pergunta estatística ou não? Lembre-se que uma pergunta estatística deve atender os requisitos citados no parágrafo anterior. Portanto, se eu te perguntasse: “Qual a sua idade?”, esta seria uma questão estatística?</p>
+<p>Bom, você me responderia a sua idade. Porém, não seria necessário coletar mais dados para responder a pergunta, pois apenas uma única observação já foi suficiente. Ou seja, a etapa de análise de dados não se faz necessária e por isso, não chegamos à etapa de interpretação dos dados. Por estes motivos, comprovamos que esta questão não é uma pergunta estatística, pois não indica variabilidade.</p>
+<p><em>Uma <strong>pergunta estatística</strong> sinaliza a <strong>variabilidade</strong> dos dados, que acontece quando existem observações que diferem da maioria registrada.</em>
+</br>
+Podemos adaptar a pergunta para que ela se torne uma questão estatística! No caso, poderíamos perguntar: “Qual é a idade dos estudantes do Projeto Ciência de Dados na Educação Pública?”. Ao coletar a idade de cada estudante perceberíamos que muitas se repetem, mas também há algumas que variam. Por exemplo, observamos estudantes de 11 a 15 anos. Todas as observações coletadas poderiam tranquilamente ser dispostas em um gráfico ou tabela que seriam usados para mostrar o padrão de idades da turma de estudantes do projeto. Graficamente, notamos que a maioria das idades equivale a 14 anos! Assim, todas as etapas do ciclo de dados se cumprem para responder esta pergunta.</p>
+<p>Veja a Figura <a href="cap1.html#fig:figura17">1.7</a> que aponta diferenças entre estes dois tipos de perguntas.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura17"></span>
+<img src="fig_cap1/fig7_cap1.png" alt="Pergunta estatística e não estatística" width="100%" />
+<p class="caption">
+Figura 1.7: Pergunta estatística e não estatística
+</p>
+</div>
+<p>Outro conceito relevante para qualquer investigação, é que para responder a uma pergunta estatística, podemos estabelecer <strong>hipóteses</strong>, que pode ser considerada como uma suposição que será testada ao longo do processo. Esta hipótese pode estar correta, neste caso ajudando a solucionar o problema, ou pode estar incorreta. Neste caso, precisamos investigar os motivos pelos quais ela é incorreta, e pode até indicar que a nossa pergunta precisa ser melhorada. Pense no caso do nosso exemplo dos filmes, poderíamos estabelecer uma hipótese onde arriscamos dizer qual será o gênero preferido. Bom, esta hipótese será testada ao longo da investigação, e ao final, poderemos dizer se estava certa ou não.</p>
+</div>
+<div id="cap1.3" class="section level2">
+<h2><span class="header-section-number">1.3</span> Estruturando os dados</h2>
+<p>Após definir a pergunta estatística, devemos coletar os dados e armazená-los em algum formato. Chamamos de <strong>estrutura de dados</strong> o formato em que estes dados ficam armazenados.</p>
+<p>A tabela é uma forma muito comum de se estruturar dados, embora não seja a única. Este formato é comum pois os dados ficam dispostos de uma forma organizada e de fácil entendimento.</p>
+<p>A tabela é composta por linhas e colunas. Veja como exemplo a Tabela 1:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Nome</th>
+<th align="center">Filme assistido</th>
+<th align="center">Gênero</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Gabrielle</td>
+<td align="center">Entre Realidades</td>
+<td align="center">Drama</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Gabrielle</td>
+<td align="center">Getúlio</td>
+<td align="center">Drama</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">Gabrielle</td>
+<td align="center">Até que a sorte nos separe</td>
+<td align="center">Comédia</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Gabrielle</td>
+<td align="center">Terremoto: A falha de <em>San Andreas</em></td>
+<td align="center">Ação</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">Karen</td>
+<td align="center">A Lista de Schindler</td>
+<td align="center">Drama</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Karen</td>
+<td align="center">Férias Frustradas</td>
+<td align="center">Comédia</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">Karen</td>
+<td align="center">Letra e Música</td>
+<td align="center">Romance</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Karen</td>
+<td align="center">Pantera Negra</td>
+<td align="center">Ação</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">Isaac</td>
+<td align="center">Madagascar</td>
+<td align="center">Comédia</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Isaac</td>
+<td align="center">Karatê Kid</td>
+<td align="center">Ação</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">Isaac</td>
+<td align="center">Um senhor estagiário</td>
+<td align="center">Comédia</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Isaac</td>
+<td align="center">A mulher de preto</td>
+<td align="center">Terror</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>Observe que as colunas trazem as características dos dados que coletamos. Já as linhas trazem as observações coletadas para cada pessoa, a respeito das características. Perceba que para uma mesma característica temos observações que podem ser iguais ou diferentes. Embora um mesmo <strong>Gênero</strong> possa aparecer repetidas vezes, notamos que há observações que diferem. Por isso a tabela também permite enxergar a variabilidade dos dados. No capítulo <a href="cap2.html#cap2">2</a> este tópico será abordado de forma mais aprofundada.</p>
+<blockquote>
+<p>Além de representar os dados por meio de tabelas, você aprenderá no capítulo <a href="cap3.html#cap3">3</a> como representar os dados de forma gráfica. Este formato permite visualizar as informações de uma forma mais clara e mais explicativa.</p>
+</blockquote>
+</div>
+<div id="cap1.4" class="section level2">
+<h2><span class="header-section-number">1.4</span> Identificando o tipo de problema</h2>
+<p>Um grande diferencial da Ciência de Dados é a investigação sobre o que os dados revelam acerca do futuro. Portanto, esta ciência não só obtém diagnósticos sobre situações já ocorridas como também traz <em>insights</em> sobre o que pode acontecer (Lembra deste termo? São aquelas <strong>sacadas</strong> que comentamos no início do capítulo). A isto chamamos de <strong>predição</strong>.<br />
+Parte do trabalho da Ciência de Dados é realizar predições, e para isto, existem métodos estatísticos que podem ser aplicados. Em geral, podemos dividir as situações em problemas de <strong>Regressão</strong> ou <strong>Classificação</strong>. A Figura <a href="cap1.html#fig:figura18">1.8</a> exemplifica estes métodos.</p>
+</br>
+<div class="figure" style="text-align: center"><span id="fig:figura18"></span>
+<img src="fig_cap1/fig8_cap1.png" alt="Regressão x Classificação" width="100%" />
+<p class="caption">
+Figura 1.8: Regressão x Classificação
+</p>
+</div>
+<p>Você irá aprender detalhadamente como aplicar estes métodos nos capítulos <a href="cap9.html#cap9">9</a> e <a href="cap10.html#cap10">10</a> deste <em>e-book</em>.</p>
+</div>
+<div id="cap1.5" class="section level2">
+<h2><span class="header-section-number">1.5</span> Considerações finais</h2>
+<p>Neste capítulo você foi apresentado à área de Ciência de Dados e percebeu como ela está presente no nosso dia a dia. Outro ponto relevante foi a percepção da nossa atividade enquanto consumidores e geradores de dados. Esta nova forma de gerar informações exige um conhecimento mínimo sobre como podemos ser influenciados a todo tempo.</p>
+<p><em>Vamos finalizar o nosso exemplo?</em><br />
+Na tabela que constrímos, temos 4 observações para cada pessoa. Ao analisarmos quantas vezes cada gênero aparece, temos:</p>
+<ul>
+<li>Drama: 3 observações</li>
+<li>Comédia: 4 observações</li>
+<li>Ação: 3 observações</li>
+<li>Romance: 1 observação</li>
+<li>Terror: 1 observação</li>
+</ul>
+<p>Ao analisar o grupo de observações percebemos que o gênero <strong>Comédia</strong> aparece mais vezes no nosso conjunto de dados. Ao verificar a tabela, é possível notar que ele aparece pelo menos uma vez para cada pessoa. Portanto, é uma preferência comum a todo o grupo. Por isso, se você escolher um filme deste gênero sua chance de acerto será alta, concorda?</p>
+<p>A Figura <a href="cap1.html#fig:figura19">1.9</a> sintetiza os conceitos discutidos neste capítulo introdutório.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura19"></span>
+<img src="fig_cap1/mapaconceitual_cap1.png" alt="Esquema de conceitos" width="100%" />
+<p class="caption">
+Figura 1.9: Esquema de conceitos
+</p>
+</div>
+<p>Viu quantos conteúdos novos você aprendeu neste capítulo? Este aprendizado vai se aprofundar mais à medida que você avançar no estudo deste <em>e-book</em> e tiver curiosidade em relação aos assuntos abordados! A Ciência de Dados tem revolucionado os setores onde é aplicada, pois busca constantemente obter respostas valiosas. Portanto, o cientista de dados é movido pela curiosidade!</p>
+</div>
+<div id="referências" class="section level2 unnumbered">
+<h2>Referências</h2>
+<p>Tecmundo (2018). Do futebol à medicina: a ciência de dados está em todo lugar. Disponível em: <a href="https://youtu.be/WjSimFnfPF0" class="uri">https://youtu.be/WjSimFnfPF0</a>.</p>
+<p>Provocações Filosóficas (2018). A privacidade na internet. Diponível em: <a href="https://youtu.be/qw_TGrpPdkw" class="uri">https://youtu.be/qw_TGrpPdkw</a>.</p>
+<p>Figura <a href="cap1.html#fig:figura11">1.1</a>: Pingado sociedade ilustrativa (2010). Adaptada de: Cidade Sustentável. Disponível em: <a href="http://www.pingado.com/imagem/0811cidade_gra.jpg" class="uri">http://www.pingado.com/imagem/0811cidade_gra.jpg</a>.</p>
+<p>Figura <a href="cap1.html#fig:figura12">1.2</a>: Coldplay (2011). Adaptada de: Coldplay - Viva la Vida (Live in Madrid 2011). Disponível em: <a href="https://youtu.be/9ldOuVuas1c" class="uri">https://youtu.be/9ldOuVuas1c</a>.</p>
+<p>LGPD Brasil. Lei Geral de Proteção de Dados - Lei n° 13.709/18. Disponível em: <a href="https://www.lgpdbrasil.com.br/" class="uri">https://www.lgpdbrasil.com.br/</a>.</p>
+<p>Brasil. LEI Nº 13.709, DE 14 DE AGOSTO DE 2018. Lei Geral de Proteção de Dados Pessoais (LGPD). Disponível em: <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.html" class="uri">http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.html</a>.</p>
+<p>McAfee (2019). Desafios Tecnológicos para atender a LGPD. Disponível em: <a href="https://youtu.be/fuuudzh1qEo" class="uri">https://youtu.be/fuuudzh1qEo</a>.</p>
+<p>Figura <a href="cap1.html#fig:figura15">1.5</a>: O Ciclo de Dados. Adaptada de: Introduction to Data Science v_5.0 (IDS). Lesson 4: The Data Cycle. The Data Cycle file (LMR_1.3_Data Cycle)</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cap2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["ciencia_de_dados.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 3 Vizualização e Ciência de Dados | Uma introdução gentil à Ciência de Dados</title>
+  <meta name="description" content="E-book em desenvolvimento." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 3 Vizualização e Ciência de Dados | Uma introdução gentil à Ciência de Dados" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="E-book em desenvolvimento." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 3 Vizualização e Ciência de Dados | Uma introdução gentil à Ciência de Dados" />
+  
+  <meta name="twitter:description" content="E-book em desenvolvimento." />
+  
+
+<meta name="author" content="Janaina Souza de Souza" />
+<meta name="author" content="Júlia Carolina Bijos" />
+<meta name="author" content="Kaike Wesley Reis" />
+
+
+<meta name="date" content="2021-03-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="cap2.html"/>
+<link rel="next" href="cap4.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Ciência de Dados</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a></li>
+<li class="chapter" data-level="1" data-path="cap1.html"><a href="cap1.html"><i class="fa fa-check"></i><b>1</b> Introdução à Ciência de Dados</a><ul>
+<li class="chapter" data-level="1.1" data-path="cap1.html"><a href="cap1.html#cap1.1"><i class="fa fa-check"></i><b>1.1</b> O que são “dados” e onde estão presentes?</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="cap1.html"><a href="cap1.html#cap1.1.1"><i class="fa fa-check"></i><b>1.1.1</b> Posso compartilhar dados?</a></li>
+<li class="chapter" data-level="1.1.2" data-path="cap1.html"><a href="cap1.html#cap1.1.2"><i class="fa fa-check"></i><b>1.1.2</b> Privacidade de dados</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="cap1.html"><a href="cap1.html#cap1.2"><i class="fa fa-check"></i><b>1.2</b> O ciclo dos Dados - Construindo uma pergunta estatística</a></li>
+<li class="chapter" data-level="1.3" data-path="cap1.html"><a href="cap1.html#cap1.3"><i class="fa fa-check"></i><b>1.3</b> Estruturando os dados</a></li>
+<li class="chapter" data-level="1.4" data-path="cap1.html"><a href="cap1.html#cap1.4"><i class="fa fa-check"></i><b>1.4</b> Identificando o tipo de problema</a></li>
+<li class="chapter" data-level="1.5" data-path="cap1.html"><a href="cap1.html#cap1.5"><i class="fa fa-check"></i><b>1.5</b> Considerações finais</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="cap2.html"><a href="cap2.html"><i class="fa fa-check"></i><b>2</b> Construindo Uma Base de Dados</a><ul>
+<li class="chapter" data-level="2.1" data-path="cap2.html"><a href="cap2.html#cap2.1"><i class="fa fa-check"></i><b>2.1</b> O que é uma base de dados?</a></li>
+<li class="chapter" data-level="2.2" data-path="cap2.html"><a href="cap2.html#cap2.2"><i class="fa fa-check"></i><b>2.2</b> Como montar uma tabela</a></li>
+<li class="chapter" data-level="2.3" data-path="cap2.html"><a href="cap2.html#cap2.3"><i class="fa fa-check"></i><b>2.3</b> Tipos de variáveis</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="cap2.html"><a href="cap2.html#cap2.3.1"><i class="fa fa-check"></i><b>2.3.1</b> Variáveis Numéricas</a></li>
+<li class="chapter" data-level="2.3.2" data-path="cap2.html"><a href="cap2.html#cap2.3.2"><i class="fa fa-check"></i><b>2.3.2</b> Variáveis Categóricas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="cap2.html"><a href="cap2.html#cap2.4"><i class="fa fa-check"></i><b>2.4</b> Como buscar base de dados abertas</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="cap2.html"><a href="cap2.html#cap2.4.1"><i class="fa fa-check"></i><b>2.4.1</b> Dados abertos governamentais</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="cap2.html"><a href="cap2.html#cap2.5"><i class="fa fa-check"></i><b>2.5</b> Concluindo…</a></li>
+<li class="chapter" data-level="2.6" data-path="cap2.html"><a href="cap2.html#cap2.6"><i class="fa fa-check"></i><b>2.6</b> Você sabia? Dados, Anedotas e Fake News</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="cap3.html"><a href="cap3.html"><i class="fa fa-check"></i><b>3</b> Vizualização e Ciência de Dados</a><ul>
+<li class="chapter" data-level="3.1" data-path="cap3.html"><a href="cap3.html#objeto-estudo"><i class="fa fa-check"></i><b>3.1</b> Objeto de estudo</a></li>
+<li class="chapter" data-level="3.2" data-path="cap3.html"><a href="cap3.html#gbarras"><i class="fa fa-check"></i><b>3.2</b> Gráfico de barra</a></li>
+<li class="chapter" data-level="3.3" data-path="cap3.html"><a href="cap3.html#gtend"><i class="fa fa-check"></i><b>3.3</b> Gráfico de tendências</a></li>
+<li class="chapter" data-level="3.4" data-path="cap3.html"><a href="cap3.html#gset"><i class="fa fa-check"></i><b>3.4</b> Gráfico de setores</a></li>
+<li class="chapter" data-level="3.5" data-path="cap3.html"><a href="cap3.html#gdisp"><i class="fa fa-check"></i><b>3.5</b> Gráfico de dispersão</a></li>
+<li class="chapter" data-level="3.6" data-path="cap3.html"><a href="cap3.html#ghist"><i class="fa fa-check"></i><b>3.6</b> Histograma</a></li>
+<li class="chapter" data-level="3.7" data-path="cap3.html"><a href="cap3.html#conc"><i class="fa fa-check"></i><b>3.7</b> Concluindo …</a></li>
+<li class="chapter" data-level="3.8" data-path="cap3.html"><a href="cap3.html#indo-além"><i class="fa fa-check"></i><b>3.8</b> Indo Além</a></li>
+<li class="chapter" data-level="3.9" data-path="cap3.html"><a href="cap3.html#citações-no-capítulo"><i class="fa fa-check"></i><b>3.9</b> Citações no capítulo</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="cap4.html"><a href="cap4.html"><i class="fa fa-check"></i><b>4</b> Correlação e Causalidade</a><ul>
+<li class="chapter" data-level="4.1" data-path="cap4.html"><a href="cap4.html#cap4.1"><i class="fa fa-check"></i><b>4.1</b> O que é correlação?</a></li>
+<li class="chapter" data-level="4.2" data-path="cap4.html"><a href="cap4.html#cap4.2"><i class="fa fa-check"></i><b>4.2</b> Quão forte é a correlação?</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="cap4.html"><a href="cap4.html#cap4.2.1"><i class="fa fa-check"></i><b>4.2.1</b> Coeficiente de Pearson</a></li>
+<li class="chapter" data-level="4.2.2" data-path="cap4.html"><a href="cap4.html#cap4.2.2"><i class="fa fa-check"></i><b>4.2.2</b> Coeficiente de Spearman</a></li>
+<li class="chapter" data-level="4.2.3" data-path="cap4.html"><a href="cap4.html#cap4.2.3"><i class="fa fa-check"></i><b>4.2.3</b> Multicolinearidade</a></li>
+<li class="chapter" data-level="4.2.4" data-path="cap4.html"><a href="cap4.html#cap4.2.4"><i class="fa fa-check"></i><b>4.2.4</b> Considerações sobre a análise</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="cap4.html"><a href="cap4.html#cap4.3"><i class="fa fa-check"></i><b>4.3</b> Relações de causa e efeito: conhecendo a causalidade</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="cap4.html"><a href="cap4.html#cap4.3.1"><i class="fa fa-check"></i><b>4.3.1</b> Coincidência ou Causalidade?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="cap4.html"><a href="cap4.html#cap4.4"><i class="fa fa-check"></i><b>4.4</b> Correlações expúrias</a></li>
+<li class="chapter" data-level="4.5" data-path="cap4.html"><a href="cap4.html#cap4.5"><i class="fa fa-check"></i><b>4.5</b> Considerações Finais</a></li>
+<li class="chapter" data-level="4.6" data-path="cap4.html"><a href="cap4.html#cap4.6"><i class="fa fa-check"></i><b>4.6</b> Indo além</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="cap5.html"><a href="cap5.html"><i class="fa fa-check"></i><b>5</b> Indicadores Básicos na Ciência de Dados</a><ul>
+<li class="chapter" data-level="5.1" data-path="cap5.html"><a href="cap5.html#objeto-de-estudo"><i class="fa fa-check"></i><b>5.1</b> Objeto de estudo</a></li>
+<li class="chapter" data-level="5.2" data-path="cap5.html"><a href="cap5.html#medidas-de-tendência-central"><i class="fa fa-check"></i><b>5.2</b> Medidas de tendência central</a></li>
+<li class="chapter" data-level="5.3" data-path="cap5.html"><a href="cap5.html#medidas-de-dispersão"><i class="fa fa-check"></i><b>5.3</b> Medidas de dispersão</a></li>
+<li class="chapter" data-level="5.4" data-path="cap5.html"><a href="cap5.html#diagramas-de-caixa"><i class="fa fa-check"></i><b>5.4</b> Diagramas de Caixa</a></li>
+<li class="chapter" data-level="5.5" data-path="cap5.html"><a href="cap5.html#concluindo"><i class="fa fa-check"></i><b>5.5</b> Concluindo …</a></li>
+<li class="chapter" data-level="5.6" data-path="cap3.html"><a href="cap3.html#indo-além"><i class="fa fa-check"></i><b>5.6</b> Indo Além</a></li>
+<li class="chapter" data-level="5.7" data-path="cap3.html"><a href="cap3.html#citações-no-capítulo"><i class="fa fa-check"></i><b>5.7</b> Citações no capítulo</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="cap6.html"><a href="cap6.html"><i class="fa fa-check"></i><b>6</b> Coletando Dados para Pesquisas</a><ul>
+<li class="chapter" data-level="6.1" data-path="cap6.html"><a href="cap6.html#cap6.1"><i class="fa fa-check"></i><b>6.1</b> Como é realizado a coleta de dados</a></li>
+<li class="chapter" data-level="6.2" data-path="cap6.html"><a href="cap6.html#cap6.2"><i class="fa fa-check"></i><b>6.2</b> Amostragem</a></li>
+<li class="chapter" data-level="6.3" data-path="cap6.html"><a href="cap6.html#cap6.3"><i class="fa fa-check"></i><b>6.3</b> Viés Amostral</a></li>
+<li class="chapter" data-level="6.4" data-path="cap6.html"><a href="cap6.html#cap6.4"><i class="fa fa-check"></i><b>6.4</b> Ética na Construção de Bancos de Dados</a></li>
+<li class="chapter" data-level="6.5" data-path="cap6.html"><a href="cap6.html#cap6.5"><i class="fa fa-check"></i><b>6.5</b> Você Sabia? Pesquisa Eleitoral</a></li>
+<li class="chapter" data-level="6.6" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i><b>6.6</b> Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="cap7.html"><a href="cap7.html"><i class="fa fa-check"></i><b>7</b> Distribuições, Probabilidade e Possibilidade</a></li>
+<li class="chapter" data-level="8" data-path="cap8.html"><a href="cap8.html"><i class="fa fa-check"></i><b>8</b> Entendendo e Avaliando sua Hipóteses</a><ul>
+<li class="chapter" data-level="8.1" data-path="cap8.html"><a href="cap8.html#cap8.1"><i class="fa fa-check"></i><b>8.1</b> O que é “Teste de Hipóteses”?</a></li>
+<li class="chapter" data-level="8.2" data-path="cap8.html"><a href="cap8.html#cap8.2"><i class="fa fa-check"></i><b>8.2</b> Hipóteses estatísticas</a></li>
+<li class="chapter" data-level="8.3" data-path="cap8.html"><a href="cap8.html#cap8.3"><i class="fa fa-check"></i><b>8.3</b> p-valor</a></li>
+<li class="chapter" data-level="8.4" data-path="cap8.html"><a href="cap8.html#cap8.4"><i class="fa fa-check"></i><b>8.4</b> Verificando a normalidade</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="cap8.html"><a href="cap8.html#cap8.4.1"><i class="fa fa-check"></i><b>8.4.1</b> Gráficos de normalidade: Histograma e Q-Q Plot</a></li>
+<li class="chapter" data-level="8.4.2" data-path="cap8.html"><a href="cap8.html#cap8.4.2"><i class="fa fa-check"></i><b>8.4.2</b> Testes de normalidade</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="cap8.html"><a href="cap8.html#cap8.5"><i class="fa fa-check"></i><b>8.5</b> Uma breve contextualização!</a></li>
+<li class="chapter" data-level="8.6" data-path="cap8.html"><a href="cap8.html#cap8.6"><i class="fa fa-check"></i><b>8.6</b> Concluindo…</a></li>
+<li class="chapter" data-level="8.7" data-path="cap8.html"><a href="cap8.html#cap8.7"><i class="fa fa-check"></i><b>8.7</b> Indo além</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="cap9.html"><a href="cap9.html"><i class="fa fa-check"></i><b>9</b> Classificação</a></li>
+<li class="chapter" data-level="10" data-path="cap10.html"><a href="cap10.html"><i class="fa fa-check"></i><b>10</b> Regressão</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Uma introdução gentil à Ciência de Dados</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="cap3" class="section level1">
+<h1><span class="header-section-number">Capítulo 3</span> Vizualização e Ciência de Dados</h1>
+<p>O capítulo <a href="cap2.html#cap2">2</a> apresenta a tabela como uma forma poderosa para estruturar e visualizar informações. No entanto, quando trabalhamos com enormes tabelas com uma imensa quantidade de linhas e colunas se torna difícil interpretar suas informações, não importa o quão organizadas elas estejam. Às vezes, é muito mais fácil interpretar essas informações através dos gráficos, conteúdo que será explorado no decorrer deste capítulo.</p>
+<p>A construção e visualização gráfica é de extrema importância na área de ciência de dados, pois é a partir de um bom gráfico que podemos extrair ideias, hipóteses e um melhor entendimento a respeito de um tema ou uma pergunta. A importância desse tipo de análise pode ser expressa por um ditado popular bastante conhecido: “Uma imagem vale mais que mil palavras”.</p>
+<div id="objeto-estudo" class="section level2">
+<h2><span class="header-section-number">3.1</span> Objeto de estudo</h2>
+<p>Para compreender a importância da análise gráfica e como utiliza-la corretamente, iremos buscar entender o perfil dos estudantes de Salvador que realizaram a prova do Exame Nacional do Ensino Médio (ENEM) no período de 2015 até 2019. Porém, antes de qualquer coisa: O que é um <strong>Perfil</strong>? Esse termo é muito usado na ciência de dados para <strong>descrever um determinado processo ou objeto de estudo através de padrões e características que o representam</strong>. Para este caso em específico, vamos analisar os estudantes da cidade de Salvador utilizando os microdados do ENEM, publicados pelo Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP), disponível ao público através deste <a href="http://inep.gov.br/microdados">link de acesso</a><sup>1</sup>.</p>
+<p>Como o termo <strong>perfil</strong> pode ser bem vasto e diversas características podem ser extraídas do nosso objeto de estudo, é necessário concentrar essa análise em perguntas mais específicas para nortear o caminho. No decorrer deste capítulo, serão exploradas graficamente as seguintes questões:</p>
+<ul>
+<li><p>A quantidade de estudantes que realizaram o ENEM aumentou de 2015 para 2019 na capital baiana?</p></li>
+<li><p>Como é a distribuição de estudantes em Salvador por cor/raça? Conseguimos identificar algum padrão para esses valores?</p></li>
+<li><p>Na dita era da informação, onde tudo está conectado, como está o acesso dos estudantes a internet em suas residências? E a computadores pessoais?</p></li>
+<li><p>O tipo de escola (pública ou privada) pode influenciar nas notas dos estudantes neste exame?</p></li>
+</ul>
+<p>A compreensão desses dados é de suma importância para entender melhor o perfil dos estudantes de Salvador que possuem o ENEM como uma oportunidade de acesso, as vezes única, ao ensino superior no Brasil. No geral, diversos setores da sociedade conseguem se beneficiar destes questionamentos: Estudantes podem buscar compreender se o tipo de escola onde estudam possui algum impacto em suas notas, enquanto gestores de políticas públicas como diretores e coordenadores podem buscar compreender as três primeiras questões para compreender melhor o panorama educacional da cidade de Salvador e assim gerar embasamento para decisões importantes no aperfeiçoamento do ensino no geral.</p>
+</div>
+<div id="gbarras" class="section level2">
+<h2><span class="header-section-number">3.2</span> Gráfico de barra</h2>
+<p>O <strong>Gráfico de barras</strong> é uma forma bastante comum e versátil de visualização na área de ciência de dados. Ele pode ser utilizado tanto com variáveis categóricas quanto numéricas para expressar grandezas. A Figura abaixo apresenta uma de suas utilizações: demonstrar grandezas numéricas.</p>
+<div class="figure" style="text-align: center"><span id="fig:f31"></span>
+<img src="fig_cap3/fig1_cap3.png" alt="Número de inscritos no ENEM na capital baiana" width="100%" />
+<p class="caption">
+Figura 3.1: Número de inscritos no ENEM na capital baiana
+</p>
+</div>
+<p>Na Figura <a href="cap3.html#fig:f31">3.1</a> é apresentada a quantidade de inscritos, uma grandeza numérica, que realizaram o ENEM de 2015 até 2019 na capital baiana. É possível notar uma queda na participação dentre os períodos de 2016 até 2019. Apesar de simples e direto, a análise desse mesmo resultado através de uma tabela pode se mostrar confusa.</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:t31">Tabela 3.1: </span>Número total de inscritos no ENEM em Salvador de 2015 até 2019
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Ano
+</th>
+<th style="text-align:right;">
+Número total de inscritos em Salvador
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+2015
+</td>
+<td style="text-align:right;">
+159835
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2016
+</td>
+<td style="text-align:right;">
+175873
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2017
+</td>
+<td style="text-align:right;">
+121063
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:right;">
+93852
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:right;">
+88557
+</td>
+</tr>
+</tbody>
+</table>
+<p>A Tabela <a href="cap3.html#tab:t31">3.1</a> mostra os mesmos dados apresentados na Figura <a href="cap3.html#fig:f31">3.1</a>. Note que nenhuma informação visual é passada para destacar os anos com mais ou menos participantes. Além disso, fica muito mais visível através da visualização gráfica aqueda de inscrições no ENEM de 2016 até 2019. O gráfico de barras apresenta uma característica muito importante relacionado ao tamanho das barras: elas crescem proporcionalmente de acordo as grandezas que elas se referem, ou seja, quanto maior o valor maior será sua barra. Comumente essas barras apresentam a mesma largura neste tipo de gráfico.</p>
+<p>É através da Figura <a href="cap3.html#fig:f31">3.1</a> que podemos responder a primeira pergunta:“<strong>A quantidade de estudantes que realizaram o ENEM aumentou de 2015 para 2019 na capital baiana?</strong>” E a resposta é não. Apesar do número de estudantes crescer de 2015 para 2016, observa-se uma queda do número de inscritos no ENEM de Salvador, chegando a diminuir pela metade este número de 2016 para 2019.</p>
+<p>Essa resposta pode levar a novos questionamentos, por exemplo, “O que realmente motivou essa queda?”. Infelizmente encontrar a resposta para este questionamento não é trivial, requer pesquisas mais específicas a cerca do tema, o que foge do escopo deste capítulo. Todavia, é interessante refletir como a partir de um simples gráfico, podemos alcançar perguntas ainda mais complexas.</p>
+<p>Agora que respondemos a primeira questão, podemos perceber que a pergunta “<strong>Como é a distribuição de estudantes em Salvador por cor/raça? Conseguimos identificar algum padrão para esses valores?</strong>” está bastante relacionada ao seu resultado.
+Inicialmente para entender essa relação, precisamos entender o que seria essa distribuição de raças no questionário no ENEM. Trata-se de uma pergunta que busca entender como o estudante se classifica em relação a sua cor. Essa pergunta possui 7 respostas padrões:</p>
+<ul>
+<li><p>Não declarado</p></li>
+<li><p>Pardo</p></li>
+<li><p>Preta</p></li>
+<li><p>Branco</p></li>
+<li><p>Amarelo</p></li>
+<li><p>Indígena</p></li>
+<li><p>Opção de não apresentar tal informação</p></li>
+</ul>
+<p>Como foi explicado no Capítulo <a href="cap2.html#cap2">2</a>, esse questionamento pode ser definido como uma variável categórica dada a quantidade finita de opções apresentadas. Esta pergunta está bastante relacionada com a primeira questão, pois a quantidade total de estudantes inscritos na prova pode alterar essa distribuição, aumentando ou diminuindo a depender das categorias.</p>
+<p>Como tivemos uma diferença tão grande entre o número de inscritos em 2016 e 2019 demonstrado na Figura <a href="cap3.html#fig:f31">3.1</a>, uma análise mais aprofundada nesses dois anos podem trazer resultados interessantes para responder nosso segundo questionamento:</p>
+<div class="figure" style="text-align: center"><span id="fig:f32"></span>
+<img src="fig_cap3/fig2_cap3.png" alt="Distinção de estudantes inscritos por cor/raça da cidade de Salvador para os anos de 2016 e 2019" width="100%" />
+<p class="caption">
+Figura 3.2: Distinção de estudantes inscritos por cor/raça da cidade de Salvador para os anos de 2016 e 2019
+</p>
+</div>
+<p>Através da Figura <a href="cap3.html#fig:f32">3.2</a>, são apresentados os valores absolutos da quantidade de estudantes que realizaram o ENEM em cada ano identificados pela sua raça. Note que a grande queda encontrada na Figura <a href="cap3.html#fig:f31">3.1</a> se reflete neste gráfico também: Em comparação a 2016, todas as categorias apresentaram valores menores. Por exemplo, a quantidade pessoas pardas que realizaram o ENEM caiu quase pela metade, assim como as pessoas auto-declaradas como preta. Além disso, podemos notar uma baixíssima quantidade de pessoas indígenas/amarelas que realizaram este exame e que em sua grande maioria, os estudantes da capital baiana se declaram como pardos e negros.</p>
+<p>Essa situação já era esperada e reflete uma realidade já conhecida: Segundo o Instituto Brasileiro de Estatística e Geografia (IBGE), em uma <a href="https://www.acordacidade.com.br/noticias/203087/ibge-ba-salvador-a-capital-mais-negra-do-brasil-e-com-a-maior-desigualdade-salarial-entre-brancos-e-pretos.html?mobile=true">pesquisa realizada em 2017</a><sup>2</sup>, Salvador é considerada a capital mais preta do brasil, onde 8 em cada 10 moradores se autodeclaravam de cor preta ou parda.</p>
+<p>Note que a Figura <a href="cap3.html#fig:f32">3.2</a> demonstra também a principal função do gráfico de barras: dimensionar variáveis categóricas de acordo a frequência de suas categorias. <strong>Frequência</strong> para uma variável categórica pode ser definida como a quantidade de vezes que ela é representada, podendo ser dividida em dois tipos: absoluta e relativa.</p>
+<p>A frequência absoluta se trata da representação da quantidade de vezes que cada categoria ocorre. Este tipo de frequência é trabalhada na Figura <a href="cap3.html#fig:f32">3.2</a>, onde apresentamos a quantidade de estudantes por cor/raça que realizaram o ENEM nos anos de 2016 e 2019. Ainda na Figura <a href="cap3.html#fig:f32">3.2</a>, conseguimos notar que todas as categorias apresentaram uma queda na quantidade de estudantes que realizaram em 2016 para 2019, mas e se quisermos comparar este valores ainda utilizando um gráfico de barras, seria possível?</p>
+<p>Uma boa forma para comparar essas frequências absolutas distintas seria através do segundo tipo de frequência apresentada anteriormente: a frequência relativa.</p>
+<p>A frequência relativa é definida como uma proporção entre o valor que você quer estimar e o valor máximo esperado. Podemos formular este conceito da seguinte forma:
+<span class="math display">\[Frequência\ Relativa\ (\%) = 100*\frac{\text{Valor para comparar}}{\text{Valor máximo}}\]</span></p>
+<p>Note que não foi mencionado o valor <span class="math inline">\(100\)</span> presente na fórmula. Ele é apresentado para tornar o resultado da frequência relativa em porcentagem. Para compreender melhor este conceito apresentado, vamos continuar respondendo a segunda questão utilizando agora este novo aprendizado:</p>
+<div class="figure" style="text-align: center"><span id="fig:f33"></span>
+<img src="fig_cap3/fig3_cap3.png" alt="Comparação entre os estudantes inscritos de Salvador por cor/raça para 2016 e 2019" width="100%" />
+<p class="caption">
+Figura 3.3: Comparação entre os estudantes inscritos de Salvador por cor/raça para 2016 e 2019
+</p>
+</div>
+<p>A Figura <a href="cap3.html#fig:f33">3.3</a> pode ser vista como uma extensão da Figura <a href="cap3.html#fig:f32">3.2</a>, utilizando a frequência relativa para apresentar uma informação implícita: a proporção dos estudantes que fizeram o ENEM em 2019 em comparação a quantidade de estudantes que realizaram em 2016. Transcrevendo a fórmula da frequência relativa apresentada anteriormente, temos:
+<span class="math display">\[Frequência\ Relativa\ (\%) = 100*\frac{\text{estudantes que realizaram o ENEM em 2019}}{\text{estudantes que realizaram o ENEM em 2016}}\]</span></p>
+<p>Como nos é apresentada uma proporção, podemos ler o gráfico de barras apresentado na Figura <a href="cap3.html#fig:f33">3.3</a> como sendo <strong>a quantidade de estudantes que fizeram a prova em 2019 em relação a quantidade que realizou a prova em 2016</strong>.</p>
+<p>Podemos identificar, por exemplo, que com exceção dos estudantes auto-declarados de cor branca todas as outras raças apresentaram uma proporção de aproximadamente 50%, ou seja, o número de estudantes pardos, pretos, amarelos, indígenas e não declarados caíram pela metade em comparação ao ano de 2016. Esta informação confirma ainda mais o resultado apresentado na Figura <a href="cap3.html#fig:f31">3.1</a>, mostrando que ocorreu uma grande queda na quantidade de inscrições no geral, porém isso é verificado com maior intensidade entre estudantes não declarados de cor branca na capital baiana.</p>
+<p>Através da análise do gráfico de barras conseguimos avaliar dois questionamentos de uma só vez! Porém para analisar como esses resultados ocorreram de 2016 até 2019 ao invés de dois anos separados, qual seria o melhor tipo de gráfico? Iremos explora-lo na próxima seção deste capítulo.</p>
+</div>
+<div id="gtend" class="section level2">
+<h2><span class="header-section-number">3.3</span> Gráfico de tendências</h2>
+<p>Para responder com mais detalhes os dois questionamentos iniciais trazidos na seção anterior:</p>
+<ul>
+<li><p>A quantidade de estudantes que realizaram o ENEM aumentou de 2015 para 2019 na capital baiana?</p></li>
+<li><p>Como é a distribuição de estudantes em Salvador por cor/raça? Conseguimos identificar algum padrão para esses valores?</p></li>
+</ul>
+<p>Vamos usar o <strong>gráfico de tendências</strong>. Este tipo de gráfico trata a visualização de uma coleção de observações realizadas ao longo do tempo para acompanhar um evento ou processo. Por se tratar de uma coleta sequencial, ou seja, feita uma após a outra torna o fator de ordem é fundamental: importa saber se determinada observação ocorreu antes ou depois de determinado evento.</p>
+<p>Este conceito será importante para expandir as análises realizadas apenas com os anos de 2016 e 2019 para a participação dos estudantes de Salvador por cor e raça apresentadas atráves dos gráficos de barras na seção <a href="cap3.html#gbarras">3.2</a>. Será através deste tipo de gráfico que podemos avaliar como essa quantidade de inscrições se comportou (aumentou ou diminuiu) de 2015 até 2019 por raça, acompanhando sua tendência.</p>
+<p>Note que realizamos este mesmo conceito no início da seção <a href="cap3.html#gbarras">3.2</a> demonstrando o número absoluto de inscrições no ENEM na capital baiana de 2015 até 2019, porém quando vamos avaliar vários anos e possibilidades de raça/cor a utilização do gráficos de barras não demonstra ser a melhor opção, pois a visualização se torna muito carregada (cheio de elementos na tela).</p>
+<p>Antes de mergulhar na análise desses dois questionamentos utilizando o gráfico de tendências é importante explorar mais um conceito novo: o plano cartesiano.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig34"></span>
+<img src="fig_cap3/fig4_cap3.png" alt="Plano cartesiano simplificado" width="100%" />
+<p class="caption">
+Figura 3.4: Plano cartesiano simplificado
+</p>
+</div>
+<p>A Figura <a href="cap3.html#fig:fig34">3.4</a> apresenta um plano cartesiano simplificado. São definidos dois eixos principais sendo eles o eixo horizontal e o eixo vertical. Cada eixo pode demonstrar o comportamento de uma variável desejada: Para o eixo horizontal, ao aumentarmos o valor se move para a direita e ao diminuir o valor se move para a esquerda, já para o eixo vertical, ao aumentarmos o valor se move para cima e ao diminuir para baixo. Ter esse conceito em mente será importante para as análises futuras.</p>
+<div class="figure" style="text-align: center"><span id="fig:f35"></span>
+<img src="fig_cap3/fig5_cap3.png" alt="Quantidade de estudantes inscritos no ENEM na capital baiana" width="100%" />
+<p class="caption">
+Figura 3.5: Quantidade de estudantes inscritos no ENEM na capital baiana
+</p>
+</div>
+<p>O gráfico apresentado na Figura <a href="cap3.html#fig:f35">3.5</a> fortalece ainda mais a resposta trazida para o primeiro questionamento: o número de estudantes que realizaram este exame não vem aumentando nos últimos cinco anos. É observada uma queda acentuada de 2016 para 2019. Porém através da análise dessa tendência, vemos que a maior queda ocorre de 2016 para 2017 com uma diminuição de mais de 50 mil inscrições. Esse gráfico mostra que a tendência de queda no ENEM não ocorreu de forma abrupta de 2016 para 2019, mas de forma gradual já que a partir de 2016, os valores apenas diminuiram com 2019 sendo o menor deles.</p>
+<p>Ainda neste gráfico, podemos extrair um conceito bem interessante referente a esta modalidade de visualização: o pico. O pico pode ser definido como o maior valor identificado em um determinado período. No nosso caso, o pico de inscrições no ENEM em Salvador ocorreu em 2016, pois é o maior valor verificado dentro deste intervalo de cinco anos.</p>
+<div class="figure" style="text-align: center"><span id="fig:f36"></span>
+<img src="fig_cap3/fig6_cap3.png" alt="Tendência da quantidade de estudantes inscritos no ENEM por cor de 2015 até 2019" width="100%" />
+<p class="caption">
+Figura 3.6: Tendência da quantidade de estudantes inscritos no ENEM por cor de 2015 até 2019
+</p>
+</div>
+<p>A Figura <a href="cap3.html#fig:f36">3.6</a> é endereçada ao segundo questionamento. Podemos notar que a tendência das duas primeiras curvas, referente as cores parda e preta dos estudantes de Salvador, seguem um padrão similar ao que foi apresentado na Figura <a href="cap3.html#fig:f35">3.5</a>: Ocorre um pico em 2016 e a partir desse ano os valores decaem gradualmente. Porém este padrão fica bem claro para essas duas primeiras curvas, enquanto as outras se mostram aparentemente retilíneas, ou seja, não demonstram grande mudanças. Essa situação requer cuidados, pois podemos acreditar que para as outras opções não ocorreram nenhuma mudança ao decorrer do tempo. Essa divergência está relacionado a grandeza de cada curva: Valores maiores acabam esticando o gráfico, tornando valores pequenos menos representativos.</p>
+<p>Para visualizar melhor e trazer uma melhor discussão a respeito do segundo questiomento, cada curva foi separada de acordo a raça que ela representa:</p>
+<div class="figure" style="text-align: center"><span id="fig:f37"></span>
+<img src="fig_cap3/fig7_cap3.png" alt="Tendência da quantidade de estudantes inscritos no ENEM particionado por cor de 2015 até 2019" width="80%" />
+<p class="caption">
+Figura 3.7: Tendência da quantidade de estudantes inscritos no ENEM particionado por cor de 2015 até 2019
+</p>
+</div>
+<p>Na Figura <a href="cap3.html#fig:f37">3.7</a> conseguimos notar a diferença de grandezas que foi mencionado anteriormente ao visualizar o eixo vertical (frequência absoluta de estudantes): para a cor parda, por exemplo, é possível enxergar valores próximos de setenta e cinco mil estudantes enquanto para a cor amarela os valores ficam próximos de três mil estudantes mostrando assim uma grande disparidade. Ao separar os gráficos, cada um consegue ter sua própria escala, diferente da Figura <a href="cap3.html#fig:f36">3.6</a> onde todos compartilhavam o mesmo eixo.</p>
+<p>Respondendo ao segundo questionamento, verifica-se que as raças parda, preta, amarela e as pessoas não declaradas seguem o padrão verificado dos estudantes inscritos em Salvador exposto na Figura <a href="cap3.html#fig:f35">3.5</a>: ocorre um pico em 2016, e a partir desse período os numéros de inscrições apenas caem. Todavía, para as pessoas de cor branca e indígena o padrão se mantém, porém difere em 2019 onde ocorre um leve aumento em comparação ao ano anterior. Esse aumento no entanto é bem diferente ao considerar a ordem de grandeza entre as raças: enquanto para cor branca esse valor aumenta em torno de doze mil estudantes, para os indígenas eles aumentam em torno de 400 estudantes, ou seja, por mais que ambas as inscrições tenham aumentado, o número de inscritos de cor branca é aproximadamente 30 vezes maior que o número de inscritos indígenas.</p>
+<p>Através dessa análise gráfica conseguimos compreender e acompanhar como o número de inscritos no ENEM em Salvador veio se alterando nos últimos anos. Essa análise poderia ser utilizada para justificar tomadas de decisão na área da educação, buscando avaliar formas de aumentar a aderência dos estudantes para se inscrever no ENEM, através de programas sociais de fomento a educação. Além disso, é importante ressaltar a importância deste exame para conseguir ingressar nas faculdades ou universidades da cidade ou país, onde em Salvador infelizmente é mostrado uma tendência de saída dos estudantes nesse exame, principalmente aqueles de cor/raça negra e parda. Essa situação apresenta ainda mais a importância de integrar esses indíviduos para compreender a causa/motivo dessa evasão na capital baiana.</p>
+</div>
+<div id="gset" class="section level2">
+<h2><span class="header-section-number">3.4</span> Gráfico de setores</h2>
+<p>Nas seções anteriores, conseguimos entender melhor o panorama dos estudantes de Salvador inscritos no ENEM nos últimos anos e como seus valores foram sendo alterados de acordo a quantidade e raça. Agora iremos avaliar o terceiro questionamento proposto no estudo de perfil: “<strong>Na dita era da informação, onde tudo está conectado, como está o acesso dos estudantes a internet em suas residências? E a computadores pessoais?</strong>”. Essa pergunta é importante, pois acredita-se que hoje tudo está conectado e que o acesso a essas ferramentas, facilitadoras do aprendizado, é algo comum a todos, mas … será? É possível que todos os estudantes do ENEM possuam fácil acesso as essas ferramentas no dias atuais? Iremos buscar responder este questionamento no decorrer deste capítulo.</p>
+<p>Para isso será apresentado uma nova modalidade gráfica: o <strong>gráfico de setores</strong>. Este gráfico, usado comumente com variáveis categóricas, apresenta sua forma mais comum equivalente ao desenho de uma “pizza”, onde cada fatia é referente a uma determinada categoria e seu tamanho é proporcional a sua representatividade. Para responder o primeiro questionamento, relacionado ao acesso da internet, vamos verificar um cenário mais atual e um cenário mais antigo, sendo respectivamente 2019 e 2015. Será que ocorreu melhorias no acesso à internet pelos estudantes do ENEM em Salvador?</p>
+<div class="figure" style="text-align: center"><span id="fig:f38"></span>
+<img src="fig_cap3/fig8_cap3.png" alt="Porcentagem de estudantes inscritos no ENEM em Salvador com acesso a internet em 2015 e 2019" width="100%" />
+<p class="caption">
+Figura 3.8: Porcentagem de estudantes inscritos no ENEM em Salvador com acesso a internet em 2015 e 2019
+</p>
+</div>
+<p>Na Figura <a href="cap3.html#fig:f38">3.8</a> é apresentada a frequência relativa dos estudantes com e sem acesso a internet de acordo ao total de estudantes soteropolitanos inscritos naquele ano. O uso da frequência relativa neste caso permite uma melhor comparação entre os anos e os resultados foram positivos: Em 2015 tinhamos 72,6% estudantes com acesso a internet e esse valor aumentou para 84,7% em 2019, mostrando uma melhora de 12,1%! Essa melhora é mostrada visualmente atráves do tamanho da fatia referente a resposta “Sim” de 2015 para 2019. Este resultado pode estar associado a diversos fatores como mais acessibilidade a esta ferramenta como a redução de custos, aperfeiçoamento dos projetos sociais de inclusão digital e etc. Deixamos a cargo do leitor buscar compreender os motivos que levaram a melhora nestes resultados.</p>
+<p>Note que neste tipo de gráfico, ao utilizar frequência relativa, é necessário que a soma dos valores em todos os setores seja igual a 100%, isso não ocorre para o ano de 2015 devido a aproximação decimal utilizada de uma casa decimal.</p>
+<p>Conseguimos encontrar parte da resposta do terceiro questionamento: “<strong>Na dita era da informação, onde tudo está conectado, como está o acesso dos estudantes a internet em suas residências?</strong>” E a resposta é que o acesso dos estudantes inscritos no ENEM à internet melhorou de 2015 para 2019, mas e o acesso a computadores pessoais em suas residências? Vamos utilizar novamente os anos de 2015 e 2019 para continuar esta pergunta:</p>
+<div class="figure" style="text-align: center"><span id="fig:f39"></span>
+<img src="fig_cap3/fig9_cap3.png" alt="Porcentagem de estudantes inscritos no ENEM em Salvador com acesso a computadores pessoais em 2015 e 2019" width="100%" />
+<p class="caption">
+Figura 3.9: Porcentagem de estudantes inscritos no ENEM em Salvador com acesso a computadores pessoais em 2015 e 2019
+</p>
+</div>
+<p>Na Figura <a href="cap3.html#fig:f39">3.9</a> podemos verificar que o questionário do ENEM em relação a esta pergunta possui 5 respostas representativas. Todavia, diferente do acesso a internet conseguimos avaliar que a fatia referente aos estudantes que possuem pelo menos um computador pessoal diminuiu de 61,5% em 2015 para 46,1% em 2019 enquanto o número de estudantes que não possuiam nenhum computador pessoal em sua residência aumentou de 28,1% em 2015 para 43,6% em 2019. A diferença entre essas duas proporções são semelhantes: enquanto uma fatia caiu 15,4% a outra aumentou 15,5% respectivamente. Esse resultado, associado ao encontrado na Figura <a href="cap3.html#fig:f38">3.8</a> pode indicar que o acesso a internet realizado pelos estudantes podem surgir de outra fonte: o telefone celular, visto a queda considerável no acesso a computadores pessoais durante o mesmo período.</p>
+<p>Ainda na Figura <a href="cap3.html#fig:f39">3.9</a>, podemos avaliar que algumas fatias, referentes a estudantes com mais de um computador pessoal, são menos representativas dado o seu tamanho. Essa situação indica um dos problemas ao utilizar este tipo de visualização: quando uma variável possui muitas categorias ou categorias com pouca representatividade pode dificultar a visualização das informações para o leitor. Em casos como esse uma das recomendações é a utilização dos gráficos de barras. Porém existem outras formas de melhorar essa visualização: Como vimos que as categorias mais dominantes se referem aos estudantes sem ou com pelo menos um computador em casa, vamos juntar as categorias: “Sim, dois”, “Sim, três” e “Sim, quatro ou mais” em uma só categoria: “Sim, mais de um”. Será que isso pode melhorar a visualização do gráfico anterior?</p>
+<div class="figure" style="text-align: center"><span id="fig:f310"></span>
+<img src="fig_cap3/fig10_cap3.png" alt="Porcentagem de estudantes inscritos no ENEM em Salvador com acesso a computadores pessoais em 2015 e 2019" width="100%" />
+<p class="caption">
+Figura 3.10: Porcentagem de estudantes inscritos no ENEM em Salvador com acesso a computadores pessoais em 2015 e 2019
+</p>
+</div>
+<p>Na Figura <a href="cap3.html#fig:f310">3.10</a> é apresentado o resultado desta alteração. A confecção dessa nova categoria permitiu encontrar uma informação implícita no gráfico anterior: a proporção de estudantes com mais de um computador pessoal em casa se manteve praticamente constante de 2015 para 2019. Isso fortalece ainda mais a narrativa de uma queda na proporção de pessoas com pelo menos um computador pessoal em casa para a proporção de pessoas sem computador pessoal. Esse tipo de informação pode ser utilizada em programas sociais ou intervenções para reverter este quadro e entender quem são as pessoas que sofrem deste tipo de necessidade digital.</p>
+<p>Neste momento o leitor pode estar se questionando: Seria possível unir os dois resultados avaliados para este questionamento, acesso à internet e computador pessoal, em um só gráfico? Abaixo é mostrado que sim, podemos.</p>
+<div class="figure" style="text-align: center"><span id="fig:f311"></span>
+<img src="fig_cap3/fig11_cap3.png" alt="Porcentagem de estudantes inscritos no ENEM em Salvador sem acesso à internet em relação ao acesso a computadores pessoais em 2015 e 2019" width="100%" />
+<p class="caption">
+Figura 3.11: Porcentagem de estudantes inscritos no ENEM em Salvador sem acesso à internet em relação ao acesso a computadores pessoais em 2015 e 2019
+</p>
+</div>
+<p>Na Figura <a href="cap3.html#fig:f311">3.11</a> são mostradas as proporções de estudantes de Salvador que não possuem acesso à internet em 2015 e 2019 em relação ao acesso de computador pessoal. Podemos extrair deste gráfico algumas informações:</p>
+<ul>
+<li>Pode existir alguma incongruência na construção dessa base de dados, pois existem estudantes com mais de um computador pessoal, porém sem acesso à internet o que pode gerar questionamentos. Essa situação pode apresentar diversos motivos e uma das hipóteses mais plausíveis seria algum erro do estudante ao responder este questionário.</li>
+<li>É possível verificar que a maioria dos estudantes sem acesso à internet também não possui computadores pessoais em casa. Esta proporção cresce de 78,8% em 2015 para 88,8% em 2019 seguido pela queda da proporção de estudantes que possui pelo menos um computador pessoal em casa.</li>
+</ul>
+<p>Essas informações podem indicar uma possível <strong>correlação</strong>, conceito que será estudado em capítulos futuros e de grande importância na área de ciência de dados.</p>
+<p>Assim é possível concluir o terceiro questionamento, que nessa era digital as situações melhoraram em partes: ocorreu um aumento, em termos proporcionais, de estudantes com acesso à internet, porém em contrapartida ocorreu um aumento de estudantes sem acesso a pelo menos um computador pessoal em suas residências o que pode dificultar sua navegação e uso desta ferramenta para o seu aprendizado.</p>
+</div>
+<div id="gdisp" class="section level2">
+<h2><span class="header-section-number">3.5</span> Gráfico de dispersão</h2>
+<p>Até o momento conseguimos observar os dados e refletir sobre três dos quatro questionamentos referente ao perfil dos estudantes de Salvador que realizaram o ENEM. Para responder o quarto questionamento: “<strong>O tipo de escola (pública ou privada) pode influenciar nas notas dos estudantes neste exame?</strong>” vamos utilizar uma nova ferramenta visual: o gráfico de dispersão. Para entender os motivos da escolha desta ferramenta precisamos antes apresentar seu conceito.</p>
+<p><strong>Gráficos de dispersão</strong> se tratam de representações usando duas ou mais variáveis através das coordenadas cartesianas para exibir valores de um conjunto de dados. Para ficar mais claro este conceito, vamos focar em responder o quarto questionamento utilizando as notas dos estudantes de Salvador no ano de 2019, considerando apenas aqueles que:</p>
+<ul>
+<li><p>Apresentaram uma pontuação maior que zero em todas as provas, com exceção no exame de Redação</p></li>
+<li><p>Definiram o tipo de colégio no ensino médio: público ou privado</p></li>
+</ul>
+<p>Essas condições foram colocadas para evitar valores atípicos nas análises, pois apenas pessoas ausentes no exame possuem suas notas zeradas (com exceção da nota em Redação) e para focar nossa nossa análise em estudantes de escolas públicas e privadas, desconsiderando aqueles que optaram por não informar o tipo de colégio. Além disso é importante mencionar que no ano de 2019, cerca de 75% dos estudantes de Salvador não responderam a questão referente ao tipo de colégio, logo as análises apresentadas aqui representam cerca de 25% dos estudantes inscritos no ENEM 2019 na capital baiana, ou seja, 15996 estudantes no total sendo 10760 de escola pública e 5236 de escola privada.</p>
+<p>Inicialmente, será mostrado um gráfico de dispersão para as provas da área de exatas: matemática e ciências naturais, mas não se assuste! O gráfico será explicado passo a passo.</p>
+<div class="figure" style="text-align: center"><span id="fig:f312"></span>
+<img src="fig_cap3/fig12_cap3.png" alt="Relação entre nota de Ciências Naturais e Matemática particionado pelo tipo de escola em 2019" width="100%" />
+<p class="caption">
+Figura 3.12: Relação entre nota de Ciências Naturais e Matemática particionado pelo tipo de escola em 2019
+</p>
+</div>
+<p>Na Figura <a href="cap3.html#fig:f312">3.12</a> são apresentadas as notas dos estudantes de Salvador em matemática no eixo vertical e no eixo horizontal as notas em ciências naturais, destacando em cores o tipo de colégio: azul escola pública e em amarelo escola privada totalizando assim três variáveis representadas em uma só imagem. Neste gráfico de dispersão são contemplados todos os estudantes que atenderam todos os requisitos expressos anteriormente, onde cada estudante é representado por um ponto de coordenada <span class="math inline">\((x,\ y)\)</span> ou se preferir <span class="math inline">\((nota\ em\ ciências\ naturais,\ nota\ em\ matemática)\)</span>. Como o ENEM funciona por pontuação, o aluno que apresentar as maiores pontuações em todas as provas possui maior vantagem na escolha de um curso superior, ou seja, os estudantes com melhor rendimento são aqueles que se aproximam do canto superior direito. Apesar desta modalidade gráfica ser bem simples, ela pode trazer resultados interessantes e intuitivos.</p>
+<p>Através da Figura <a href="cap3.html#fig:f312">3.12</a> podemos verificar que a maioria dos estudantes de escolas públicas se localizam no canto inferior esquerdo, ou seja, estudantes com notas menores em ambas as provas e a medida que crescemos em ambos os eixos, mais dominante se tornam os estudantes de escolas privadas, mostrando um maior rendimento.</p>
+<p>Além desta análise, no geral é possível verificar uma <strong>tendência</strong> crescente, onde ao aumentarmos a nota de matemática vemos que a maioria dos estudantes também aumentam a nota em ciências naturais. Compreender tendências deste tipo faz parte do dia a dia do cientista de dados, pois essas tendências são as mais comuns e intuitivas na natureza. Na Figura <a href="cap3.html#fig:f313">3.13</a> é apresentado dois padrões: em vermelho está uma tendência linear crescente e em azul uma tendência linear decrescente representadas em um plano cartesiano.</p>
+<div class="figure" style="text-align: center"><span id="fig:f313"></span>
+<img src="fig_cap3/fig13_cap3.png" alt="Tendências lineares em um plano cartesiano" width="100%" />
+<p class="caption">
+Figura 3.13: Tendências lineares em um plano cartesiano
+</p>
+</div>
+<p>É dito linear, pois seu comportamento lembra o formato de uma uma linha: mostra um padrão que está aumentando ou diminuindo a uma taxa constante (fixa).</p>
+<p>Os termos crescente e descrescente se referem a como os valores de um eixo se comportam em relação ao outro: na <strong>tendência linear crescente</strong>, ao aumentarmos o valor em um eixo é esperado aumentarmos também o valor no outro eixo, já na <strong>tendência linear decrescente</strong> ocorre o inverso: ao aumentarmos o valor em um dos eixos, é esperado que o valor no outro eixo decaia na mesma proporção.</p>
+<p>Na Figura <a href="cap3.html#fig:f312">3.12</a> conseguimos visualizar o padrão exposto pela reta linear vermelha, ou seja, ao crescermos as notas em matemática, esperamos que cresça as notas em ciências naturais.</p>
+<p>Através da Figura <a href="cap3.html#fig:f312">3.12</a> verificamos que, de certa forma, o tipo de escola que o estudante frequentou possui um fato impacto nas notas dos estudantes de Salvador, porém este padrão se repete caso seja avaliado outra prova?</p>
+<div class="figure" style="text-align: center"><span id="fig:f314"></span>
+<img src="fig_cap3/fig14_cap3.png" alt="Relação entre nota de Linguagens e Matemática particionado pelo tipo de escola em 2019" width="100%" />
+<p class="caption">
+Figura 3.14: Relação entre nota de Linguagens e Matemática particionado pelo tipo de escola em 2019
+</p>
+</div>
+<p>A Figura <a href="cap3.html#fig:f314">3.14</a> apresenta o gráfico de dispersão entre a nota em matemática (eixo vertical) e a nota em Linguagens (eixo horizontal) semelhante a Figura <a href="cap3.html#fig:f312">3.12</a> e o padrão se repete: no geral, os estudantes de escolas públicas apresentam um rendimento inferior aos estudantes de escolas privadas.</p>
+<p>Este conhecimento é importante para ressaltar a necessidade do aperfeiçoamento das escolas públicas no município e buscar formas de reverter ou equiparar este quadro que impacta de forma negativa padrões e classes sociais, dificultando o ingresso de estudantes de escolas públicas em cursos mais concorridos como Engenharia, Direito e Medicina.</p>
+</div>
+<div id="ghist" class="section level2">
+<h2><span class="header-section-number">3.6</span> Histograma</h2>
+<p>Para expandir ainda mais as discussões referentes ao quarto questionamento, vamos utilizar mais uma ferramenta gráfica de visualização: o histograma. Um histograma de um conjunto de dados numéricos se parece muito com um gráfico de barras apresentado anteriormente, embora tenha algumas diferenças importantes que examinaremos nesta seção.</p>
+<div class="figure" style="text-align: center"><span id="fig:f315"></span>
+<img src="fig_cap3/fig15_cap3.png" alt="Histograma com as notas de matemática dos estudantes de escolas públicas e privadas de Salvador em 2019 de 300 à 1000 pontos com resolução de 50 pontos" width="100%" />
+<p class="caption">
+Figura 3.15: Histograma com as notas de matemática dos estudantes de escolas públicas e privadas de Salvador em 2019 de 300 à 1000 pontos com resolução de 50 pontos
+</p>
+</div>
+<p>A Figura <a href="cap3.html#fig:f315">3.15</a> apresenta o histograma das notas dos estudantes de escolas públicas e privadas de Salvador em matemática no ano de 2019. No eixo horizontal está representado os valores numéricos das notas dos participantes agrupados em intervalos discretos. Fazendo um paralelo com o capítulo <a href="cap2.html#cap2">2</a>, o intervalo contínuo numérico estudado foi transformado para <strong>K</strong> valores categóricos/discretos. Este valor <strong>K</strong> pode ser definido pelo usuário de duas formas: um valor inteiro, onde o algoritmo irá particionar os números em <strong>K</strong> categorias de mesmo tamanho (largura), ou através de intervalos definidos pelo próprio usuário como foi feito na Figura <a href="cap3.html#fig:f315">3.15</a> onde foi são definidos limites de 50 em 50 pontos começando em 300 pontos até 1000 pontos. Você pode perceber isso ao contar a quantidade de “caixinhas” que existem no histograma. Já o eixo vertical representa a quantidade de valores que estão em cada categoria, ou seja, quanto mais valores são representados por aquela classe maior será a altura de sua barra. Caso você esteja atento, provavelmente notou uma semelhança com a frequência absoluta apresentada durante a seção do gráfico de barras.</p>
+<p>Antes de discutirmos o quarto questionamento, é importante entender que ao avaliar um histograma é preciso compreender que cada barra representa uma categoria que define um intervalo numérico limitado. Esse intervalo é na maioria das vezes apresentado da seguinte forma:
+<span class="math display">\[[limite\ inferior,\ limite\ superior)\]</span>
+Onde o <span class="math inline">\(limite\ inferior\)</span> representa o menor valor contido naquela categoria e <span class="math inline">\(limite\ superior\)</span> o maior valor daquela categoria. Porém, na matemática os sinais <span class="math inline">\([\)</span> e <span class="math inline">\()\)</span> apresentam um significado específico, importantes para compreender a definição de uma categoria do histograma: o primeiro representa um intervalo fechado já o segundo um intervalo aberto.</p>
+<p>Juntando todo este conhecimento é possível dizer que cada <strong>K</strong> categoria em um histograma contém seu limite inferior, mas não contém seu limite superior. Em outras palavras, uma determinada barra (categoria) não representa seu limite superior, logo uma categoria começa no limite inferior e termina no superior, sem incluí-lo.</p>
+<p>Na <a href="cap3.html#fig:f315">3.15</a> é possível observar que a medida que aumentamos a nota em matemática menos representativa se torna aquelas categorias, dificultando a visibilidade das barras. Além disso, o intervalo mais dominante se encontra na faixa entre 400 e 450 pontos. Caso seja desejado melhorar a resolução desses intervalos, será necessário realizar o aumento de categorias.</p>
+<div class="figure" style="text-align: center"><span id="fig:f316"></span>
+<img src="fig_cap3/fig16_cap3.png" alt="Histograma com as notas de matemática dos estudantes de escolas públicas e privadas de Salvador em 2019 de 300 à 1000 pontos com resolução de 25 pontos" width="100%" />
+<p class="caption">
+Figura 3.16: Histograma com as notas de matemática dos estudantes de escolas públicas e privadas de Salvador em 2019 de 300 à 1000 pontos com resolução de 25 pontos
+</p>
+</div>
+<p>Ao utilizar um espaçamento de 25 pontos como apresentado na Figura <a href="cap3.html#fig:f316">3.16</a> é possível identificar como mais precisão os intervalos de notas dos estudantes da cidade de Salvador. Podemos destacar agora, através da Figura <a href="cap3.html#fig:f316">3.16</a> que o intervalo mais representado é aquele que começa em 425 pontos até 450 pontos. Isso foi possível graças ao aumento da quantidade de categorias por meio da diminuição do espaçamento de 50 pontos para 25 pontos.</p>
+<p>Porém este gráfico apresenta, sem distinção, estudantes de escolas privadas e públicas, mas separando encontramos valores diferentes?</p>
+<div class="figure" style="text-align: center"><span id="fig:f317"></span>
+<img src="fig_cap3/fig17_cap3.png" alt="Histograma com 25 categorias de notas de matemática dos estudantes de Salvador em 2019 particionado pelo tipo de escola" width="100%" />
+<p class="caption">
+Figura 3.17: Histograma com 25 categorias de notas de matemática dos estudantes de Salvador em 2019 particionado pelo tipo de escola
+</p>
+</div>
+<p>A Figura <a href="cap3.html#fig:f317">3.17</a> mostra o mesmo histograma agora com distinção entre os tipos de escola. Inicialmente verificamos que existe uma diferença na quantidade de estudantes de colégio público e privado na edição de 2019, como apontado na seção anterior. Além disso, é possível verificar que o perfil dos estudantes de colégio público é semelhante ao apresentado na Figura <a href="cap3.html#fig:f316">3.16</a>: O intervalo mais representativo está próximo de 450 pontos, porém e para os estudantes de escola privada os intervalos mais representativos estão em entre 600 e 700 pontos.</p>
+<p>Para uma melhor visualização e contornar o problema de diferença de escala entre os tipos de escolas, visto anteriormente na seção <a href="cap3.html#gtend">3.3</a>, vamos separar os histogramas em diferentes gráficos com seus eixos representativos próprios:</p>
+<div class="figure" style="text-align: center"><span id="fig:f318"></span>
+<img src="fig_cap3/fig18_cap3.png" alt="Histograma com 25 categorias de notas de matemática dos estudantes de Salvador em 2019 particionado pelo tipo de escola" width="100%" />
+<p class="caption">
+Figura 3.18: Histograma com 25 categorias de notas de matemática dos estudantes de Salvador em 2019 particionado pelo tipo de escola
+</p>
+</div>
+<p>A Figura <a href="cap3.html#fig:f318">3.18</a> apresenta ambos os histogramas lado a lado com escalas de grandezas próprias. Você pode notar isso pelos valores máximos alcançados onde na escola pública foi alcançado aproximadamente 1400 em uma categoria enquanto na escola privada foi alcançado 400 em uma categoria.</p>
+<p>Ainda na Figura <a href="cap3.html#fig:f318">3.18</a> é possível notar que os valores máximos de cada histogramas são bem diferentes: para escola pública, as categorias mais representativas começam em 400 pontos e vão até 475 pontos, já para as escolas privadas gira em torno de 600 a 700 pontos, apresentando assim uma diferença em torno de 200 pontos de diferença. Além disso, um fator alarmante no histograma que representa os estudantes das escolas públicas é a queda nas notas de matemática a medida que a pontuação (eixo horizontal) aumenta a partir dos 475 pontos. Este padrão também ocorre para as escolas privadas, porém para um valor superior a 700 pontos.</p>
+<p>Assim, em relação a nota de matemática, podemos dizer que a resposta para o quarto questionamento: “<strong>O tipo de escola (pública ou privada) pode influenciar nas notas dos estudantes neste exame?</strong>” apresenta uma resposta positiva, ou seja, é possível verificar uma diferença visual entre os tipos de escolas através dos histogramas discussões até o momento. Fica a cargo do leitor avaliar se o comportamento das notas de matemática no ENEM 2019 se repetem para as outras avaliações do exame.</p>
+<p><strong>Nota</strong>: É importante ressaltar que alguns materiais trazem o conceito da densidade para o eixo vertical do histograma, porém dado o direcionamento do livro será mantido uma análise sem abordar este conceito visto sua complexidade. A ideia de densidade é importante quando é analisado histogramas com intervalos de tamanhos diferentes, mas para intervalos iguais tanto o conceito de frequência absoluta (contagem) quanto densidade funcionam para o mesmo propósito.</p>
+<p>Após concluir a leitura desta seção você pode notar a semelhança entre <strong>histograma</strong> e <strong>gráfico de barras</strong>, porém não confunda: eles são diferentes! Suas principais diferenças são:</p>
+<ul>
+<li><p>Os gráficos de barras exibem uma quantidade por categoria. Eles são frequentemente usados para exibir as distribuições de variáveis categóricas. Os histogramas exibem as distribuições de variáveis numéricas.</p></li>
+<li><p>Todas as barras em um gráfico de barras têm a mesma largura e há uma quantidade igual de espaço entre as barras consecutivas. As barras de um histograma podem ter larguras diferentes e são contíguas.</p></li>
+</ul>
+</div>
+<div id="conc" class="section level2">
+<h2><span class="header-section-number">3.7</span> Concluindo …</h2>
+<p>Através deste capítulo conseguimos entender como a visualição gráfica pode trazer diferentes ideias e esclarecimentos a respeito dos nossos questionamentos, apresentando informações de forma simples e de fácil entendimento. Vimos também que cada gráfico pode trazer uma visão distinta e cabe ao leitor saber escolher qual a melhor abordagem a partir da sua pergunta e conjuntos de dados.
+Nosso questionamento sobre o <strong>perfil dos estudantes de Salvador que realizaram o ENEM</strong> conseguiu apresentar diversos <em>insights</em>, porém desanimadores. Na Figura <a href="cap3.html#fig:f319">3.19</a> é apresentado o infográfico resumindo as informações extraídas a partir da análise gráfica.</p>
+<div class="figure" style="text-align: center"><span id="fig:f319"></span>
+<img src="fig_cap3/infografico_cap3.png" alt="Infográfico dos resultados encontrados para o nosso questionamento" width="99%" />
+<p class="caption">
+Figura 3.19: Infográfico dos resultados encontrados para o nosso questionamento
+</p>
+</div>
+<p>Esses resultados são desanimadores, pois no geral mostra uma grande evasão no número de inscritos de estudantes de vulnerabilidade social e um baixo rendimento dos estudantes de escolas públicas em comparação aos de escola privada. Todavia, para confirmar esses resultados apenas a visualização gráfica é insuficiente: Na ciência de dados precisamos de indicadores e medidas matemáticas para expressar se de nossas hipóteses são verídicas. Esse ferramental será explorado nos próximos capítulos deste livro, então mantenha o estudo!</p>
+</div>
+<div id="indo-além" class="section level2">
+<h2><span class="header-section-number">3.8</span> Indo Além</h2>
+<p>Fizemos diversas análises e respondemos alguns questionamentos a respeito do <strong>perfil dos estudantes de Salvador que realizaram o ENEM</strong> não foi? Porém com a riqueza que esta base de dados possui o leitor pode explorar ainda mais!</p>
+<p>Utilizando Python, explicada em nosso capítulo de programação, você conseguiria <strong>ir além</strong> e responder os seguintes questionamentos?</p>
+<ul>
+<li><p>Através do infográfico na Figura <a href="cap3.html#fig:f319">3.19</a> avaliamos que ocorreu um aumento no número de estudantes sem acesso a computadores pessoais no ENEM de 2015 para 2019, o que pode dificultar os estudos desta parcela de estudantes. Você consegue avaliar a distribuição de cor/raça para esses estudantes em 2019 utilizando o gráfico de barras?</p></li>
+<li><p>Na seção <a href="cap3.html#ghist">3.6</a> verificamos que, infelizmente, na edição de 2019 do ENEM as notas dos estudantes de escolas públicas são menores em comparação aos estudantes de escolas privadas para a prova de Matemática. Utilizando o histograma, você consegue avaliar se este padrão se repete para as notas de Linguagens nesta mesma edição?</p></li>
+</ul>
+</div>
+<div id="citações-no-capítulo" class="section level2">
+<h2><span class="header-section-number">3.9</span> Citações no capítulo</h2>
+<p>[1] Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira. <strong>Microdados Exame Nacional do Ensino Médio</strong>. Disponível em: <a href="http://inep.gov.br/microdados">link de acesso</a></p>
+<p>[2] Acorda Cidade. <strong>IBGE-BA: Salvador é a capital mais negra do Brasil e com a maior desigualdade salarial entre brancos e pretos</strong>. Publicado em 19 de novembro de 2018. Disponível em: <a href="https://www.acordacidade.com.br/noticias/203087/ibge-ba-salvador-a-capital-mais-negra-do-brasil-e-com-a-maior-desigualdade-salarial-entre-brancos-e-pretos.html">link de acesso</a></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="cap2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cap4.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["ciencia_de_dados.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

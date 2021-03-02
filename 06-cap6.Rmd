@@ -1,0 +1,15 @@
+
+# Coletando Dados para Pesquisas {#cap6}
+
+## Como é realizado a coleta de dados {#cap6.1}
+
+## Amostragem {#cap6.2}
+
+## Viés Amostral {#cap6.3}
+
+## Ética na Construção de Bancos de Dados {#cap6.4}
+
+## Você Sabia? Pesquisa Eleitoral {#cap6.5}
+
+## Referências
+

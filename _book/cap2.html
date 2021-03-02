@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 2 Construindo Uma Base de Dados | Uma introdução gentil à Ciência de Dados</title>
+  <meta name="description" content="E-book em desenvolvimento." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 2 Construindo Uma Base de Dados | Uma introdução gentil à Ciência de Dados" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="E-book em desenvolvimento." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 2 Construindo Uma Base de Dados | Uma introdução gentil à Ciência de Dados" />
+  
+  <meta name="twitter:description" content="E-book em desenvolvimento." />
+  
+
+<meta name="author" content="Janaina Souza de Souza" />
+<meta name="author" content="Júlia Carolina Bijos" />
+<meta name="author" content="Kaike Wesley Reis" />
+
+
+<meta name="date" content="2021-03-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="cap1.html"/>
+<link rel="next" href="cap3.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Ciência de Dados</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a></li>
+<li class="chapter" data-level="1" data-path="cap1.html"><a href="cap1.html"><i class="fa fa-check"></i><b>1</b> Introdução à Ciência de Dados</a><ul>
+<li class="chapter" data-level="1.1" data-path="cap1.html"><a href="cap1.html#cap1.1"><i class="fa fa-check"></i><b>1.1</b> O que são “dados” e onde estão presentes?</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="cap1.html"><a href="cap1.html#cap1.1.1"><i class="fa fa-check"></i><b>1.1.1</b> Posso compartilhar dados?</a></li>
+<li class="chapter" data-level="1.1.2" data-path="cap1.html"><a href="cap1.html#cap1.1.2"><i class="fa fa-check"></i><b>1.1.2</b> Privacidade de dados</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="cap1.html"><a href="cap1.html#cap1.2"><i class="fa fa-check"></i><b>1.2</b> O ciclo dos Dados - Construindo uma pergunta estatística</a></li>
+<li class="chapter" data-level="1.3" data-path="cap1.html"><a href="cap1.html#cap1.3"><i class="fa fa-check"></i><b>1.3</b> Estruturando os dados</a></li>
+<li class="chapter" data-level="1.4" data-path="cap1.html"><a href="cap1.html#cap1.4"><i class="fa fa-check"></i><b>1.4</b> Identificando o tipo de problema</a></li>
+<li class="chapter" data-level="1.5" data-path="cap1.html"><a href="cap1.html#cap1.5"><i class="fa fa-check"></i><b>1.5</b> Considerações finais</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="cap2.html"><a href="cap2.html"><i class="fa fa-check"></i><b>2</b> Construindo Uma Base de Dados</a><ul>
+<li class="chapter" data-level="2.1" data-path="cap2.html"><a href="cap2.html#cap2.1"><i class="fa fa-check"></i><b>2.1</b> O que é uma base de dados?</a></li>
+<li class="chapter" data-level="2.2" data-path="cap2.html"><a href="cap2.html#cap2.2"><i class="fa fa-check"></i><b>2.2</b> Como montar uma tabela</a></li>
+<li class="chapter" data-level="2.3" data-path="cap2.html"><a href="cap2.html#cap2.3"><i class="fa fa-check"></i><b>2.3</b> Tipos de variáveis</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="cap2.html"><a href="cap2.html#cap2.3.1"><i class="fa fa-check"></i><b>2.3.1</b> Variáveis Numéricas</a></li>
+<li class="chapter" data-level="2.3.2" data-path="cap2.html"><a href="cap2.html#cap2.3.2"><i class="fa fa-check"></i><b>2.3.2</b> Variáveis Categóricas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="cap2.html"><a href="cap2.html#cap2.4"><i class="fa fa-check"></i><b>2.4</b> Como buscar base de dados abertas</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="cap2.html"><a href="cap2.html#cap2.4.1"><i class="fa fa-check"></i><b>2.4.1</b> Dados abertos governamentais</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="cap2.html"><a href="cap2.html#cap2.5"><i class="fa fa-check"></i><b>2.5</b> Concluindo…</a></li>
+<li class="chapter" data-level="2.6" data-path="cap2.html"><a href="cap2.html#cap2.6"><i class="fa fa-check"></i><b>2.6</b> Você sabia? Dados, Anedotas e Fake News</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="cap3.html"><a href="cap3.html"><i class="fa fa-check"></i><b>3</b> Vizualização e Ciência de Dados</a><ul>
+<li class="chapter" data-level="3.1" data-path="cap3.html"><a href="cap3.html#objeto-estudo"><i class="fa fa-check"></i><b>3.1</b> Objeto de estudo</a></li>
+<li class="chapter" data-level="3.2" data-path="cap3.html"><a href="cap3.html#gbarras"><i class="fa fa-check"></i><b>3.2</b> Gráfico de barra</a></li>
+<li class="chapter" data-level="3.3" data-path="cap3.html"><a href="cap3.html#gtend"><i class="fa fa-check"></i><b>3.3</b> Gráfico de tendências</a></li>
+<li class="chapter" data-level="3.4" data-path="cap3.html"><a href="cap3.html#gset"><i class="fa fa-check"></i><b>3.4</b> Gráfico de setores</a></li>
+<li class="chapter" data-level="3.5" data-path="cap3.html"><a href="cap3.html#gdisp"><i class="fa fa-check"></i><b>3.5</b> Gráfico de dispersão</a></li>
+<li class="chapter" data-level="3.6" data-path="cap3.html"><a href="cap3.html#ghist"><i class="fa fa-check"></i><b>3.6</b> Histograma</a></li>
+<li class="chapter" data-level="3.7" data-path="cap3.html"><a href="cap3.html#conc"><i class="fa fa-check"></i><b>3.7</b> Concluindo …</a></li>
+<li class="chapter" data-level="3.8" data-path="cap3.html"><a href="cap3.html#indo-além"><i class="fa fa-check"></i><b>3.8</b> Indo Além</a></li>
+<li class="chapter" data-level="3.9" data-path="cap3.html"><a href="cap3.html#citações-no-capítulo"><i class="fa fa-check"></i><b>3.9</b> Citações no capítulo</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="cap4.html"><a href="cap4.html"><i class="fa fa-check"></i><b>4</b> Correlação e Causalidade</a><ul>
+<li class="chapter" data-level="4.1" data-path="cap4.html"><a href="cap4.html#cap4.1"><i class="fa fa-check"></i><b>4.1</b> O que é correlação?</a></li>
+<li class="chapter" data-level="4.2" data-path="cap4.html"><a href="cap4.html#cap4.2"><i class="fa fa-check"></i><b>4.2</b> Quão forte é a correlação?</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="cap4.html"><a href="cap4.html#cap4.2.1"><i class="fa fa-check"></i><b>4.2.1</b> Coeficiente de Pearson</a></li>
+<li class="chapter" data-level="4.2.2" data-path="cap4.html"><a href="cap4.html#cap4.2.2"><i class="fa fa-check"></i><b>4.2.2</b> Coeficiente de Spearman</a></li>
+<li class="chapter" data-level="4.2.3" data-path="cap4.html"><a href="cap4.html#cap4.2.3"><i class="fa fa-check"></i><b>4.2.3</b> Multicolinearidade</a></li>
+<li class="chapter" data-level="4.2.4" data-path="cap4.html"><a href="cap4.html#cap4.2.4"><i class="fa fa-check"></i><b>4.2.4</b> Considerações sobre a análise</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="cap4.html"><a href="cap4.html#cap4.3"><i class="fa fa-check"></i><b>4.3</b> Relações de causa e efeito: conhecendo a causalidade</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="cap4.html"><a href="cap4.html#cap4.3.1"><i class="fa fa-check"></i><b>4.3.1</b> Coincidência ou Causalidade?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="cap4.html"><a href="cap4.html#cap4.4"><i class="fa fa-check"></i><b>4.4</b> Correlações expúrias</a></li>
+<li class="chapter" data-level="4.5" data-path="cap4.html"><a href="cap4.html#cap4.5"><i class="fa fa-check"></i><b>4.5</b> Considerações Finais</a></li>
+<li class="chapter" data-level="4.6" data-path="cap4.html"><a href="cap4.html#cap4.6"><i class="fa fa-check"></i><b>4.6</b> Indo além</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="cap5.html"><a href="cap5.html"><i class="fa fa-check"></i><b>5</b> Indicadores Básicos na Ciência de Dados</a><ul>
+<li class="chapter" data-level="5.1" data-path="cap5.html"><a href="cap5.html#objeto-de-estudo"><i class="fa fa-check"></i><b>5.1</b> Objeto de estudo</a></li>
+<li class="chapter" data-level="5.2" data-path="cap5.html"><a href="cap5.html#medidas-de-tendência-central"><i class="fa fa-check"></i><b>5.2</b> Medidas de tendência central</a></li>
+<li class="chapter" data-level="5.3" data-path="cap5.html"><a href="cap5.html#medidas-de-dispersão"><i class="fa fa-check"></i><b>5.3</b> Medidas de dispersão</a></li>
+<li class="chapter" data-level="5.4" data-path="cap5.html"><a href="cap5.html#diagramas-de-caixa"><i class="fa fa-check"></i><b>5.4</b> Diagramas de Caixa</a></li>
+<li class="chapter" data-level="5.5" data-path="cap5.html"><a href="cap5.html#concluindo"><i class="fa fa-check"></i><b>5.5</b> Concluindo …</a></li>
+<li class="chapter" data-level="5.6" data-path="cap3.html"><a href="cap3.html#indo-além"><i class="fa fa-check"></i><b>5.6</b> Indo Além</a></li>
+<li class="chapter" data-level="5.7" data-path="cap3.html"><a href="cap3.html#citações-no-capítulo"><i class="fa fa-check"></i><b>5.7</b> Citações no capítulo</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="cap6.html"><a href="cap6.html"><i class="fa fa-check"></i><b>6</b> Coletando Dados para Pesquisas</a><ul>
+<li class="chapter" data-level="6.1" data-path="cap6.html"><a href="cap6.html#cap6.1"><i class="fa fa-check"></i><b>6.1</b> Como é realizado a coleta de dados</a></li>
+<li class="chapter" data-level="6.2" data-path="cap6.html"><a href="cap6.html#cap6.2"><i class="fa fa-check"></i><b>6.2</b> Amostragem</a></li>
+<li class="chapter" data-level="6.3" data-path="cap6.html"><a href="cap6.html#cap6.3"><i class="fa fa-check"></i><b>6.3</b> Viés Amostral</a></li>
+<li class="chapter" data-level="6.4" data-path="cap6.html"><a href="cap6.html#cap6.4"><i class="fa fa-check"></i><b>6.4</b> Ética na Construção de Bancos de Dados</a></li>
+<li class="chapter" data-level="6.5" data-path="cap6.html"><a href="cap6.html#cap6.5"><i class="fa fa-check"></i><b>6.5</b> Você Sabia? Pesquisa Eleitoral</a></li>
+<li class="chapter" data-level="6.6" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i><b>6.6</b> Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="cap7.html"><a href="cap7.html"><i class="fa fa-check"></i><b>7</b> Distribuições, Probabilidade e Possibilidade</a></li>
+<li class="chapter" data-level="8" data-path="cap8.html"><a href="cap8.html"><i class="fa fa-check"></i><b>8</b> Entendendo e Avaliando sua Hipóteses</a><ul>
+<li class="chapter" data-level="8.1" data-path="cap8.html"><a href="cap8.html#cap8.1"><i class="fa fa-check"></i><b>8.1</b> O que é “Teste de Hipóteses”?</a></li>
+<li class="chapter" data-level="8.2" data-path="cap8.html"><a href="cap8.html#cap8.2"><i class="fa fa-check"></i><b>8.2</b> Hipóteses estatísticas</a></li>
+<li class="chapter" data-level="8.3" data-path="cap8.html"><a href="cap8.html#cap8.3"><i class="fa fa-check"></i><b>8.3</b> p-valor</a></li>
+<li class="chapter" data-level="8.4" data-path="cap8.html"><a href="cap8.html#cap8.4"><i class="fa fa-check"></i><b>8.4</b> Verificando a normalidade</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="cap8.html"><a href="cap8.html#cap8.4.1"><i class="fa fa-check"></i><b>8.4.1</b> Gráficos de normalidade: Histograma e Q-Q Plot</a></li>
+<li class="chapter" data-level="8.4.2" data-path="cap8.html"><a href="cap8.html#cap8.4.2"><i class="fa fa-check"></i><b>8.4.2</b> Testes de normalidade</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="cap8.html"><a href="cap8.html#cap8.5"><i class="fa fa-check"></i><b>8.5</b> Uma breve contextualização!</a></li>
+<li class="chapter" data-level="8.6" data-path="cap8.html"><a href="cap8.html#cap8.6"><i class="fa fa-check"></i><b>8.6</b> Concluindo…</a></li>
+<li class="chapter" data-level="8.7" data-path="cap8.html"><a href="cap8.html#cap8.7"><i class="fa fa-check"></i><b>8.7</b> Indo além</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="cap9.html"><a href="cap9.html"><i class="fa fa-check"></i><b>9</b> Classificação</a></li>
+<li class="chapter" data-level="10" data-path="cap10.html"><a href="cap10.html"><i class="fa fa-check"></i><b>10</b> Regressão</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Uma introdução gentil à Ciência de Dados</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="cap2" class="section level1">
+<h1><span class="header-section-number">Capítulo 2</span> Construindo Uma Base de Dados</h1>
+<p>No capítulo anterior, você aprendeu sobre dados e viu, resumidamente, que a forma como os dados estão armazenados chama-se estrutura de dados. Neste capítulo vamos resgatar e aprofundar um pouco mais do que você já aprendeu de modo que você seja capaz de construir a sua própria base de dados. Mas antes, precisamos entender o que é e para que serve uma base de dados.</p>
+<p><em>Será que você já teve contato com alguma base de dados no decorrer de sua vida?</em></p>
+<div id="cap2.1" class="section level2">
+<h2><span class="header-section-number">2.1</span> O que é uma base de dados?</h2>
+<p><em>Você já ouviu falar sobre o Programa Bolsa Família?</em></p>
+<p>O Programa Bolsa Família (PBF) é uma <a href="https://www.todospelaeducacao.org.br/conteudo/o-que-e-uma-politica-publica-e-como-ela-afeta-sua-vida">política pública</a> que visa cooperar para a inclusão social de famílias em situação de vulnerabilidade, contribuindo com alívio imediato da situação de pobreza e fome. O PBF estimula um melhor acompanhamento do atendimento do público-alvo pelos serviços de saúde, além de ajudar a superar indicadores que marcam negativamente a trajetória educacional de crianças mais pobres; como por exemplo os altos índices de evasão escolar e a repetência. Desde que foi criado em 2003, o PBF evoluiu e se tornou um dos mais eficientes mecanismos de enfrentamento a pobreza do mundo, consolidando-se como um dos maiores programas de transferência direta de renda existentes. Em todo o país, segundo dados do Ministério da Cidadania, em junho de 2020 o PBF atendia a mais de 14 milhões de famílias, das quais 180.706 mil estavam em Salvador, sendo 476.633 mil pessoas diretamente beneficiadas com o PBF na capital baiana.</p>
+<p><em>Interessante, né? Mas o que o bolsa família tem a ver com uma base de dados?</em></p>
+<p>Bem, para ser beneficiária do PBF a família precisa estar cadastrada no Cadastro Único para Programas Sociais (CadÚnico). O CadÚnico é a <strong>base de dados</strong> do governo federal onde estão registrados dados sobre famílias de baixa renda; ou seja, famílias que possuem renda mensal de até ½ salário mínimo por pessoa ou 3 salários mínimos no total. É a partir dos dados registrados no CadÚnico que é possível identificar as famílias que necessitam do bolsa família e encaminha-las para serem beneficiarias do programa.</p>
+<p><em>Portanto, sem uma base de dados não seria possível que uma política pública do tamanho e da importância do Programa Bolsa Família existisse.</em></p>
+<p><em>E como podemos, exatamente, definir uma base de dados?</em></p>
+<p>Uma base de dados é um conjunto de <strong>dados</strong> inter-relacionados (possuem relação), que estão armazenados em uma estrutura que permite que <strong>informações</strong> sejam extraídas.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<br />
+<img alt="" align="left" src="fig_cap2/gif1_cap2.gif" width="400" height="270" />
+<p>
+<font size="4" face="Bradley Hand">Dados são observações armazenadas. Desde imagens salvas em seu celular até vídeos presentes no youtube. Porém, sua existência não implica em significado ou sentido, logo, não tem valor algum para embasar conclusões. Por outro lado, ao organizar esse conjunto de dados com o intuito de transmitir significado, conseguimos gerar informações. Em resumo, dados podem ser considerados informações não processadas.</font>
+</p>
+<p><br /></p>
+<p>Na base de dados da nossa discussão, o CadÚnico, dados referentes a raça, sexo, ocupação, moradia, escolaridade e muitos outros, estão relacionados a cada família que compõem o cadastro. Dessa forma, o governo consegue extrair informações referentes a habitação, saúde, educação, renda; possibilitando que se pense em formas de melhor atender as necessidades da população que compoem o cadastro. Atualmente, o CadÚnico conta com o registro dos dados de aproximadamente 29 milhões de famílias, mais de 76 milhões de pessoas. Isto é, o CadÚnico armazena dados de quase 40% da população brasileira.</p>
+<p>O CadÚnico funciona tão bem porque cumpre um requisito muito importante para bases de dados: a armazenagem eficiente dos dados. Para que a sua base de dados funcione do mesmo jeito, os seus dados precisam estar armazenados de maneira correta. Na próxima seção vamos discutir um pouco mais sobre isso.</p>
+</div>
+<div id="cap2.2" class="section level2">
+<h2><span class="header-section-number">2.2</span> Como montar uma tabela</h2>
+<p><em>Vimos que em uma base de dados, os dados estão armazenados em uma estrutura que permite que informações sejam extraídas. Nessa seção, vamos entender um pouco mais sobre essas estruturas.</em></p>
+<p>Já aprendemos no capítulo <a href="cap1.html#cap1">1</a> que dados são observações que foram coletadas e armazenadas de alguma forma. A maneira como esses dados são armazenados varia e algumas dessas formas de se armazenar os dados são mais eficientes que outras pois auxiliam na análise e visualização dos dados. Quanto à maneira como os dados estão armazenados podemos classificá-los de duas formas principais: estruturados e não-estruturados</p>
+<p>Os <strong>dados não-estruturados</strong>, como o nome indica, não possuem uma estrutura bem definida e previamente pensada para se armazenar os dados. Como exemplo de dados não estruturados podemos citar as redes-sociais, imagens, filmes, vídeos, músicas e documentos de texto.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura21"></span>
+<img src="fig_cap2/fig1_cap2.png" alt="Exemplo de dados não-estruturados" width="70%" />
+<p class="caption">
+Figura 2.1: Exemplo de dados não-estruturados
+</p>
+</div>
+<p>Os <strong>dados estruturados</strong> por sua vez, possuem uma estrutura bem definida, rígida e previamente pensada para se armazenar os dados. A tabela é uma das formas mais comuns e simples dessas estruturas pois nela os dados ficam dispostos em linhas e colunas que é uma forma de se armazenar dados bastante organizada e de fácil entendimento. Vamos entender mais sobre essa forma de organização. Leia o fragmento de texto abaixo extraído e adaptado do site: <a href="https://aplicacoes.mds.gov.br/sagirmps/bolsafamilia/index.html" title="Cadastro Único, Conhecer Para Incluir">Cadastro Único Conhecer para incluir</a></p>
+<center>
+<p>
+<p><font size="4" face="FreeMono">
+"Tendo em vista o alto grau de vulnerabilidade social, alguns grupos são considerados prioritários no processo de ingresso no PBF. São eles: famílias indígenas, quilombolas, em situação de trabalho infantil, com pessoas libertas de situação análoga à de trabalho escravo e com catadores de material reciclável.<br /></p>
+No mês de junho de 2020, 5.5 mil famílias beneficiarias em Salvador pertenciam a um dos grupos denominados prioritários ao PBF. (3.0% do total de famílias beneficiarias)"
+</font>
+</p>
+</center>
+<p><br /></p>
+<p>Observe agora como os dados referentes aos grupos prioritários do PBF ficam organizados em uma tabela:</p>
+<div class="figure" style="text-align: center"><span id="fig:figura22"></span>
+<img src="fig_cap2/fig2_cap2.png" alt="Grupos prioritários ao PBF em Salvador" width="100%" />
+<p class="caption">
+Figura 2.2: Grupos prioritários ao PBF em Salvador
+</p>
+</div>
+<p>As <strong>linhas</strong>, partes horizontais da tabela, que também podemos chamar de amostras, representam indivíduos ou observações, que são os nossos objetos de estudo. No nosso exemplo, as observações são os grupos de famílias prioritárias ao PBF: “Indígenas”, “Quilombolas”, “Famílias com pessoas libertas de situação análoga à de trabalho escravo”, “Famílias com pessoas catadoras de material reciclável” e “Famílias com pessoas em situação de trabalho infantil”</p>
+<p>As <strong>colunas</strong>, parte vertical da tabela, representam atributos, ou seja, representam características referentes as observações. Em nosso exemplo, “Grupo”, “Quantidade” e “Percentual” são os atributos que caracterizam nossas observações.</p>
+<p>Note que à medida que percorremos uma linha, todos os atributos são referentes a aquela observação. Por exemplo, quando percorremos a linha cuja observação é do grupo “Indígenas”, os atributos: “Quantidade” e “Percentual” se referem a ela. No caso 5 e 0,0% respectivamente. Portanto, existem 5 famílias que fazem parte do grupo prioritário “Indígenas”, representando, aproximadamente, 0,0% do total entre todos os beneficiários do Bolsa Família em Salvador.</p>
+<p><em>Das mais de 180 mil famílias que recebem o Bolsa Família em Salvador, apenas 5 são famílias indígenas. Em sua opinião, por que isso acontece? Que tal buscar dados referentes a populações indígenas existentes em sua cidade?</em></p>
+<div class="figure" style="text-align: center"><span id="fig:figura23"></span>
+<img src="fig_cap2/fig3_cap2.png" alt="Sentido de leitura da linha" width="100%" />
+<p class="caption">
+Figura 2.3: Sentido de leitura da linha
+</p>
+</div>
+<p>Observe também que quando descemos em uma coluna da tabela, todos os valores representam a mesma característica. Por exemplo, quando descemos na coluna “Quantidade”, todos os valores representam quantidades. As quantidades variam dependendo da observação que está sendo avaliada, mas o atributo é o mesmo: Quantidade.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura24"></span>
+<img src="fig_cap2/fig4_cap2.png" alt="Sentido de leitura da coluna" width="100%" />
+<p class="caption">
+Figura 2.4: Sentido de leitura da coluna
+</p>
+</div>
+<p>O fato dos atributos assumirem diferentes valores, indica que os dados possuem <strong>variabilidade</strong>. Ao ler os seus dados numa tabela foi iniciada uma etapa importante da análise que permite reconhecer a variabilidade dos dados. Os atributos também são chamados de <strong>variáveis</strong>. Perceba que existe relação entre os termos <strong>variáveis</strong> e <strong>variabilidade</strong>. A palavra “variável” indica que os valores dos dados variam. Nos acompanhe na próxima seção para entender um pouco mais sobre variáveis.</p>
+</div>
+<div id="cap2.3" class="section level2">
+<h2><span class="header-section-number">2.3</span> Tipos de variáveis</h2>
+<p>Já vimos que variáveis (atributos) são simplesmente características de nossas observações (indivíduos). Ou seja, são atributos que pertencem aos nossos objetos de estudo.</p>
+<p>Imagine que você decide estudar sobre os impactos que o Programa Bolsa Família tem sobre os hábitos e práticas alimentares dos beneficiários. Você decidiu seu objeto de estudo: famílias beneficiárias do PBF. Depois de definir o objeto de estudo, você se pergunta “Quais as informações que eu poderia levantar sobre meu objeto de estudo?”. Bem, você pode levantar muitas informações: o tipo de alimento consumido, a quantidade, se são alimentos ricos em gorduras ou em açucares, se o PBF faz com que as famílias se alimentem de maneira mais saudável, e muitas outras informações. Essas informações são os atributos do seu objeto de estudo, suas variáveis.</p>
+<p>No exemplo da seção anterior, o nosso objeto de estudo foram os grupos prioritários ao Programa Bolsa Família. E as variáveis que caracterizaram o nosso objeto de estudo foram: “Grupo”, que indica quais são esses grupos prioritários; “Quantidade”, que indica a quantidade de famílias que compõem esses grupos e “Percentual” que indica a porcentagem que esses grupos representam em relação ao total de beneficiários em Salvador.</p>
+<p>Agora que já sabemos o que são variáveis, vamos discutir sobre os seus dois principais tipos: variáveis categóricas e variáveis numéricas.</p>
+<div id="cap2.3.1" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Variáveis Numéricas</h3>
+<p>Variáveis numéricas são aquelas que assumem <strong>valores numéricos</strong> finitos ou infinitos, ou seja, são variáveis <strong>quantitativas</strong>. Essas variáveis podem ser <strong>contínuas</strong> ou <strong>discretas</strong>.</p>
+<p>As variáveis numéricas discretas são aquelas que só podem ser representadas por números inteiros. Vamos entender um pouco mais: famílias beneficiárias do PBF que tenham em sua composição gestantes, nutrizes (mães que amamentam) e crianças e adolescentes de 0 a 15 anos, recebem o benefício de R$ 41,00 para cada membro da família e cada família pode acumular até 5 benefícios por mês. Então, imagine que uma mãe que possua 5 filhos entre 0 e 15 anos irá receber o benefício de R$ 41,00 para cada filho; mas o que aconteceria se ela tivesse 5,5 filhos? Faz sentido dizer que uma pessoa tem 5,5 filhos (cinco filhos e meio)? Não, né?! Isso acontece porque a variável “Quantidade de filhos” é uma variável numérica discreta pois só pode assumir valores inteiros (0,1,2,3…). As variáveis discretas geralmente são resultado de contagens.</p>
+<p>Já as variáveis numéricas contínuas são aquelas que podem assumir valores contínuos. Ou seja, são variáveis que podem assumir qualquer valor nos números reais. Vamos retomar o exemplo acima para entendermos melhor, mas dessa vez vamos falar sobre a variável “Idade”. Para você faria sentido dizer que um dos filhos dessa mulher tem 5,5 anos (cinco anos e meio)? Sim, né?! O que estamos dizendo é que essa criança tem 5 anos e 6 meses de idade; ou quem sabe 5 anos 6 meses e 2 dias, 5 anos 6 meses 2 dias e 15 horas, e assim por diante. Isso acontece porque a variável “Idade” é uma variável contínua e pode assumir qualquer <a href="https://www.educamaisbrasil.com.br/enem/matematica/numeros-reais" title="Conjunto dos números reais">valor real</a>. As variáveis contínuas geralmente resultam de medições.</p>
+<p>Vamos retomar o exemplo dos grupos prioritários ao PBF e ver quais foram as nossas variáveis numéricas:</p>
+<p><img src="fig_cap2/fig5_cap2.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="cap2.3.2" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Variáveis Categóricas</h3>
+<p>Variáveis categóricas são qualitativas, finitas e expressam um valor determinado de categorias ou níveis. Ou seja, são variáveis que representam uma classificação das observações. Normalmente as variáveis categóricas representam valores que possuem palavras. Essas variáveis podem ser nominais ou ordinais.</p>
+<p>Variáveis categóricas ordinais existe uma ordenação entre as categorias. Como exemplo podemos pensar na escolaridade dos beneficiários do PBF, (1º,2º,3º grau)</p>
+<p>Variáveis categóricas nominais não possuem ordenação entre as categorias. Como exemplo podemos pensar no sexo dos beneficiários do PBF, que pode ser masculino ou feminino</p>
+<p>A variável categórica do nosso exemplo é do tipo nominal, pois não existe ordenação entre as categorias:</p>
+<p><img src="fig_cap2/fig6_cap2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Até aqui você já aprendeu sobre o que são bases de dados, como montar tabelas, o que são e quais os tipos de variáveis; ou seja, já apendeu o básico necessário para montar a sua própria base de dados. Na próxima seção, você vai aprender a acessar bases de dados que estão disponíveis para serem acessadas por qualquer pessoa: as bases de dados abertas.</p>
+</div>
+</div>
+<div id="cap2.4" class="section level2">
+<h2><span class="header-section-number">2.4</span> Como buscar base de dados abertas</h2>
+<p>Durante a sua jornada como cientista de dados, os dados que você irá utilizar, normalmente, estarão em bases de dados. Porém, nem todas as bases de dados estarão disponíveis para serem acessadas por todas as pessoas. Como vimos, o CadÚnico é a base de dados do governo federal onde estão registrados dados de família de baixa renda residentes no Brasil. Entre os muitos dados que estão registrados no CadÚnico, constam também a identificação de cada pessoa; informações como RG, CPF e endereço. Por conta disso, o acesso a essa base de dados é restrito. Logo, o CadÚnico não é uma base de dados aberta.</p>
+<p><em>Mas o que são bases de dados abertas?</em></p>
+<p>Antes de definirmos o que são base de dados abertas, precisamos entender o que são <strong>dados abertos</strong>. Para isso, vamos assistir o vídeo a seguir:</p>
+<div class="embed-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/T6_AsumMFm4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+<p></br></p>
+<p>Agora que já sabemos o que são dados abertos, podemos definir uma base de dados aberta como um conjunto de dados abertos que podem ser livremente usados, reutilizados e redistribuídos por qualquer pessoa.</p>
+<p><img src="fig_cap2/fig7_cap2.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>Na proxima seção você vai conhecer algumas bases de dados abertas que podem ser uteis para você a apartir de agora</p>
+<div id="cap2.4.1" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Dados abertos governamentais</h3>
+<p>Dados abertos governamentais são dados gerados pelo governo que estão disponíveis para serem acessados e utilizados pela população. O objetivo é aumentar a transparência, além de incentivar maior participação politica por parte do cidadão.</p>
+<ul>
+<li><a href="https://dadosabertos.camara.leg.br/#a1">Dados abertos da Câmara dos Deputados</a></li>
+</ul>
+<p>A Câmara dos Deputados discute e vota propostas referentes às áreas econômicas e sociais, como educação, saúde, transporte, entre outras. É também responsabilidade do Câmara dos deputados fiscalizar a utilização dos recursos arrecadados da população com o pagamento de impostos.</p>
+<p>Na base de dados da Câmara dos Deputados, você encontra dados referentes a votações, partidos políticos, informações detalhadas de deputados, entre outros. Os dados disponíveis na base de dados da Câmara dos Deputados possibilitam, inclusive, que a população crie projetos que ajudam a fiscalizar a atividade dos deputados, como por exemplo a <a href="https://visualizemobile.github.io/akan/">AKAN</a>, um aplicativo que acompanha os gastos de deputados.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura28"></span>
+<img src="fig_cap2/fig8_cap2.png" alt="Dados abertos da Câmara dos Deputados" width="70%" />
+<p class="caption">
+Figura 2.5: Dados abertos da Câmara dos Deputados
+</p>
+</div>
+<p>Confira a seguir mais alguns exemplos de bases de dados abertas:</p>
+<ul>
+<li><p><a href="https://www12.senado.leg.br/dados-abertos">Dados abertos do Senado Federal</a></p></li>
+<li><p><a href="https://www.justica.gov.br/dados-abertos/dados">Dados Abertos Ministério da Justiça e Segurança</a></p></li>
+<li><p><a href="https://sineaberto.economia.gov.br/">Dados Abertos sobre Emprego</a></p></li>
+<li><p><a href="https://dados.gov.br/">Portal Brasileiro de Dados Abertos</a></p></li>
+</ul>
+</div>
+</div>
+<div id="cap2.5" class="section level2">
+<h2><span class="header-section-number">2.5</span> Concluindo…</h2>
+<p>Sem os dados, não existiria ciência de dados, e neste capítulo aprendemos um pouco mais sobre eles. No próximo capítulo, visualização e ciência de dados, vamos conversar sobre um tema essencial para futuros cientistas de dados tal como você. Mas antes, confira um breve resumo do que aprendemos:</p>
+<p><img src="fig_cap2/gif2_cap2.gif" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="cap2.6" class="section level2">
+<h2><span class="header-section-number">2.6</span> Você sabia? Dados, Anedotas e Fake News</h2>
+<p>(Seção baseada no encontro realizado com os estudantes. Prevista para ser adicionada na correção final)</p>
+</div>
+<div id="referências" class="section level2 unnumbered">
+<h2>Referências</h2>
+<p>CÂMARA DOS DEPUTADOS DO BRASIL. Papel e história da câmara. Disponível em: <a href="https://www2.camara.leg.br/a-camara/conheca/o-papel-da-camara-dos-deputados" class="uri">https://www2.camara.leg.br/a-camara/conheca/o-papel-da-camara-dos-deputados</a></p>
+<p>CIANCONI, Regina. Banco de Dados de acesso público. Ciência da Informação
+Brasília, v. 16, n. J, p. 53-59,jan./jun. 1987.</p>
+<p>NIC.br (2014). Dados Abertos para um dia a dia melhor - com narração. Disponível em: <a href="https://www.youtube.com/watch?v=T6_AsumMFm4" class="uri">https://www.youtube.com/watch?v=T6_AsumMFm4</a></p>
+<p>Programa Bolsa Família : uma década de inclusão e cidadania / organizadores: Tereza Campello, Marcelo Côrtes Neri. –
+Brasília : Ipea, 2013. Disponível em: <a href="https://www.ipea.gov.br/portal/index.php?option=com_content&amp;id=20408" class="uri">https://www.ipea.gov.br/portal/index.php?option=com_content&amp;id=20408</a></p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>CIANCONI, 1987, p. 54<a href="cap2.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="cap1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cap3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["ciencia_de_dados.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

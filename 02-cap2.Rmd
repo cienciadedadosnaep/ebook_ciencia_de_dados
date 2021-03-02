@@ -1,0 +1,239 @@
+
+# Construindo Uma Base de Dados {#cap2}
+
+No capítulo anterior, você aprendeu sobre dados e viu, resumidamente, que a forma como os dados estão armazenados chama-se estrutura de dados. Neste capítulo vamos resgatar e aprofundar um pouco mais do que você já aprendeu de modo que você seja capaz de construir a sua própria base de dados. Mas antes, precisamos entender o que é e para que serve uma base de dados.
+
+
+*Será que você já teve contato com alguma base de dados no decorrer de sua vida?*
+
+
+## O que é uma base de dados? {#cap2.1}
+
+*Você já ouviu falar sobre o Programa Bolsa Família?*
+
+
+O Programa Bolsa Família (PBF) é uma [política pública](https://www.todospelaeducacao.org.br/conteudo/o-que-e-uma-politica-publica-e-como-ela-afeta-sua-vida) que visa cooperar para a inclusão social de famílias em situação de vulnerabilidade, contribuindo com alívio imediato da situação de pobreza e fome. O PBF estimula um melhor acompanhamento do atendimento do público-alvo pelos serviços de saúde, além de ajudar a superar indicadores que marcam negativamente a trajetória educacional de crianças mais pobres; como por exemplo os altos índices de evasão escolar e a repetência. Desde que foi criado em 2003, o PBF evoluiu e se tornou um dos mais eficientes mecanismos de enfrentamento a pobreza do mundo, consolidando-se como um dos maiores programas de transferência direta de renda existentes. Em todo o país, segundo dados do Ministério da Cidadania, em junho de 2020 o PBF atendia a mais de 14 milhões de famílias, das quais 180.706 mil estavam em Salvador, sendo 476.633 mil pessoas diretamente beneficiadas com o PBF na capital baiana.
+
+*Interessante, né? Mas o que o bolsa família tem a ver com uma base de dados?*
+
+Bem, para ser beneficiária do PBF a família precisa estar cadastrada no Cadastro Único para Programas Sociais (CadÚnico). O CadÚnico é a **base de dados** do governo federal onde estão registrados dados sobre famílias de baixa renda; ou seja, famílias que possuem renda mensal de até ½ salário mínimo por pessoa ou 3 salários mínimos no total. É a partir dos dados registrados no CadÚnico que é possível identificar as famílias que necessitam do bolsa família e encaminha-las para serem beneficiarias do programa.
+
+*Portanto, sem uma base de dados não seria possível que uma política pública do tamanho e da importância do Programa Bolsa Família existisse.*
+
+*E como podemos, exatamente, definir uma base de dados?*
+
+Uma base de dados é um conjunto de **dados** inter-relacionados (possuem relação), que estão armazenados em uma estrutura que permite que **informações** sejam extraídas.^[CIANCONI, 1987, p. 54]
+
+
+<br />
+<img alt="" align="left" src="fig_cap2/gif1_cap2.gif" width="400" height="270" /> 
+<p><font size="4" face="Bradley Hand">Dados são observações armazenadas. Desde imagens salvas em seu celular até vídeos presentes no youtube. Porém, sua existência não implica em significado ou sentido, logo, não tem valor algum para embasar conclusões. Por outro lado, ao organizar esse conjunto de dados com o intuito de transmitir significado, conseguimos gerar informações. Em resumo, dados podem ser considerados informações não processadas.</font></p>
+<br />
+
+Na base de dados da nossa discussão, o CadÚnico, dados referentes a raça, sexo, ocupação, moradia, escolaridade e muitos outros, estão relacionados a cada família que compõem o cadastro. Dessa forma, o governo consegue extrair informações referentes a habitação, saúde, educação, renda; possibilitando que se pense em formas de melhor atender as necessidades da população que compoem o cadastro. Atualmente, o CadÚnico conta com o registro dos dados de aproximadamente 29 milhões de famílias, mais de 76 milhões de pessoas. Isto é, o CadÚnico armazena dados de quase 40% da população brasileira.
+
+O CadÚnico funciona tão bem porque cumpre um requisito muito importante para bases de dados: a armazenagem eficiente dos dados. Para que a sua base de dados funcione do mesmo jeito, os seus dados precisam estar armazenados de maneira correta. Na próxima seção vamos discutir um pouco mais sobre isso.
+
+
+## Como montar uma tabela {#cap2.2}
+
+*Vimos que em uma base de dados, os dados estão armazenados em uma estrutura que permite que informações sejam extraídas. Nessa seção, vamos entender um pouco mais sobre essas estruturas.*
+
+Já aprendemos no capítulo \@ref(cap1) que dados são observações que foram coletadas e armazenadas de alguma forma. A maneira como esses dados são armazenados varia e algumas dessas formas de se armazenar os dados são mais eficientes que outras pois auxiliam na análise e visualização dos dados. Quanto à maneira como os dados estão armazenados podemos classificá-los de duas formas principais: estruturados e não-estruturados
+
+
+Os **dados não-estruturados**, como o nome indica, não possuem uma estrutura bem definida e previamente pensada para se armazenar os dados. Como exemplo de dados não estruturados podemos citar as redes-sociais, imagens, filmes, vídeos, músicas e documentos de texto.
+
+```{r figura21, fig.align='center', fig.cap="Exemplo de dados não-estruturados", fig.width=50 ,echo=FALSE,out.width="70%"}
+
+knitr::include_graphics("fig_cap2/fig1_cap2.png")
+
+```
+
+
+
+Os **dados estruturados** por sua vez, possuem uma estrutura bem definida, rígida e previamente pensada para se armazenar os dados. A tabela é uma das formas mais comuns e simples dessas estruturas pois nela os dados ficam dispostos em linhas e colunas que é uma forma de se armazenar dados bastante organizada e de fácil entendimento. Vamos entender mais sobre essa forma de organização. Leia o fragmento de texto abaixo extraído e adaptado do site: [Cadastro Único Conhecer para incluir](https://aplicacoes.mds.gov.br/sagirmps/bolsafamilia/index.html "Cadastro Único, Conhecer Para Incluir")
+
+<center>
+<p><font size="4" face="FreeMono">
+"Tendo em vista o alto grau de vulnerabilidade social, alguns grupos são considerados prioritários no processo de ingresso no PBF. São eles: famílias indígenas, quilombolas, em situação de trabalho infantil, com pessoas libertas de situação análoga à de trabalho escravo e com catadores de material reciclável.<br />
+
+No mês de junho de 2020, 5.5 mil famílias beneficiarias em Salvador pertenciam a um dos grupos denominados prioritários ao PBF. (3.0% do total de famílias beneficiarias)"
+</font></p>
+</center>
+<br />
+
+
+Observe agora como os dados referentes aos grupos prioritários do PBF ficam organizados em uma tabela:
+
+
+```{r figura22, fig.align='center',fig.width=50,out.width="100%",fig.cap="Grupos prioritários ao PBF em Salvador" ,echo=FALSE}
+
+knitr::include_graphics("fig_cap2/fig2_cap2.png")
+
+``` 
+
+
+
+As **linhas**, partes horizontais da tabela, que também podemos chamar de amostras, representam indivíduos ou observações, que são os nossos objetos de estudo. No nosso exemplo, as observações são os grupos de famílias prioritárias ao PBF: "Indígenas", "Quilombolas", "Famílias com pessoas libertas de situação análoga à de trabalho escravo", "Famílias com pessoas catadoras de material reciclável" e "Famílias com pessoas em situação de trabalho infantil" 
+
+As **colunas**, parte vertical da tabela, representam atributos, ou seja, representam características referentes as observações. Em nosso exemplo, "Grupo", "Quantidade" e "Percentual" são os atributos que caracterizam nossas observações.
+
+
+Note que à medida que percorremos uma linha, todos os atributos são referentes a aquela observação. Por exemplo, quando percorremos a linha cuja observação é do grupo “Indígenas”, os atributos: “Quantidade” e “Percentual” se referem a ela. No caso 5 e 0,0% respectivamente. Portanto, existem 5 famílias que fazem parte do grupo prioritário “Indígenas”, representando, aproximadamente, 0,0% do total entre todos os beneficiários do Bolsa Família em Salvador.
+
+*Das mais de 180 mil famílias que recebem o Bolsa Família em Salvador, apenas 5 são famílias indígenas. Em sua opinião, por que isso acontece? Que tal buscar dados referentes a populações indígenas existentes em sua cidade?*
+
+```{r figura23, fig.align='center',fig.cap="Sentido de leitura da linha" ,fig.width=50,echo=FALSE,out.width="100%"}
+
+knitr::include_graphics("fig_cap2/fig3_cap2.png")
+
+``` 
+
+Observe também que quando descemos em uma coluna da tabela, todos os valores representam a mesma característica. Por exemplo, quando descemos na coluna "Quantidade", todos os valores representam quantidades. As quantidades variam dependendo da observação que está sendo avaliada, mas o atributo é o mesmo: Quantidade. 
+
+```{r figura24, fig.align='center',fig.cap="Sentido de leitura da coluna" ,fig.width=50,echo=FALSE,out.width="100%"}
+
+knitr::include_graphics("fig_cap2/fig4_cap2.png")
+
+``` 
+
+
+O fato dos atributos assumirem diferentes valores, indica que os dados possuem **variabilidade**. Ao ler os seus dados numa tabela foi iniciada uma etapa importante da análise que permite reconhecer a variabilidade dos dados. Os atributos também são chamados de **variáveis**. Perceba que existe relação entre os termos **variáveis** e **variabilidade**. A palavra "variável" indica que os valores dos dados variam. Nos acompanhe na próxima seção para entender um pouco mais sobre variáveis.
+
+
+## Tipos de variáveis {#cap2.3}
+
+Já vimos que variáveis (atributos) são simplesmente características de nossas observações (indivíduos). Ou seja, são atributos que pertencem aos nossos objetos de estudo. 
+
+Imagine que você decide estudar sobre os impactos que o Programa Bolsa Família tem sobre os hábitos e práticas alimentares dos beneficiários. Você decidiu seu objeto de estudo: famílias beneficiárias do PBF. Depois de definir o objeto de estudo, você se pergunta “Quais as informações que eu poderia levantar sobre meu objeto de estudo?”. Bem, você pode levantar muitas informações: o tipo de alimento consumido, a quantidade, se são alimentos ricos em gorduras ou em açucares, se o PBF faz com que as famílias se alimentem de maneira mais saudável, e muitas outras informações. Essas informações são os atributos do seu objeto de estudo, suas variáveis.
+
+No exemplo da seção anterior, o nosso objeto de estudo foram os grupos prioritários ao Programa Bolsa Família. E as variáveis que caracterizaram o nosso objeto de estudo foram: "Grupo", que indica quais são esses grupos prioritários; "Quantidade", que indica a quantidade de famílias que compõem esses grupos e "Percentual" que indica a porcentagem que esses grupos representam em relação ao total de beneficiários em Salvador. 
+
+Agora que já sabemos o que são variáveis, vamos discutir sobre os seus dois principais tipos: variáveis categóricas e variáveis numéricas.
+
+
+### Variáveis Numéricas {#cap2.3.1}
+
+Variáveis numéricas são aquelas que assumem **valores numéricos** finitos ou infinitos, ou seja, são variáveis **quantitativas**. Essas variáveis podem ser **contínuas** ou **discretas**.
+
+As variáveis numéricas discretas são aquelas que só podem ser representadas por números inteiros. Vamos entender um pouco mais: famílias beneficiárias do PBF que tenham em sua composição gestantes, nutrizes (mães que amamentam) e crianças e adolescentes de 0 a 15 anos, recebem o benefício de R$ 41,00 para cada membro da família e cada família pode acumular até 5 benefícios por mês. Então, imagine que uma mãe que possua 5 filhos entre 0 e 15 anos irá receber o benefício de R$ 41,00 para cada filho; mas o que aconteceria se ela tivesse 5,5 filhos? Faz sentido dizer que uma pessoa tem 5,5 filhos (cinco filhos e meio)? Não, né?! Isso acontece porque a variável "Quantidade de filhos" é uma variável numérica discreta pois só pode assumir valores inteiros (0,1,2,3...). As variáveis discretas geralmente são resultado de contagens.
+
+Já as variáveis numéricas contínuas são aquelas que podem assumir valores contínuos. Ou seja, são variáveis que podem assumir qualquer valor nos números reais. Vamos retomar o exemplo acima para entendermos melhor, mas dessa vez vamos falar sobre a variável “Idade”. Para você faria sentido dizer que um dos filhos dessa mulher tem 5,5 anos (cinco anos e meio)? Sim, né?! O que estamos dizendo é que essa criança tem 5 anos e 6 meses de idade; ou quem sabe 5 anos 6 meses e 2 dias, 5 anos 6 meses 2 dias e 15 horas, e assim por diante. Isso acontece porque a variável “Idade” é uma variável contínua e pode assumir qualquer [valor real](https://www.educamaisbrasil.com.br/enem/matematica/numeros-reais "Conjunto dos números reais"). As variáveis contínuas geralmente resultam de medições.
+
+
+Vamos retomar o exemplo dos grupos prioritários ao PBF e ver quais foram as nossas variáveis numéricas:
+
+
+```{r figura25, fig.align='center', fig.width=50,echo=FALSE,out.width="100%"}
+
+knitr::include_graphics("fig_cap2/fig5_cap2.png")
+
+```
+
+
+### Variáveis Categóricas {#cap2.3.2}
+
+Variáveis categóricas são qualitativas, finitas e expressam um valor determinado de categorias ou níveis. Ou seja, são variáveis que representam uma classificação das observações. Normalmente as variáveis categóricas representam valores que possuem palavras. Essas variáveis podem ser nominais ou ordinais. 
+
+Variáveis categóricas ordinais existe uma ordenação entre as categorias. Como exemplo podemos pensar na escolaridade dos beneficiários do PBF, (1º,2º,3º grau)
+
+Variáveis categóricas nominais não possuem ordenação entre as categorias. Como exemplo podemos pensar no sexo dos beneficiários do PBF, que pode ser masculino ou feminino
+
+
+A variável categórica do nosso exemplo é do tipo nominal, pois não existe ordenação entre as categorias:
+
+```{r figura26, fig.align='center', fig.width=50 ,echo=FALSE,out.width="100%"}
+
+knitr::include_graphics("fig_cap2/fig6_cap2.png")
+
+```
+
+Até aqui você já aprendeu sobre o que são bases de dados, como montar tabelas, o que são e quais os tipos de variáveis; ou seja, já apendeu o básico necessário para montar a sua própria base de dados. Na próxima seção, você vai aprender a acessar bases de dados que estão disponíveis para serem acessadas por qualquer pessoa: as bases de dados abertas.
+
+## Como buscar base de dados abertas {#cap2.4}
+
+Durante a sua jornada como cientista de dados, os dados que você irá utilizar, normalmente, estarão em bases de dados. Porém, nem todas as bases de dados estarão disponíveis para serem acessadas por todas as pessoas. Como vimos, o CadÚnico é a base de dados do governo federal onde estão registrados dados de família de baixa renda residentes no Brasil. Entre os muitos dados que estão registrados no CadÚnico, constam também a identificação de cada pessoa; informações como RG, CPF e endereço. Por conta disso, o acesso a essa base de dados é restrito. Logo, o CadÚnico não é uma base de dados aberta. 
+
+*Mas o que são bases de dados abertas?*
+
+Antes de definirmos o que são base de dados abertas, precisamos entender o que são **dados abertos**. Para isso, vamos assistir o vídeo a seguir:
+
+<div class="embed-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/T6_AsumMFm4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</br>
+
+Agora que já sabemos o que são dados abertos, podemos definir uma base de dados aberta como um conjunto de dados abertos que podem ser livremente usados, reutilizados e redistribuídos por qualquer pessoa.
+
+```{r figura27, fig.align='center', fig.width=50,echo=FALSE,out.width="50%"}
+
+knitr::include_graphics("fig_cap2/fig7_cap2.png")
+
+```
+
+Na proxima seção você vai conhecer algumas bases de dados abertas que podem ser uteis para você a apartir de agora
+
+
+### Dados abertos governamentais {#cap2.4.1}
+
+Dados abertos governamentais são dados gerados pelo governo que estão disponíveis para serem acessados e utilizados pela população. O objetivo é aumentar a transparência, além de incentivar maior participação politica por parte do cidadão.
+
+
+  - [Dados abertos da Câmara dos Deputados](https://dadosabertos.camara.leg.br/#a1)
+  
+A Câmara dos Deputados discute e vota propostas referentes às áreas econômicas e sociais, como educação, saúde, transporte, entre outras. É também responsabilidade do Câmara dos deputados fiscalizar a utilização dos recursos arrecadados da população com o pagamento de impostos.
+
+Na base de dados da Câmara dos Deputados, você encontra dados referentes a votações, partidos políticos, informações detalhadas de deputados, entre outros. Os dados disponíveis na base de dados da Câmara dos Deputados possibilitam, inclusive, que a população crie projetos que ajudam a fiscalizar a atividade dos deputados, como por exemplo a [AKAN](https://visualizemobile.github.io/akan/), um aplicativo que acompanha os gastos de deputados.
+  
+```{r figura28,fig.cap="Dados abertos da Câmara dos Deputados" ,fig.align='center',fig.width=50,echo=FALSE,out.width="70%"}
+
+knitr::include_graphics("fig_cap2/fig8_cap2.png")
+
+```
+
+Confira a seguir mais alguns exemplos de bases de dados abertas:
+
+ - [Dados abertos do Senado Federal](https://www12.senado.leg.br/dados-abertos)
+ 
+ - [Dados Abertos Ministério da Justiça e Segurança](https://www.justica.gov.br/dados-abertos/dados)
+ 
+ - [Dados Abertos sobre Emprego](https://sineaberto.economia.gov.br/)
+ 
+ - [Portal Brasileiro de Dados Abertos](https://dados.gov.br/)
+
+
+  
+
+## Concluindo... {#cap2.5}
+
+Sem os dados, não existiria ciência de dados, e neste capítulo aprendemos um pouco mais sobre eles. No próximo capítulo, visualização e ciência de dados, vamos conversar sobre um tema essencial para futuros cientistas de dados tal como você. Mas antes, confira um breve resumo do que aprendemos:
+
+```{r figura29, fig.align='center',out.width="100%",fig.width=100,echo=FALSE}
+
+knitr::include_graphics("fig_cap2/gif2_cap2.gif")
+
+``` 
+
+## Você sabia? Dados, Anedotas e Fake News {#cap2.6}
+
+(Seção baseada no encontro realizado com os estudantes. Prevista para ser adicionada na correção final)
+
+## Referências {-}
+
+
+CÂMARA DOS DEPUTADOS DO BRASIL. Papel e história da câmara. Disponível em: https://www2.camara.leg.br/a-camara/conheca/o-papel-da-camara-dos-deputados
+
+CIANCONI, Regina. Banco de Dados de acesso público. Ciência da Informação
+Brasília, v. 16, n. J, p. 53-59,jan./jun. 1987. 
+
+NIC.br (2014). Dados Abertos para um dia a dia melhor - com narração. Disponível em: https://www.youtube.com/watch?v=T6_AsumMFm4
+
+Programa Bolsa Família : uma década de inclusão e cidadania / organizadores: Tereza Campello, Marcelo Côrtes Neri. –
+Brasília : Ipea, 2013. Disponível em:         https://www.ipea.gov.br/portal/index.php?option=com_content&id=20408
+
+
+
+
+
+

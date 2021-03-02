@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 4 Correlação e Causalidade | Uma introdução gentil à Ciência de Dados</title>
+  <meta name="description" content="E-book em desenvolvimento." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 4 Correlação e Causalidade | Uma introdução gentil à Ciência de Dados" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="E-book em desenvolvimento." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 4 Correlação e Causalidade | Uma introdução gentil à Ciência de Dados" />
+  
+  <meta name="twitter:description" content="E-book em desenvolvimento." />
+  
+
+<meta name="author" content="Janaina Souza de Souza" />
+<meta name="author" content="Júlia Carolina Bijos" />
+<meta name="author" content="Kaike Wesley Reis" />
+
+
+<meta name="date" content="2021-03-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="cap3.html"/>
+<link rel="next" href="cap5.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Ciência de Dados</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a></li>
+<li class="chapter" data-level="1" data-path="cap1.html"><a href="cap1.html"><i class="fa fa-check"></i><b>1</b> Introdução à Ciência de Dados</a><ul>
+<li class="chapter" data-level="1.1" data-path="cap1.html"><a href="cap1.html#cap1.1"><i class="fa fa-check"></i><b>1.1</b> O que são “dados” e onde estão presentes?</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="cap1.html"><a href="cap1.html#cap1.1.1"><i class="fa fa-check"></i><b>1.1.1</b> Posso compartilhar dados?</a></li>
+<li class="chapter" data-level="1.1.2" data-path="cap1.html"><a href="cap1.html#cap1.1.2"><i class="fa fa-check"></i><b>1.1.2</b> Privacidade de dados</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="cap1.html"><a href="cap1.html#cap1.2"><i class="fa fa-check"></i><b>1.2</b> O ciclo dos Dados - Construindo uma pergunta estatística</a></li>
+<li class="chapter" data-level="1.3" data-path="cap1.html"><a href="cap1.html#cap1.3"><i class="fa fa-check"></i><b>1.3</b> Estruturando os dados</a></li>
+<li class="chapter" data-level="1.4" data-path="cap1.html"><a href="cap1.html#cap1.4"><i class="fa fa-check"></i><b>1.4</b> Identificando o tipo de problema</a></li>
+<li class="chapter" data-level="1.5" data-path="cap1.html"><a href="cap1.html#cap1.5"><i class="fa fa-check"></i><b>1.5</b> Considerações finais</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="cap2.html"><a href="cap2.html"><i class="fa fa-check"></i><b>2</b> Construindo Uma Base de Dados</a><ul>
+<li class="chapter" data-level="2.1" data-path="cap2.html"><a href="cap2.html#cap2.1"><i class="fa fa-check"></i><b>2.1</b> O que é uma base de dados?</a></li>
+<li class="chapter" data-level="2.2" data-path="cap2.html"><a href="cap2.html#cap2.2"><i class="fa fa-check"></i><b>2.2</b> Como montar uma tabela</a></li>
+<li class="chapter" data-level="2.3" data-path="cap2.html"><a href="cap2.html#cap2.3"><i class="fa fa-check"></i><b>2.3</b> Tipos de variáveis</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="cap2.html"><a href="cap2.html#cap2.3.1"><i class="fa fa-check"></i><b>2.3.1</b> Variáveis Numéricas</a></li>
+<li class="chapter" data-level="2.3.2" data-path="cap2.html"><a href="cap2.html#cap2.3.2"><i class="fa fa-check"></i><b>2.3.2</b> Variáveis Categóricas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="cap2.html"><a href="cap2.html#cap2.4"><i class="fa fa-check"></i><b>2.4</b> Como buscar base de dados abertas</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="cap2.html"><a href="cap2.html#cap2.4.1"><i class="fa fa-check"></i><b>2.4.1</b> Dados abertos governamentais</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="cap2.html"><a href="cap2.html#cap2.5"><i class="fa fa-check"></i><b>2.5</b> Concluindo…</a></li>
+<li class="chapter" data-level="2.6" data-path="cap2.html"><a href="cap2.html#cap2.6"><i class="fa fa-check"></i><b>2.6</b> Você sabia? Dados, Anedotas e Fake News</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="cap3.html"><a href="cap3.html"><i class="fa fa-check"></i><b>3</b> Vizualização e Ciência de Dados</a><ul>
+<li class="chapter" data-level="3.1" data-path="cap3.html"><a href="cap3.html#objeto-estudo"><i class="fa fa-check"></i><b>3.1</b> Objeto de estudo</a></li>
+<li class="chapter" data-level="3.2" data-path="cap3.html"><a href="cap3.html#gbarras"><i class="fa fa-check"></i><b>3.2</b> Gráfico de barra</a></li>
+<li class="chapter" data-level="3.3" data-path="cap3.html"><a href="cap3.html#gtend"><i class="fa fa-check"></i><b>3.3</b> Gráfico de tendências</a></li>
+<li class="chapter" data-level="3.4" data-path="cap3.html"><a href="cap3.html#gset"><i class="fa fa-check"></i><b>3.4</b> Gráfico de setores</a></li>
+<li class="chapter" data-level="3.5" data-path="cap3.html"><a href="cap3.html#gdisp"><i class="fa fa-check"></i><b>3.5</b> Gráfico de dispersão</a></li>
+<li class="chapter" data-level="3.6" data-path="cap3.html"><a href="cap3.html#ghist"><i class="fa fa-check"></i><b>3.6</b> Histograma</a></li>
+<li class="chapter" data-level="3.7" data-path="cap3.html"><a href="cap3.html#conc"><i class="fa fa-check"></i><b>3.7</b> Concluindo …</a></li>
+<li class="chapter" data-level="3.8" data-path="cap3.html"><a href="cap3.html#indo-além"><i class="fa fa-check"></i><b>3.8</b> Indo Além</a></li>
+<li class="chapter" data-level="3.9" data-path="cap3.html"><a href="cap3.html#citações-no-capítulo"><i class="fa fa-check"></i><b>3.9</b> Citações no capítulo</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="cap4.html"><a href="cap4.html"><i class="fa fa-check"></i><b>4</b> Correlação e Causalidade</a><ul>
+<li class="chapter" data-level="4.1" data-path="cap4.html"><a href="cap4.html#cap4.1"><i class="fa fa-check"></i><b>4.1</b> O que é correlação?</a></li>
+<li class="chapter" data-level="4.2" data-path="cap4.html"><a href="cap4.html#cap4.2"><i class="fa fa-check"></i><b>4.2</b> Quão forte é a correlação?</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="cap4.html"><a href="cap4.html#cap4.2.1"><i class="fa fa-check"></i><b>4.2.1</b> Coeficiente de Pearson</a></li>
+<li class="chapter" data-level="4.2.2" data-path="cap4.html"><a href="cap4.html#cap4.2.2"><i class="fa fa-check"></i><b>4.2.2</b> Coeficiente de Spearman</a></li>
+<li class="chapter" data-level="4.2.3" data-path="cap4.html"><a href="cap4.html#cap4.2.3"><i class="fa fa-check"></i><b>4.2.3</b> Multicolinearidade</a></li>
+<li class="chapter" data-level="4.2.4" data-path="cap4.html"><a href="cap4.html#cap4.2.4"><i class="fa fa-check"></i><b>4.2.4</b> Considerações sobre a análise</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="cap4.html"><a href="cap4.html#cap4.3"><i class="fa fa-check"></i><b>4.3</b> Relações de causa e efeito: conhecendo a causalidade</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="cap4.html"><a href="cap4.html#cap4.3.1"><i class="fa fa-check"></i><b>4.3.1</b> Coincidência ou Causalidade?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="cap4.html"><a href="cap4.html#cap4.4"><i class="fa fa-check"></i><b>4.4</b> Correlações expúrias</a></li>
+<li class="chapter" data-level="4.5" data-path="cap4.html"><a href="cap4.html#cap4.5"><i class="fa fa-check"></i><b>4.5</b> Considerações Finais</a></li>
+<li class="chapter" data-level="4.6" data-path="cap4.html"><a href="cap4.html#cap4.6"><i class="fa fa-check"></i><b>4.6</b> Indo além</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="cap5.html"><a href="cap5.html"><i class="fa fa-check"></i><b>5</b> Indicadores Básicos na Ciência de Dados</a><ul>
+<li class="chapter" data-level="5.1" data-path="cap5.html"><a href="cap5.html#objeto-de-estudo"><i class="fa fa-check"></i><b>5.1</b> Objeto de estudo</a></li>
+<li class="chapter" data-level="5.2" data-path="cap5.html"><a href="cap5.html#medidas-de-tendência-central"><i class="fa fa-check"></i><b>5.2</b> Medidas de tendência central</a></li>
+<li class="chapter" data-level="5.3" data-path="cap5.html"><a href="cap5.html#medidas-de-dispersão"><i class="fa fa-check"></i><b>5.3</b> Medidas de dispersão</a></li>
+<li class="chapter" data-level="5.4" data-path="cap5.html"><a href="cap5.html#diagramas-de-caixa"><i class="fa fa-check"></i><b>5.4</b> Diagramas de Caixa</a></li>
+<li class="chapter" data-level="5.5" data-path="cap5.html"><a href="cap5.html#concluindo"><i class="fa fa-check"></i><b>5.5</b> Concluindo …</a></li>
+<li class="chapter" data-level="5.6" data-path="cap3.html"><a href="cap3.html#indo-além"><i class="fa fa-check"></i><b>5.6</b> Indo Além</a></li>
+<li class="chapter" data-level="5.7" data-path="cap3.html"><a href="cap3.html#citações-no-capítulo"><i class="fa fa-check"></i><b>5.7</b> Citações no capítulo</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="cap6.html"><a href="cap6.html"><i class="fa fa-check"></i><b>6</b> Coletando Dados para Pesquisas</a><ul>
+<li class="chapter" data-level="6.1" data-path="cap6.html"><a href="cap6.html#cap6.1"><i class="fa fa-check"></i><b>6.1</b> Como é realizado a coleta de dados</a></li>
+<li class="chapter" data-level="6.2" data-path="cap6.html"><a href="cap6.html#cap6.2"><i class="fa fa-check"></i><b>6.2</b> Amostragem</a></li>
+<li class="chapter" data-level="6.3" data-path="cap6.html"><a href="cap6.html#cap6.3"><i class="fa fa-check"></i><b>6.3</b> Viés Amostral</a></li>
+<li class="chapter" data-level="6.4" data-path="cap6.html"><a href="cap6.html#cap6.4"><i class="fa fa-check"></i><b>6.4</b> Ética na Construção de Bancos de Dados</a></li>
+<li class="chapter" data-level="6.5" data-path="cap6.html"><a href="cap6.html#cap6.5"><i class="fa fa-check"></i><b>6.5</b> Você Sabia? Pesquisa Eleitoral</a></li>
+<li class="chapter" data-level="6.6" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i><b>6.6</b> Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="cap7.html"><a href="cap7.html"><i class="fa fa-check"></i><b>7</b> Distribuições, Probabilidade e Possibilidade</a></li>
+<li class="chapter" data-level="8" data-path="cap8.html"><a href="cap8.html"><i class="fa fa-check"></i><b>8</b> Entendendo e Avaliando sua Hipóteses</a><ul>
+<li class="chapter" data-level="8.1" data-path="cap8.html"><a href="cap8.html#cap8.1"><i class="fa fa-check"></i><b>8.1</b> O que é “Teste de Hipóteses”?</a></li>
+<li class="chapter" data-level="8.2" data-path="cap8.html"><a href="cap8.html#cap8.2"><i class="fa fa-check"></i><b>8.2</b> Hipóteses estatísticas</a></li>
+<li class="chapter" data-level="8.3" data-path="cap8.html"><a href="cap8.html#cap8.3"><i class="fa fa-check"></i><b>8.3</b> p-valor</a></li>
+<li class="chapter" data-level="8.4" data-path="cap8.html"><a href="cap8.html#cap8.4"><i class="fa fa-check"></i><b>8.4</b> Verificando a normalidade</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="cap8.html"><a href="cap8.html#cap8.4.1"><i class="fa fa-check"></i><b>8.4.1</b> Gráficos de normalidade: Histograma e Q-Q Plot</a></li>
+<li class="chapter" data-level="8.4.2" data-path="cap8.html"><a href="cap8.html#cap8.4.2"><i class="fa fa-check"></i><b>8.4.2</b> Testes de normalidade</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="cap8.html"><a href="cap8.html#cap8.5"><i class="fa fa-check"></i><b>8.5</b> Uma breve contextualização!</a></li>
+<li class="chapter" data-level="8.6" data-path="cap8.html"><a href="cap8.html#cap8.6"><i class="fa fa-check"></i><b>8.6</b> Concluindo…</a></li>
+<li class="chapter" data-level="8.7" data-path="cap8.html"><a href="cap8.html#cap8.7"><i class="fa fa-check"></i><b>8.7</b> Indo além</a></li>
+<li class="chapter" data-level="" data-path="cap1.html"><a href="cap1.html#referências"><i class="fa fa-check"></i>Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="cap9.html"><a href="cap9.html"><i class="fa fa-check"></i><b>9</b> Classificação</a></li>
+<li class="chapter" data-level="10" data-path="cap10.html"><a href="cap10.html"><i class="fa fa-check"></i><b>10</b> Regressão</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Uma introdução gentil à Ciência de Dados</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="cap4" class="section level1">
+<h1><span class="header-section-number">Capítulo 4</span> Correlação e Causalidade</h1>
+<p>Sempre buscamos saber o que leva um fato a ocorrer, não é mesmo? A Figura <a href="cap4.html#fig:figura41">4.1</a> abaixo trás alguns tipos de questionamentos que fazem parte da nossa vida.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura41"></span>
+<img src="fig_cap4/Figinicial_cap4.png" alt="Questionamentos" width="80%" />
+<p class="caption">
+Figura 4.1: Questionamentos
+</p>
+</div>
+<p>Além destes exemplos, mas em diversas situações cotidianas atribuímos causas a fatos que nem sempre condizem à realidade e, mais precisamente, sem respaldo estatístico. Isto porquê, nossa mente sempre busca encontrar padrões, ainda que eles não existam.</p>
+<p>Portanto, neste capítulo vamos aprender os conceitos: <strong>Correlação</strong> e <strong>Causalidade</strong>. Não basta conhecer estes termos, é preciso saber interpretá-los.</p>
+<p>Por isto, a partir de agora vamos iniciar uma discussão super interessante que irá nos ajudar neste aprendizado!
+Para compreender estes conceitos, vamos utilizar dados voltados ao desempenho de atletas. Desta forma, poderemos analisar quais variáveis se relacionam com resultados das provas realizadas. A base de dados utilizada foi adaptada da plataforma <a href="https://www.kaggle.com/beyzanurarslan/best-women-volleyball-players-eda-visualization">kaggle</a>.</p>
+<div id="cap4.1" class="section level2">
+<h2><span class="header-section-number">4.1</span> O que é correlação?</h2>
+<p>Dizemos que há correlação, quando verifica-se uma relação de associação entre duas variáveis! Neste caso, é possível verificar para as duas variáveis, ao mesmo tempo, uma tendência no comportamento. Para entender melhor, imagine que estamos avaliando se pessoas com maior massa corporal (kg) consomem mais água durante o dia. Caso esta hipótese seja confirmada, significa que <em>a depender</em> da massa corporal do indivíduo, a quantidade de água ingerida irá <em>variar</em>. Assim acontece em outros casos, o estudo de correlação busca descobrir se variações em uma característica se associa à variações em outra característica.</p>
+<p>Vamos iniciar com um estudo de caso. Queremos saber quais variáveis <em>estão associadas</em> a pontuação total em partidas de vôlei. Esta condição é definida pelas variáveis “Ranking All”, que trata a pontuação de todos os anos e “Ranking 2020”, que trata do ano 2020. Observe na Figura <a href="cap4.html#fig:figura42">4.2</a> as variáveis que possuímos. Perceba que existem variáveis numéricas e também categóricas.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura42"></span>
+<img src="fig_cap4/dados.png" alt="Trecho de base de dados utilizada" width="100%" />
+<p class="caption">
+Figura 4.2: Trecho de base de dados utilizada
+</p>
+</div>
+<p>Para seguir a convenção estatística, denominamos “Ranking Geral” e “Ranking 2020” como <em>variável resposta</em> ou <em>dependente</em> ou ainda, <em>variável Y</em>. O comportamento delas pode estar associado à alterações de outras variáveis da tabela. Assim, estas duas variáveis são as respostas que queremos avaliar na nossa análise. O restante das variáveis são denominadas <em>variável independente</em>, <em>variável X</em>, pois é a partir das variações delas é que poderemos avaliar as respostas na saída.</p>
+<p><em>Ao verificar a parte dos dados exibida na Figura <a href="cap4.html#fig:figura41">4.1</a>, sem qualquer informação prévia, qual destas variáveis você acredita que mais influencia o Ranking?</em></p>
+<blockquote>
+<p><em>Pesquisando na literatura, vemos que estudos de correlação foram realizados em jogadores de vôlei. Variáveis diferentes foram avaliadas, mas no final, fica claro a importância deste conteúdo para gerar melhorias e estratégias de treino.</em><br />
+Um estudo de Crivelin et al., 2015 indicou alta correlação entre a composição corporal de jogadores (variável X) e a altura do salto em cm (variável Y).<br />
+Outro estudo (de Marques Junior, 2015) investigou os fundamentos do vôlei que geram pontos ao longo de uma partida. Assim, foi indicada uma alta correlação entre o ataque, bloqueio e saque (nesta ordem) para a realização de pontuação.</p>
+</blockquote>
+<p>A Correlação (ou Associação) pode ser definida pelo seu <strong>sentido</strong> e ser vizualizada em um Diagrama de dispersão. Assim, ocorrem três formas distintas de correlação:</p>
+<div class="figure" style="text-align: center"><span id="fig:figura43"></span>
+<img src="fig_cap4/Fig_correlacao.png" alt="Tipos de correlação" width="80%" />
+<p class="caption">
+Figura 4.3: Tipos de correlação
+</p>
+</div>
+</div>
+<div id="cap4.2" class="section level2">
+<h2><span class="header-section-number">4.2</span> Quão forte é a correlação?</h2>
+<p>Além do sentido, uma forma de melhor entender a correlação é através da análise do <strong>grau</strong> ou <strong>intensidade</strong> que ocorre. Esta força, ou intensidade é avaliada a partir do <strong>coeficiente de correlação</strong>, um valor numérico que indica o <strong>grau</strong> e a <strong>direção</strong> da tendência de associação entre as variáveis. Vamos comentar duas formas de cálculo do Coeficiente de Correlação. Todavia, é importante você saber que existem outras formas e escolher aplicá-los irá depender das características verificadas na sua amostra.</p>
+<div id="cap4.2.1" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Coeficiente de Pearson</h3>
+<p>Este coeficiente é representado pela letra <em>r</em> e também pode ser chamado de <em>correlação linear</em> ou <em>r de Pearson</em>. Seus valores se situam entre <em>-1</em> e <em>+1</em>, e a interpretação ocorre da forma indicada na Figura <a href="cap4.html#fig:figura44">4.4</a>. Se a correlação é 0, significa que não há associação entre as variáveis. Quando o valor do r de Pearson é 1, independente do sentido, dizemos que esta correlação é perfeita, é a mais forte possível. Quanto mais próximo de zero, menor é a correlação. Vale lembrar que este coeficiente expressa o grau de associação entre duas <strong>variáveis quantitativas</strong>.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura44"></span>
+<img src="fig_cap4/Figy_cap4.png" alt="Coeficiente de Pearson" width="70%" />
+<p class="caption">
+Figura 4.4: Coeficiente de Pearson
+</p>
+</div>
+<p>É comum optarmos por verificar o grau de associação por meio de uma <strong>Matriz de correlação</strong>. Observe a Figura <a href="cap4.html#fig:figura45">4.5</a>, que representa a matriz de correlação dos dados estudados.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura45"></span>
+<img src="fig_cap4/matriz_cor.png" alt="Matriz de correlação - Pearson" width="100%" />
+<p class="caption">
+Figura 4.5: Matriz de correlação - Pearson
+</p>
+</div>
+<p>Sabendo que estamos avaliando quais fatores podem influenciar a posição de um país no Rankin geral ou no Ranking de 2020, localize nesta tabela as linhas que indicam a associação entre estas duas variáveis com todas as outras.</p>
+<p>Observe que para a variável reposta Ranking geral, as variáveis Ranking em 2020, Idade e Peso (kg) são as que apresentam maior grau de associação. Já para o Ranking em 2020, as variáveis que apresentam maior grau de associação são Ranking geral, Peso e Pontos.</p>
+<p>Que tal visualizar esta matriz em forma gráfica? Veja a Figura <a href="cap4.html#fig:figura46">4.6</a> e tente entender as informações.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura46"></span>
+<img src="fig_cap4/Fig1_cap4.png" alt="Gráfico - Matriz de correlação" width="80%" />
+<p class="caption">
+Figura 4.6: Gráfico - Matriz de correlação
+</p>
+</div>
+<p>Esta forma de representação é bastante completa. Isto porque utiliza cores e também adiciona o valor numérico do cálculo do correlação entre as variáveis.</p>
+<p>A esta altura você já deve ter percebido que a coloração vermelha indica valores de correlação positivos, enquanto as tonalidades em azul indicam os valores negativos. A intensidade das cores indica a força da correlação. Ou seja, quanto mais próximo de 1 for o valor de <em>r</em>, mais forte será a tonalidade.</p>
+<p>Localize a variável “Ranking geral” e veja sua associação com as variáveis restantes. Percebemos que seu grau de associação com a variável “Ranking em 2020” é 0,5, por isso a tonalidade indicada na caixa é em tom vermelho. Já com a variável Idade a correlação é -0,6, com tonalidade azul. Este valor negativo indica que quanto maior a idade das jogadoras, menor as notas no ranking geral.
+Esta informação é relevante, uma vez que a Idade influencia o desempenho de atletas e é um dos principais fatores que levam à aposentadoria destes profissionais (<a href="https://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S1517-86922008000600006">Agresta et al., 2008</a>.</p>
+<p>Observe também que a correlação com as outras variáveis tem sentido negativo e são bastante fracas, se aproximando de zero. Desta forma, podemos dizer que estas variáveis praticamente não são relacionadas a Ranking geral. O mesmo pode-se dizer quanto ao Ranking em 2020. Vale destacar que a correlação de uma variável com ela mesma sempre será 1.</p>
+<p>Também podemos optar por visualizar a correlação separadamente. Assim, comparamos apenas a variável dependente <em>versus</em> a variável independente. Verifique graficamente a associação entre Pontos (variável de entrada) e Raking Geral (variável de saída).</p>
+<div class="figure" style="text-align: center"><span id="fig:figura47"></span>
+<img src="fig_cap4/Fig13_cap4.png" alt="Associação entre Pontos e Ranking geral" width="50%" />
+<p class="caption">
+Figura 4.7: Associação entre Pontos e Ranking geral
+</p>
+</div>
+<p>Ao observar este gráfico, não percebemos uma tendência, um comportamento que indique associação entre estas variáveis. As observações estão dispersas pelo gráfico, não indicando um padrão associativo e a reta plotada praticamente não tem inclinação.</p>
+<p>Verifique agora a associação de Pontos com Ranking 2020.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura48"></span>
+<img src="fig_cap4/Fig14_cap4.png" alt="Associação entre Pontos e Ranking em 2020" width="50%" />
+<p class="caption">
+Figura 4.8: Associação entre Pontos e Ranking em 2020
+</p>
+</div>
+<p>Ocorre a mesma situação anterior, o que indica que Ranking 2020 também não se associa com Points. Ou seja, mesmo que a variável Points sofra variações, isto não irá interferir em Ranking All ou Ranking 2020.</p>
+<blockquote>
+<p>Já sabemos que o valor 0 indica que não há correlação, e que o valor de 1 indica o maior grau desta estatística. Mas, como classificar os outros valores encontrados? Observe a Figura <a href="cap4.html#fig:figura49">4.9</a> abaixo:</p>
+</blockquote>
+<div class="figure" style="text-align: center"><span id="fig:figura49"></span>
+<img src="fig_cap4/rankingr.png" alt="Hieraquia de valores - Correlação" width="50%" />
+<p class="caption">
+Figura 4.9: Hieraquia de valores - Correlação
+</p>
+</div>
+</div>
+<div id="cap4.2.2" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Coeficiente de Spearman</h3>
+<p>Assim como o <em>r de Pearson</em>, esta métrica também se situa entre -1 e 1. A diferença é que neste caso não existe a obrigatoriedade de haver relação linear entre as variáveis. Deste modo, este coeficente avalia se as variáveis apresentam uma relação, mas a mudança delas não necessariamente precisa ser a uma mesma taxa.</p>
+<p>Veja a Figura <a href="cap4.html#fig:figura410">4.10</a> com a matriz de correlação para o Coeficiente de Spearman.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura410"></span>
+<img src="fig_cap4/Fig18_cap4.png" alt="Correlação de Spearman" width="80%" />
+<p class="caption">
+Figura 4.10: Correlação de Spearman
+</p>
+</div>
+<p>Observamos que alguns valores se diferenciam daqueles apresentados pela correlação de Pearson na <a href="cap4.html#fig:figura43">4.3</a>. Apesar destas variáveis terem um baixo/ moderado grau de associação, ao se utilizar a correlação de Spearman nota-se para algumas delas (Salto (cm), Pontos e Bloqueio (cm)) um coeficiente de correlação maior do que o obtido pela correlação de Pearson, indicando que o relacionamento entre elas não necessariamente é linear. Por isto a diferença de valores apresentada na Figura <a href="cap4.html#fig:figura411">4.11</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura411"></span>
+<img src="fig_cap4/comparacao.png" alt="Comparação Spearman e Pearson" width="60%" />
+<p class="caption">
+Figura 4.11: Comparação Spearman e Pearson
+</p>
+</div>
+<blockquote>
+<p>Correlações categóricas<br />
+Até agora utilizamos apenas dados numéricos para quantificar a correlação. Mas, e quanto às informações categóricas que possuímos, elas devem ser desconsideradas?<br />
+A resposta é não. Existem formas de se avaliar o grau de associação de variáveis qualitativas, como: qui-quadrado, coeficiente phi, V de cramer e outras.</p>
+</blockquote>
+</div>
+<div id="cap4.2.3" class="section level3">
+<h3><span class="header-section-number">4.2.3</span> Multicolinearidade</h3>
+<p>Quando observamos todas as linhas e colunas da matriz de correlação, percebemos que outras variáveis (variáveis de entrada), também apresentam um valor de correlação. Isto indica que elas apresentam uma relação entre si.</p>
+<p>Veja na figura que existe um grupo de variáveis de entrada com altos valores de correlação positiva. Peso, Spike e Block! Isto significa que estas variáveis tem uma interação entre si. Quando isto ocorre dizemos que há <em>multicolinearidade</em>.</p>
+<p>Podemos visualizar este comportamento de forma gráfica. Observe na Figura <a href="cap4.html#fig:figura412">4.12</a>, a plotagem entre estas variáveis e observe a tendência entre elas.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura412"></span>
+<img src="fig_cap4/Figxxx_cap4.png" alt="Associação entre variáveis independentes" width="100%" />
+<p class="caption">
+Figura 4.12: Associação entre variáveis independentes
+</p>
+</div>
+<p>Basicamente, percebemos que os pontos estão dispersos, porém, apresentam uma tendência crescente em todos os gráficos. Isto possibilita até mesmo traçar uma linha de tendência para observarmos melhor. Assim, precebemos associação linear crescente entre Altura e peso; altura e salto; peso e salto.</p>
+<p>Em geral, espera-se que em um conjunto, as variáveis de entrada praticamente não apresentem correlação entre si e apenas se associem à variável de saída. Isto porque, a multicolinearidade pode nos confundir quanto ao comportamento observado na variável resposta.</p>
+</div>
+<div id="cap4.2.4" class="section level3">
+<h3><span class="header-section-number">4.2.4</span> Considerações sobre a análise</h3>
+<p>Verificamos que a relação de associação das variáveis avaliadas é muito baixa em relação às variáveis dependentes (Ranking 2020 e Ranking geral). Vale ressaltar que aplicamos métodos que consideram variáveis numéricas e, portanto, não avaliamos as variáveis categóricas. Assim, é possível que estas variáveis tenham uma maior relação com os resultados de Ranking.</p>
+</div>
+</div>
+<div id="cap4.3" class="section level2">
+<h2><span class="header-section-number">4.3</span> Relações de causa e efeito: conhecendo a causalidade</h2>
+<p>De acordo com o <a href="https://www.dicio.com.br/causalidade/">dicionário</a>, a palavra “causalidade” se refere à condição ou qualidade do que é causal, do que produz efeito. É uma relação direta entre causa-efeito.Veja estas frases e reflita sobre a mensagem que você compreende.</p>
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+<blockquote>
+<ol style="list-style-type: lower-alpha">
+<li>Pare o aquecimento global: se torne um pirata<br />
+</li>
+<li>Habilidades em linguagens reduzem ataques de raiva na pré escola<br />
+</li>
+<li>Qual a causa de câncer?</li>
+<li>chocolate faz bem?
+</div></li>
+</ol>
+</blockquote>
+<p>Observe que estas frases passam uma relação imediata de causa e efeito entre as variáveis. Em “a”, dá a entender que é possível parar o aquecimento global ao se tornar um pirata. Mas, será que estas alegações fazem sentido?</p>
+<p>Uma relação de causa-efeito pode ser descrita por meio de palavras como <em>impacta</em>, <em>afeta</em> ou <em>efeito</em>. Deste modo, este tipo de relação sugere que duas variáveis não apenas aparecem juntas, mas que o fato de uma delas ocorrer automaticamente causa o surgimento da outra.</p>
+<p>Observe este outro exemplo: Em países do hemisfério norte as pessoas gastam mais em compras no frio. À primeira vista, tendemos a achar que o frio provoca um aumento nas vendas. Porém, se pensarmos um pouco vamos perceber que datas festivas como Natal e Ano Novo nestes países, ocorrem no inverno. Portanto, esta pode ser a causa do aumento das compras.</p>
+<p>Ou seja, não podemos simplesmente atribuir uma relação de causa e efeito a um evento, pois podem haver muitos fatores que influenciam este contexto.</p>
+<div id="cap4.3.1" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Coincidência ou Causalidade?</h3>
+<p>A única forma de provar uma causalidade é a partir de uma análise detalhada dos dados. Estas análises são realizadas por meio de <em>estudos observacionais</em> ou <em>estudos experimentais aleatório</em>, em um grupo de indivíduos divididos em: <em>grupo controle</em> e <em>grupo de tratamento</em>. Este último sofre intervenção por algum fator que se deseja analisar. Estes grupos são monitorados às mesmas condições, e a diferença nas respostas finais são computadas.</p>
+<p>Uma questão central para respondermos é se de fato o tratamento aplicado produz em efeito na resposta obtida. Caso isto ocorra, a associação é causal. Observe que quando investigamos a causalidade, não queremos saber apenas se há uma associação entre variáveis. Mas sim, se esta relação implica diretamente causa-efeito.</p>
+<p>Desta forma, afirmar a ocorrência de causalidade exige duas etapas:</p>
+<p>1 - Observar uma associação entre variáveis<br />
+2 - Análise cuidadosa de causalidade</p>
+<p>Algumas situação não permitem a realização de experimentos aleatórios, ainda que seja para verificar a causalidade. Por exemplo, se qusiermos avaliar a os efeitos do consumo de ácool durante a gravidez, deveríamos convidr algumas grávidas para o nosso experimento. Mas, isto seria sensato? Em situações deste tipo, deve ser realizado um estudo observacional.</p>
+<p>Se o grupo de tratamento e o grupo de controle apresentarem diferenças além do tratamento aplicado, tomar conclusões sobre a causalidade se torna algo difícil. Neste caso, chamamos esta diferença de <strong>fator de confusão</strong>.</p>
+<p>Vamos entender melhor a partir de um exemplo. Nos anos 60, alguns estudos apontaram que pessoas que ingeriam café tinham altas taxas de câncer de pulmão se comparadas às que não ingeriam. Devido a isto, algumas pessoas começaram a atribuir o café como causa de câncer de pulmão. Porém, hoje sabemos que café não é a causa desta doença! Na verdade, esta análise tinha um fator de confusão: o hábito de fumar. Naquela época, pessoas que ingeriam café provavekmente também tinham o hábito de fumar. E esta prática sim, causa câncer de pulmão. Então, podemos concluir que: o consumo de café estava associado ao cancer de pulmão, porém não é o causador da doença!</p>
+<p>Bom, os fatores de confusão são bastantes comuns. Mas estudos confiáveis tomam bastante cuidado para reduzir esta <em>confusão</em> e saber o quanto ela afeta a análise.</p>
+</div>
+</div>
+<div id="cap4.4" class="section level2">
+<h2><span class="header-section-number">4.4</span> Correlações expúrias</h2>
+<p>Bom, já aprendemos o conceito de correlação e também sabemos que a correção não implica causalidade. Veja a Figura <a href="cap4.html#fig:figura413">4.13</a> e avalie a tendência entre afogamentos e aparições do ator Nicholas Cage em filmes.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura413"></span>
+<img src="fig_cap4/corexp.png" alt="Afogamentos e aparições do Nicholas Cage" width="100%" />
+<p class="caption">
+Figura 4.13: Afogamentos e aparições do Nicholas Cage
+</p>
+</div>
+<p>A associação entre estas variáveis é nítida, não é mesmo? Portanto, claro que elas são correlacionadas (r = 0,666) e mais, a causa dos afogamentos é a aparição do Nicholas Cage em filmes!</p>
+<p>Claramente esta afirmação está ERRADA!!</p>
+<p><img src="fig_cap4/gif_cap4.gif" width="50%" style="display: block; margin: auto;" /></p>
+<p>Assim como muitas outras afirmações que ouvimos no nosso dia a dia que são bastante questionáveis, esta afirmação reflete uma certa negligência à compreensão de Correlação e Causalidade.Ainda que esta relação seja visível graficamente, o nosso senso crítico precisa prevalecer, caso contrário seguiremos acreditando em informações dúbias e tomando decisões incorretas.</p>
+<p>Para não sermos reféns deste tipo de conclusão, precisamos saber de dois fatores que acarretam esta conclusão errônea:</p>
+<p>1 - o primeiro deles é o já citado <strong>fator de confusão</strong>: ou uma terceira variável que afeta o resultado, que não está sendo considerada.<br />
+2 - Acaso: sim, coincidências acontecem e precisamos ter criticidade para avaliar se a informação é lógica.</p>
+<p>Uma crítica semelhante pode ser feita ao caso seguinte. Em alguns meses do ano, foi observado que o número de afogamentos aumenta. Ao mesmo tempo, as vendas de sorvete também aumentam! Antes de você refletir, vamos a mais informações. Os meses recorde de afogamentos e vendas de sorvete são Dezembro e Janeiro. Segundo os dados estas variáveis estão correlacionadas positivamente, com um r = 0,98. E mais do que isso, será que poderíamos concluir que as vendas de sorvete causam afogamentos? Errado. Temos uma terceira variável em comum a estas duas, a Temperatura. Em dias mais quentes as pessoas vão à praia, ou tomam sorvete, e com isso, mais pessoas ficam expostas à chances de afogamento. Portanto, neste problema deve ser levado em conta a Temperatura, que está associada aos afogamentos e às vendas de sorvete.</p>
+</div>
+<div id="cap4.5" class="section level2">
+<h2><span class="header-section-number">4.5</span> Considerações Finais</h2>
+<p>Neste capítulo, aprendemos a avaliar afirmações, com embasamento estatístico. A Figura <a href="cap4.html#fig:figura415">4.14</a> exibe um mapa conceitual do que foi discutido.</p>
+<div class="figure" style="text-align: center"><span id="fig:figura415"></span>
+<img src="fig_cap4/mapaconceitual_cap4.png" alt="Mapa conceitual do capítulo 4" width="100%" />
+<p class="caption">
+Figura 4.14: Mapa conceitual do capítulo 4
+</p>
+</div>
+<p>O que achou do tema deste capítulo? Com certeza, a partir de hoje você será muito mais crítico ao ler ou ouvir uma informação. É exatamente isto que buscamos, ter um senso crítico em relação às informações que nos chegam e conhecer formas que garantam que elas sejam corretas!</p>
+</div>
+<div id="cap4.6" class="section level2">
+<h2><span class="header-section-number">4.6</span> Indo além</h2>
+<p><em>Em progresso</em></p>
+</div>
+<div id="referências" class="section level2 unnumbered">
+<h2>Referências</h2>
+<p>[1]<a href="https://www.tylervigen.com/spurious-correlations" class="uri">https://www.tylervigen.com/spurious-correlations</a>: Correlações espúrias
+[2]<a href="https://www.inferentialthinking.com/chapters/intro.html" class="uri">https://www.inferentialthinking.com/chapters/intro.html</a>: Inferential Thinking. Causality and Experiments. UC Berkeley.<br />
+[3]<a href="https://curriculum.idsucla.org/table/" class="uri">https://curriculum.idsucla.org/table/</a> : IDS Curriculum v5_0</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="cap3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cap5.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["ciencia_de_dados.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
